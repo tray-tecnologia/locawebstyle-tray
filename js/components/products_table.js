@@ -47,7 +47,6 @@ var ProductsTableBody = React.createClass({
         ];
 
         this.setState({ products: products });
-        this.setState({ products: [] });
     },
     render: function () {
         var productNodes;
