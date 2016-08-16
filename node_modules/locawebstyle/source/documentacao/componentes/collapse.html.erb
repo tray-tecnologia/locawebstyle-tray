@@ -1,0 +1,147 @@
+---
+title: Collapse & Accordeon
+description: Um painel com título visível e conteúdo oculto
+type: component
+---
+
+<%= partial 'partials/doc-menu-components'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <div class="ls-box-demo">
+    <%= partial('documentacao/shared/collapse/collapse', :locals => { :id => 'collapse_1', :quant => 2, :header => "Título", content: (lorem.paragraphs 1)  }) %>
+  </div>
+  <% code("html") do %><%= partial('documentacao/shared/collapse/collapse', :locals => { :id => '', :quant => 1, :header => "Título", content: (lorem.words 1)}) %><% end %>
+
+  <div class="ls-box-demo">
+    <%= partial('documentacao/shared/collapse/collapse', :locals => { :id => '3', :quant => 1, :header => { title: 'Titulo', desc: "Descrição para este collapse" }, content: (lorem.paragraphs 1)  }) %>
+  </div>
+  <% code("html") do %><%= partial('documentacao/shared/collapse/collapse', :locals => { :id => '3', :quant => 1, :header => { title: 'Titulo', desc: "Descrição para este collapse" }, content: (lorem.paragraphs 1)  }) %><% end %>
+
+  <div class="ls-box ls-background-info">
+    <h5 class="ls-title-4">Atenção</h5>
+    <p>Nos exemplos usamos o elemento <code>a</code> com a classe <code>.ls-collapse-header</code>, mas qualquer elemento, como um DIV por exemplo, pode receber essa classe.</p>
+  </div>
+
+  <div class="ls-box ls-box-gray">
+    <h2 class="doc-title-4">Acessibilidade</h2>
+    <p>Via javascript é adicionada as ARIAs abaixo:</p>
+    <table class="ls-table">
+      <thead>
+        <tr>
+          <th>Estado do Collapse</th>
+          <th>Elemento</th>
+          <th>Wai-aria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fechado</td>
+          <td>ls-collapse-header</td>
+          <td>aria-expanded="false"</td>
+        </tr>
+        <tr>
+          <td>Fechado</td>
+          <td>ls-collapse-body</td>
+          <td>aria-hidden="true"</td>
+        </tr>
+        <tr>
+          <td>Aberto</td>
+          <td>ls-collapse-header</td>
+          <td>aria-expanded="true"</td>
+        </tr>
+        <tr>
+          <td>Aberto</td>
+          <td>ls-collapse-body</td>
+          <td>aria-hidden="false"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="doc-title-3">Parâmetros adicionais</h2>
+
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ls-collapse-opened-always</td>
+        <td>classe</td>
+        <td>mantém um collapse sempre aberto</td>
+      </tr>
+      <tr>
+        <td>ls-collapse-opened</td>
+        <td>classe</td>
+        <td>inicia um collapse aberto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="doc-title-3">Abrir/Fechar o Collapse</h2>
+  <% code("javascript") do %>locastyle.collapse.toggle('#element')<% end %>
+
+
+
+  <hr>
+  <div class="ls-box-demo">
+    <button type="button" class="ls-btn-primary" data-ls-module="collapse" data-target="#010">Abre/Fecha o <i>collapse</i></button>
+    <br>
+    <br>
+    <%= partial('documentacao/shared/collapse/collapse', :locals => { id: "01",:quant => 1, :header => "Título", content: (lorem.paragraphs 1)  }) %>
+  </div>
+
+  <h2 class="doc-title-3">Accordeon</h2>
+  <p><i>Accordeon</i> é um conjunto de <i>collapses</i> agrupados, onde apenas um deles permanece aberto.</p>
+  <p>Um <i>accordeon</i> é um conjunto de <i>collapses</i>, como mostrados acima, com um elemento que os agrupa, com a classe <code>.ls-collapse-group</code>.</p>
+
+  <div class="ls-box-demo">
+    <div class="ls-collapse-group">
+      <%= partial('documentacao/shared/collapse/collapse', :locals => { :id => "acordeon", :quant => 2, :header => "Título", content: (lorem.paragraphs 1)  }) %>
+    </div>
+  </div>
+  <% code("html") do %><%= partial('documentacao/shared/collapse/collapse', :locals => { :id => "acordeon", :quant => 2, :header => "Título", content: (lorem.paragraphs 1)  }) %><% end %>
+
+
+  <h2 class="doc-title-3">Eventos</h2>
+  <p>Você pode escutar eventos de abre e fecha nos elementos de collapse, veja a referência abaixo.</p>
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th width="200">Evento</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>collapse:opened</th>
+        <td><p>Quando um collapse abre, o evento <code>collapse:opened</code> é disparado no elemento do módulo. Veja exemplo abaixo.</p></td>
+      </tr>
+      <tr>
+        <th>collapse:closed</th>
+        <td><p>Quando um collapse fecha, o evento <code>collapse:closed</code> é disparado no elemento do módulo. Veja exemplo abaixo.</p></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Exemplo: </p>
+  <% code("javascript") do %>
+// Um collapse específico
+$("#id-collapse").on('collapse:opened', function(){
+  // do something
+})
+
+// Todos os elementos de collapse
+$(".ls-collapse").on('collapse:closed', function(){
+  // do something
+})
+  <%end%>
+
+</section>
+

@@ -1,0 +1,782 @@
+@import "compass/css3"
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600,300,700)
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html, body
+  background-color: #fff !important
+  overflow: visible !important
+  height: 100% !important
+  min-height: 100%
+
+html
+  font-size: 100%
+
+body
+  overflow: auto !important
+  font-family: 'Open Sans', sans-serif
+
+h1,h2,h3,h4,h5,h6
+  -webkit-font-smoothing: antialiased
+  -ms-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.doc-size-mobile
+  width: 320px
+
+.clearfix:after
+  content: ""
+  display: block
+  clear: both
+
+.documentacao_cartilha-de-elementos [class*="doc-title"]
+  margin-top: 0
+
+.documentacao[class*="ls-theme-"] p a:not([class*="ls-btn"]),
+.index[class*="ls-theme-"] p a:not([class*="ls-btn"])
+  color: #001e45
+
+ul, ol
+  margin: 30px 20px
+
+  .ls-box-demo &
+    margin: 0
+
+.doc-content
+  padding: 60px 0
+  min-height: calc(100% - 392px)
+  height: calc(100% - 392px)
+
+  > .row > .col-md-9
+    padding-bottom: 50px
+
+  .ls-window-xs &
+    height: auto
+
+  &:after
+    content: ""
+    display: block
+    clear: both
+
+  section [class*="ls-alert"] a
+    color: inherit
+
+  p, li
+    line-height: 1.6
+    font-size: remtopx(.9375)
+    color: #555
+
+
+    &[class^="ls-pagination"]
+      margin: 0
+
+  .commit-url
+    color: #4183c4
+    font-size: remtopx(.875)
+    border: 1px solid #ddd
+    background-color: #f8f8f8
+    border-radius: 3px
+
+.doc-hr-sep
+  display: block
+  margin: 50px 0
+
+p + .row
+  padding-top: 25px
+  padding-bottom: 25px
+  overflow: hidden
+
+  [class*="doc-title"]
+    margin-top: 0
+
+p code
+  padding: 2px 4px
+  font-size: 90%
+  color: #c7254e
+  background-color: #f9f2f4
+  white-space: nowrap
+  border-radius: 4px
+  font-family: courier, monospace
+
+.doc-example-grid
+  [class*="col-"]
+    padding-top: 10px
+    padding-bottom: 10px
+    background-color: rgba(0,30,69,.15)
+    border: 1px solid rgba(0,30,69,.25)
+
+  .row
+    margin-bottom: 10px
+    overflow: hidden
+
+//
+// ICONS GRID EXAMPLE
+//
+.list-icons
+
+  li
+    list-style: none
+    display: inline-block
+    vertical-align: top
+    height: 110px
+    width: 110px
+    margin-bottom: 5px
+    padding: 20px 10px
+    line-height: 1
+    font-size: remtopx(.875)
+    text-align: center
+    background-color: rgba(0, 0, 0, 0.03)
+    cursor: default
+    color: rgba(0, 0, 0, .5)
+
+    &:hover
+      color: rgba(0, 0, 0, 1)
+      background-color: rgba(0, 0, 0, 0.08)
+      font-weight: bold
+
+    span:before
+      display: block
+      font-size: 30px
+      margin-bottom: 5px
+
+//
+// INTRO TOPBAR
+//
+.doc-title-intro
+  padding: 65px 0
+  margin: 0 !important
+  background: url(../images/docs/bg-highlight2.jpg) fixed
+  color: #fff
+
+  h1
+    font-weight: 700
+    font-size: remtopx(2.625)
+    padding-bottom: 10px
+    color: #fff
+
+  p
+    font-weight: 300
+    font-size: remtopx(1.5)
+    color: #fff
+
+[class*="ls-alert"]
+  p
+    margin-bottom: 0
+  [class*="doc-title"]
+    margin-top: 0
+
+
+//
+// TITLES
+//
+.documentacao .ls-box p
+  margin-bottom: 0
+
+[class*="doc-title"]
+  margin-top: 35px
+  margin-bottom: 5px
+  color: #222
+
+  [class*="ls-alert"] &
+    margin-top: 0
+
+  a
+    color: #000
+
+    &[class*="ls-tag"]
+      color: #fff
+
+    &:hover
+      opacity: .6
+
+  .ls-box &
+    margin-top: 0
+
+.doc-title-1
+  font-size: remtopx(2.25)
+
+.doc-title-2
+  font-size: remtopx(2)
+
+.doc-title-3
+  font-size: remtopx(1.75)
+
+.doc-title-4
+  font-size: remtopx(1.5)
+
+.doc-title-5
+  font-size: remtopx(1.25)
+
+.doc-title-6
+  font-size: remtopx(.875)
+
+//
+// MENU HORIZONTAL
+//
+.doc-menu-top
+  background-color: #f8f8f8
+  border-bottom: 1px solid #e5e5e5
+
+  ul
+    margin: 0
+
+  li
+    display: inline-block
+    vertical-align: top
+
+  a
+    display: inline-block
+    padding: 15px
+    font-size: remtopx(.875)
+    color: #555
+    font-weight: 400
+    text-decoration: none
+    text-transform: uppercase
+
+    &.active,
+    &:hover,
+    &:focus
+      background-color: #fff
+      color: #000
+      position: relative
+
+      &:before,
+      &:after
+        content: ""
+        display: block
+        width: 100%
+        position: absolute
+
+      &:before
+        border-top: 4px solid #bfbfbf
+        top: -4px
+        left: 0
+
+      &:after
+        height: 1px
+        bottom: -1px
+        left: 0
+        background: #fff
+
+//
+// SIDEBAR MENU
+//
+.doc-sidebar-menu
+  border: 1px solid #e5e5e5
+  padding: 15px 0
+  background: #fff
+  margin-bottom: 20px
+
+  .doc-title-menu
+    font-size: .94rem
+    margin-top: 15px
+    padding: 10px 0 10px 25px
+
+    &:first-of-type
+      margin-top: 0
+
+  ul
+    margin: 0
+
+  li
+    list-style: none
+    line-height: inherit
+
+    a
+      position: relative
+      display: block
+      padding: 10px 0 10px 20px
+      margin-bottom: 1px
+      font-size: remtopx(1)
+      color: #555
+      border-left: 5px solid #fff
+
+    &.active,
+    &:hover,
+    &:focus
+
+      a,
+      a:hover,
+      a:focus
+        border-left-color: #001e45
+        background-color: #f2f2f2
+        color: #000
+
+        &:after
+          position: absolute
+          right: -17px
+          top: 0
+          content: ""
+          display: inline-block
+          vertical-align: middle
+          margin-right: 10px
+          width: 0
+          height: 0
+
+          border-top: 18px solid transparent
+          border-bottom: 18px solid transparent
+          border-left: 7px solid #f2f2f2
+
+//
+// DOC SECTIONS (ADDTHIS SOCIAL LINKS)
+//
+.doc-social
+  text-align: center
+
+.githubbtn
+  display: inline-block
+  vertical-align: middle
+
+.addthis_toolbox
+  display: inline-block
+  text-align: center
+
+  // a, iframe
+  //   vertical-align: middle
+  //   float: none !important
+  //   padding: 0
+  //   display: inline-block !important
+  //   margin-bottom: 15px
+
+  //   &.addthis_button_tweet
+  //     margin-bottom: 0
+
+  // a.addthis_button_tweet.at300b
+  //   width: 90px
+
+.addthis_native_toolbox
+  display: inline-block
+  vertical-align: middle
+  padding-right: 10px
+
+  iframe
+    width: 95px !important
+
+  a
+    display: inline-block !important
+    padding-right: 15px !important
+
+//
+// SECTIONS OF HOME
+//
+.doc-section
+  clear: both
+  padding: 60px 0
+  background-color: #fff
+
+  &:after,
+  .row:after
+    content: ""
+    display: block
+    clear: both
+
+  &.doc-section-gray
+    background-color: #f2f2f2
+
+  .index & h1
+    margin-bottom: 15px
+    text-align: center
+    font-size: remtopx(2.5)
+    font-weight: 700
+    color: #222
+
+    & + p
+      margin-bottom: 65px
+      text-align: center
+      font-size: remtopx(1.625)
+      color: #555
+      font-weight: 300
+
+.doc-msg-info
+  text-align: center
+  padding: 55px 0
+  font-size: remtopx(1.625)
+  font-weight: 300
+
+  .doc-section &:last-child
+    padding-bottom: 0
+
+//
+// CONTENT
+//
+.doc-intro-content
+  border-bottom: 1px solid #e5e5e5
+  padding-bottom: 10px
+  margin-bottom: 40px
+  position: relative
+
+  h1
+    font-size: remtopx(2.25)
+    font-weight: 700
+    color: #222
+    padding-bottom: 10px
+
+  p
+    font-size: remtopx(1.25)
+    font-weight: 300
+    color: #555
+
+//
+// Header
+//
+.doc-header
+  padding: 10px 0
+
+  .doc-menu
+    display: inline-block
+    vertical-align: middle
+    position: static
+
+  .doc-logo
+    display: inline-block
+    font-weight: 300
+    vertical-align: middle
+    border-left: 1px solid #d9d9d9
+    padding: 10px 15px
+    margin-left: 15px
+    text-transform: uppercase
+    font-size: remtopx(1.25)
+
+    a
+      color: #000
+
+.doc-text-center
+  text-align: center
+
+.doc-hr
+  clear: both
+  display: block
+  border: none
+  margin: 65px auto
+  background-color: #ededed
+  width: 125px
+  height: 7px
+
+  + .doc-msg-info
+    padding-top: 0
+
+  &.doc-hr-naked
+    background-color: transparent
+    margin: 35px auto
+
+//
+// DOC MENU SANDWICH
+//
+.doc-menu
+  width: 40px
+  height: 40px
+  cursor: pointer
+  background-color: rgba(255, 255, 255, 0.1)
+  border-radius: 3px
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  position: absolute
+  top: 30px
+  left: 0
+
+  &.active
+    background-color: #fff
+    box-shadow: inset 0px 2px 16px #ccc
+
+    .sandwich
+
+      &:after
+        background-color: #000
+        box-shadow: 0 6px 0 #000, 0 12px 0 #000
+
+    ul
+      display: block
+      margin: 0
+
+  .sandwich
+
+    &:after
+      content: ""
+      width: 16px
+      height: 3px
+      background-color: #fff
+      display: block
+      margin: 12px auto 0
+      box-shadow: 0 6px 0 #fff, 0 12px 0 #fff
+
+  ul
+    display: none
+    position: relative
+    top: 30px
+    border-radius: 5px
+    min-width: 200px
+    box-shadow: 1px 1px 6px rgba(0,0,0,.2)
+    list-style: none
+    background-color: #fff
+    padding: 10px 0
+    text-align: left
+    font-size: remtopx(.875)
+
+    a
+      display: block
+      padding: 10px 15px
+      color: #333
+      font-size: remtopx(.8125)
+      font-weight: 700
+      text-transform: uppercase
+      position: relative
+
+      &:hover,
+      &:focus
+        background: #000
+        color: #fff
+
+  .doc-header &
+    background-color: #f2f2f2
+    border-color: #ececec
+    position: relative
+    top: 0
+
+    .sandwich
+
+      &:after
+        background-color: #000
+        box-shadow: 0 6px 0 #000, 0 12px 0 #000
+
+//
+// EXAMPLES
+//
+.doc-examples
+  a
+    color: #777
+    display: block
+    margin-bottom: 50px
+
+    .doc-thumbnail
+      display: block
+      max-height: 300px
+      max-width: 400px
+      overflow: hidden
+      padding: 4px
+      border: 1px solid #ddd
+      border-radius: 4px
+
+      img
+        border-radius: 4px
+        +transition (all .35s ease)
+
+    &:hover,
+    &:focus
+      img
+        +scale(1.15)
+        +transition (all .35s ease)
+
+    [class*="doc-title"]
+      margin-top: 20px
+
+.ls-box-demo
+  @extend .clearfix
+  border: solid 1px #e1e1e8
+  border-radius: 3px 3px 0 0
+  padding: 40px 20px 20px
+  margin-top: 25px
+  position: relative
+
+  &:after
+    content: ""
+    display: both
+    clear: both
+
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+    font-size: 11px
+    border-bottom: 1px solid #e1e1e8
+    border-right: 1px solid #e1e1e8
+    content: "Exemplo"
+    display: inline-block
+    background: #efefef
+    color: #666
+    padding: 5px 10px
+
+  & + .language-markup
+    border-radius: 0 0 3px 3px !important
+    margin-top: -1px
+
+  & + p
+    padding-top: 25px
+
+.language-markup
+  border-radius: 3px
+
+.documentacao_componentes_passo-a-passo .doc-border-silver
+  padding-left: 15px
+
+//
+// FOOTER
+//
+.doc-footer
+  clear: both
+  background-image: url(../images/docs/bg-highlight2.jpg)
+  padding: 10px 0
+
+  .doc-logo-footer
+    padding: 10px 15px 10px 0
+    display: inline-block
+    border-right: 1px solid rgba(255,255,255,0.15)
+
+  .doc-copyright
+    display: inline-block
+    vertical-align: middle
+    padding: 0 10px
+    font-size: remtopx(0.6875)
+    color: rgba(255,255,255,.6)
+
+  .doc-social-link
+    list-style: none
+    float: right
+    padding-top: 10px
+    margin: 0
+
+    li
+      display: inline-block
+      margin-left: 10px
+
+      a
+        text-indent: -9999px
+        overflow: hidden
+        width: 30px
+        height: 30px
+        background: url(../images/docs/social-icons.png) no-repeat
+        display: inline-block
+
+        &.doc-social-twitter
+          background-position: -38px 0
+
+.doc-affix
+  position: fixed
+  top: 20px
+  max-width: 261px !important
+
+//
+// Syntax Highlight
+//
+.highlight
+  overflow: auto
+  background-color: rgba(0, 0, 0, 0.02)
+  line-height: 1.4
+  border: solid 1px #e1e1e8
+  margin-bottom: 25px
+  margin-top: 25px
+
+  .ls-box-demo + &
+    margin-top: -1px
+    border-radius: 0 0 3px 3px
+
+  .gutter
+    background-color: rgba(0, 0, 0, 0.03)
+    border-right: 1px solid rgba(0, 0, 0, 0.1)
+    padding: 10px 15px
+    font-weight: bold
+
+  .code
+    padding: 10px 15px
+
+//
+// Adjust color documentation
+//
+
+.doc-content
+  .ls-box-demo
+
+    .ls-topbar:after
+      content: none
+
+
+  .ls-topbar
+    position: relative
+
+    ul
+      margin: 0
+
+  .ls-notification,
+  .ls-sidebar
+    position: absolute
+
+    ul
+      margin: 0
+
+    .ls-notification-list
+      top: 94px
+      margin-left: 20px
+
+  .doc-border-silver
+    border: 1px solid #ccc
+
+#doc-header-full
+  height: 555px
+  margin-bottom: 50px
+  overflow: hidden
+  position: relative
+
+  .ls-main
+    height: 450px
+
+@media screen and (max-width: 991px)
+  .doc-content
+    min-height: auto
+    height: auto
+
+  .doc-sidebar-menu
+    margin-bottom: 30px
+
+    li
+
+      &.active,
+      &:hover,
+      &:focus
+
+        a,
+        a:hover,
+        a:focus
+
+          &:after
+            border-left-color: transparent
+
+@media screen and (max-width: 480px)
+
+  .doc-menu-top
+    li,
+    a
+      display: block
+
+  .doc-highlight
+
+    .container
+      padding: 95px 0 80px !important
+
+    h1
+      font-size: remtopx(4.5) !important
+
+      strong
+        display: block
+
+  .doc-portfolio-thumb
+    margin-bottom: 30px
+
+  .doc-hr-naked
+    display: none
+
+  .doc-footer
+
+    .doc-logo-footer,
+    .doc-social-link,
+    .doc-copyright
+      display: block
+      border: none
+      text-align: center
+      padding: 0 0 10px
+      float: none
+
+    .doc-copyright
+      font-size: remtopx(.8125)

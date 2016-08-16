@@ -1,0 +1,104 @@
+$defaultWidth: 90%
+$largeWidth: 750px
+$smallWidth: 450px
+$paddingDefault: 20px
+
+.ls-modal
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  text-align: center
+  overflow: auto
+  overflow-y: scroll
+  z-index: 16
+  backface-visibility: hidden
+  background: rgba(0, 0, 0, 0.8)
+
+  &.ls-opened
+    display: block
+
+  &.popover
+    .ls-modal-footer
+      display: none
+
+.ls-modal-box
+  display: inline-block
+  width: $defaultWidth
+  margin: 10% 20px 100px
+  position: relative
+  text-align: left
+  background-color: #fff
+  border-radius: $default-radius
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7)
+
+  &.ls-modal-large
+    width: $largeWidth
+    margin-left: -$largeWidth / 2
+
+  &.ls-modal-small
+    width: $smallWidth
+
+[data-modal-blocked]
+  [data-dismiss]
+    display: none
+
+
+.ls-modal-header
+  padding: $paddingDefault
+  border-bottom: 1px solid $gray1
+
+  [data-dismiss]
+    position: absolute
+    right: 10px
+    top: 14px
+    border: none
+    background: none
+    color: #212121
+    text-align: center
+    font-size: remtopx(1.25)
+    font-weight: bold
+    cursor: pointer
+    opacity: .3
+
+    &:hover
+      opacity: 1
+
+  .ls-modal-title
+    padding: 0
+    margin: 0
+    font-size: remtopx(1)
+
+.ls-modal-body
+  padding: $paddingDefault
+
+  p
+    margin-bottom: 10px
+
+.ls-modal-footer
+  padding: $paddingDefault
+  border-top: 1px solid $gray1
+
+.ls-modal-feedbackr
+
+  .ls-modal-box
+    width: 627px
+    height: 600px
+
+    .ls-modal-header
+      padding: 0
+      border: none
+
+      [data-dismiss]
+        top: 0px
+        right: 3px
+
+    .ls-modal-body
+      width: 100%
+      height: 600px
+
+@media screen and (min-width: $screen-sm)
+  .ls-modal-box
+    width: 600px

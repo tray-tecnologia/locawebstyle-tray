@@ -1,0 +1,68 @@
+*
+  margin: 0
+  padding: 0
+  +box-sizing(border-box)
+
+*:after,
+*:before
+  +box-sizing(border-box)
+
+html
+  background-color: #fff
+
+  &.ls-html-nobg
+    background-color: #f7f7f7
+
+html,
+body
+  height: 100%
+
+body
+  font-size: 100%
+  line-height: 1
+  font-family: Open Sans, Arial, Helvetica, Sans-serif
+
+.container-white
+  @extend .ls-clearfix
+  margin: 0 -15px
+  padding: 30px
+  border-top: 1px solid $gray1
+  background-color: #fff
+
+a, a:hover
+  text-decoration: none
+
+p a,
+a.ls-color-theme
+  border-bottom-style: solid
+  border-bottom-width: 1px
+
+  &:hover,
+  &:focus
+    border-bottom-color: transparent
+
+img
+  max-width: 100%
+
+fieldset
+  border: none
+
+main
+  display: block
+
+[hidden],
+template
+  display: none
+
+small
+  font-size: remtopx(.6875)
+
+button::-moz-focus-inner,
+input::-moz-focus-inner
+  border: 0
+  padding: 0
+
+@media screen and (min-width: $screen-sm)
+  html,
+  body
+    overflow-x: initial

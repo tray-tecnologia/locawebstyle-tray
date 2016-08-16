@@ -1,0 +1,59 @@
+[data-ls-module="progressBar"]
+  background: $gray1
+  width: 100%
+  padding: 2px
+  min-height: 24px
+  border-radius: $default-radius
+  position: relative
+
+  span
+    display: block
+    min-height: 20px
+    background: $gray4
+    border-radius: $default-radius
+    text-align: center
+
+    &:before
+      content: attr(aria-valuenow)
+      color: #fff
+      font-size: remtopx(.625)
+      display: inline-block
+      padding: 5px
+
+  &.ls-right-percentage
+    width: calc(100% - 30px)
+    width: 96.5%\9
+
+    span:before
+      position: absolute
+      left: 100%
+      color: #000
+
+  &.ls-left-percentage
+    margin-left: 30px
+    width: calc(100% - 30px)
+    width: 96.5%\9
+
+    span:before
+      position: absolute
+      right: 100%
+      color: #000
+
+@-webkit-keyframes stretch
+  0%
+    width: 0
+
+@keyframes stretch
+  0%
+    width: 0
+
+
+[data-ls-module="progressBar"].ls-animated span
+  -webkit-animation-duration: 1s
+  animation-duration: 1s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-name: stretch
+  animation-name: stretch

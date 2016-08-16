@@ -1,0 +1,72 @@
+---
+title: Iniciando com formulários
+description: Elementos padrão de formulários e disposição de campos
+type: forms
+---
+<%= partial 'partials/doc-menu-forms'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <p>É possível fazer um formulário usando elementos verticais e horizontais, usando o <strong>grid</strong> padrão e a classe para <strong>formulários inline</strong>.</p>
+
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th>Classe</th>
+        <th>Layout</th>
+        <th>Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>.ls-form</td><td>Vertical</td><td>Classe padrão do formulário, exibe a label e conteúdo de formulários em bloco</td></tr>
+      <tr><td>.ls-form-horinzontal</td><td>Horizontal</td><td>Exibe os elementos ao lado, mas a label continua sendo bloco</td></tr>
+      <tr><td>.ls-form-horinzontal</td><td>Inline</td><td>Exibe todos os elementos ao lado, label e conteúdo de formulário</td></tr>
+    </tbody>
+  </table>
+
+
+  <h3 class="doc-title-3">Formulários verticais</h3>
+  <p>Este já é o comportamento padrão, você não precisa fazer praticamente nada para que o form funcione na vertical. Você pode definir a largura das áreas do formulário com as classes do GRID.</p>
+
+  <div class="ls-box-demo">
+   <%= partial 'documentacao/shared/form/form-vertical.erb' %>
+  </div>
+  <% code("html") do %><%= partial 'documentacao/shared/form/form-vertical.erb'  %><% end %>
+
+  <hr>
+  <h3 class="doc-title-3">Formulários horizontais</h3>
+  <p>Para colocar os campos um ao lado do outro, basta inserir a classe <code>ls-form-horizontal</code> na tag FORM.</p>
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/form/form-horizontal.erb' %>
+  </div>
+  <% code("html") do %><%= partial 'documentacao/shared/form/form-horizontal.erb' %><% end %>
+
+  <hr>
+  <h3>Etiqueta ao lado do campo</h3>
+  <p>Basta adicionar a classe <code>ls-form-inline</code> na tag FORM. Veja exemplos abaixo:</p>
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/form/form-horizontal-inline.erb' %>
+  </div>
+  <% code("html") do %><%= partial 'documentacao/shared/form/form-horizontal-inline.erb' %><% end %>
+
+  <p>Com caixa de filtro:</p>
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/box-de-filtro/filter-status' %>
+  </div>
+  <% code("html") do %><%= partial 'documentacao/shared/box-de-filtro/filter-status' %><% end %>
+
+  <div class="ls-box ls-box-gray">
+    <h4>Acessibilidade</h4>
+    <p>
+      Ao usar o atributo <code>placeholder</code> adicionamos a classe <code>ls-hidden-accessible </code> no <code>ls-label-text</code>, assim escondemos o elemento, porém os leitores de tela conseguem entender.
+      <br>
+      Faça isso e a Acessibilidade agradece =)
+    </p>
+  </div>
+
+</section>

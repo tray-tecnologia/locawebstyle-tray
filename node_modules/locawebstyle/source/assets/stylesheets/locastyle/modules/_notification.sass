@@ -1,0 +1,125 @@
+.ls-notification
+  background: #222
+  width: $sidebar-width
+  position: fixed
+  right: 0
+  top: 0
+  height: 100%
+  z-index: -1
+
+  .ls-notification-list
+
+    ul li
+      border-bottom: 1px solid $gray4
+      position: relative
+      list-style: none
+
+      &:last-child
+        border-bottom: none
+
+    [class*="ls-title"]
+      padding: 20px
+      color: #fff
+      background: $gray4
+
+    a:not([class*="btn"])
+      -moz-transition: all 0.2s
+      -webkit-transition: all 0.2s
+      transition: all 0.2s
+      color: $gray3
+      display: block
+      font-size: remtopx(.875)
+      text-decoration: none
+      padding: 20px
+      padding-right: 30px
+      font-weight: 300
+      line-height: 1.3
+
+      &.ls-close-notification
+        padding: 0
+        position: absolute
+        top: 10px
+        right: 5px
+        font-size: remtopx(.625)
+        color: #fff
+
+      &:hover,
+      &:focus,
+      &:active
+        color: #fff
+
+    a[class*="btn"]
+      margin: 20px 0
+
+// Message when notifications is empty
+.ls-no-notification-message
+  @extend .ls-txt-center
+  @extend .ls-lg-space
+  @extend .ls-display-none
+
+  &.active
+    @extend .ls-display-block
+
+
+@media screen and (min-width: $screen-sm)
+  .ls-notification
+    +transform(none)
+    +translate(-100%, 0)
+    +single-transition(none)
+    float: none
+    top: $topbar-height
+    height: calc(100% - 60px)
+    height: 93%\9
+    z-index: 11
+    position: fixed
+    overflow: visible
+    right: auto
+    left: 0
+
+  .ls-notification-list
+    position: fixed
+    background: #222
+    width: $sidebar-width
+    top: -20px
+    display: block
+    -ms-transition: all .2s ease-out
+    -moz-transition: all .2s ease-out
+    -webkit-transition: all .2s ease-out
+    transition: all .2s ease-out
+    opacity: 0
+    height: 0
+    overflow: hidden
+    border-radius: $default-radius
+
+    h3
+      border-radius: $default-radius $default-radius 0 0
+
+    ul
+      max-height: 300px
+      overflow: auto
+      margin: 0 5px 5px 0
+
+      &::-webkit-scrollbar
+        width: 6px
+
+      &::-webkit-scrollbar-track
+        background: rgba(0,0,0,0.8)
+        border-radius: $default-radius
+
+      &::-webkit-scrollbar-thumb
+        background: $gray3
+        border-radius: $default-radius
+
+    &.ls-active
+      top: 0
+      opacity: 1
+      height: auto
+      overflow: visible
+
+    &:before
+      +arrow-structure(10px)
+      position: absolute
+      top: -20px
+      left: 50%
+      margin-left: -10px
+      border-bottom-color: $gray4

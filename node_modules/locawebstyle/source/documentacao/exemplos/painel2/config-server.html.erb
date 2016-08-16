@@ -1,0 +1,40 @@
+---
+title: Dados do Servidor SMTP
+layout: panel
+theme_name: ls-theme-light-green
+panel: painel2
+title_product: SMTP Locaweb
+---
+
+<h1 class="ls-title-intro ls-ico-cog">Dados do Servidor SMTP</h1>
+<p>Utilize e gerencie as informações de autenticação do servidor SMTP.</p>
+<table class="ls-table ls-table-striped">
+  <tbody>
+    <tr>
+      <td><strong>Usuário: </strong> <%= lorem.first_name %></td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Senha: </strong>
+        <input type="password" maxlength="20" id="password_field2" name="password" class="ls-no-style-input" value="testandosenha" >
+        <a class="ls-toggle-pass" data-target="#password_field2" href="#" data-toggle-text="Ocultar">Exibir</a> |
+        <a href="#" data-ls-module="modal" data-target="#changePassword">Alterar</a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Endereço de SMTP: </strong>smtp.dominio-smtp.dominio.com</td>
+    </tr>
+    <tr>
+      <td><strong>Porta:</strong> 587| <strong>SSL/TLS:</strong> 465</td>
+    </tr>
+  </tbody>
+</table>
+<h3 class="ls-title-5">Documentação</h3>
+<p>Veja <a href="#">exemplos de código de implementação</a> em PHP, .NET, RUBY, Java entre outras linguagens.</p>
+<p>Saiba como <a href="#">configurar o SMTP no Outlook</a>.</p>
+
+<%= partial 'documentacao/exemplos/painel2/change-password' %>
+
+<% content_for :sidebar_panel do %>
+  <%= partial 'documentacao/exemplos/painel2/sidebar' %>
+<% end %>

@@ -1,0 +1,54 @@
+<div class="ls-topbar <%= 'ls-topbar-gray' if current_page.data.topbar_gray %>">
+
+  <!-- Barra de Notificações -->
+  <div class="ls-notification-topbar">
+
+    <!-- Links de apoio -->
+    <div class="ls-alerts-list">
+      <a href="#" class="ls-ico-bell-o" data-counter="8" data-ls-module="topbarCurtain" data-target="#ls-notification-curtain"><span>Notificações</span></a>
+      <a href="#" class="ls-ico-bullhorn" data-ls-module="topbarCurtain" data-target="#ls-help-curtain"><span>Ajuda</span></a>
+      <a href="#" class="ls-ico-question" data-ls-module="topbarCurtain" data-target="#ls-feedback-curtain"><span>Sugestões</span></a>
+    </div>
+
+    <!-- Dropdown com detalhes da conta de usuário -->
+    <div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
+      <a href="#" class="ls-ico-user">
+        <img src="<%= base_url %>/assets/images/locastyle/avatar-example.jpg" alt="" />
+        <span class="ls-name">João Kennedy</span>
+        (johnkennedy)
+      </a>
+
+      <nav class="ls-dropdown-nav ls-user-menu">
+        <ul>
+          <li><a href="#">Meus dados</a></li>
+          <li><a href="#">Faturas</a></li>
+          <li><a href="#">Planos</a></li>
+          <li><a href="#">Sair</a></li>
+         </ul>
+      </nav>
+    </div>
+  </div>
+
+  <span class="ls-show-sidebar ls-ico-menu"></span>
+
+  <a href="<%= base_url %>/documentacao/exemplos/<%= current_page.data.panel %>/pre-painel"  class="ls-go-next"><span class="ls-text">Voltar à lista de serviços</span></a>
+
+  <!-- Nome do produto/marca com sidebar -->
+  <%- unless current_page.data.show_topbar_title %>
+    <h1 class="ls-brand-name">
+      <a href="home" class="ls-ico-earth">
+        <small>Uma descrição ou outro nome</small>
+        O nome do Produto
+      </a>
+    </h1>
+  <% end %>
+
+  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
+  <%- if current_page.data.no_show_sidebar %>
+    <h1 class="ls-brand-name">
+      <a href="home" class="ls-ico-earth">
+        <%= current_page.data.title_product %>
+      </a>
+    </h1>
+  <% end %>
+</div>

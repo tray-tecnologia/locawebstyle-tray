@@ -1,0 +1,94 @@
+---
+title: Cores do Tema
+description: Insira cores no seu projeto.
+---
+
+<%= partial 'partials/doc-menu-css'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <p>Existem uma série de temas de cores base usados no Locaweb Style. Essas cores são adicionadas conforme vamos implementando novos produtos na Locaweb. O tema de cor é aplicado via classe no elemento <code>html</code>.</p>
+
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th>Classe da cor</th>
+        <th>Cor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.themes.each do |theme| %>
+        <tr>
+          <td><%= theme[0] %></td>
+          <td><%= theme[1] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p>Clique nos links abaixo para ter uma ideia de como o layout poderá ficar:</p>
+
+  <div class="ls-box-demo">
+    <div class="doc-test-themes ls-group-btn ls-group-active">
+      <% data.themes.each do |theme| %>
+        <a href="#" class="ls-btn-primary" data-toggle-class="<%= theme[0] %>" data-target="html"><%= theme[1] %></a>
+      <% end %>
+    </div>
+    <br>
+    <br>
+    <div data-ls-module="dropdown" class="ls-dropdown">
+      <a href="#" class="ls-btn-primary">Users</a>
+
+      <ul class="ls-dropdown-nav">
+        <%- 5.times do%>
+        <li><a href="#"><%= lorem.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="ls-topbar ls-no-position" style="position: static !important;">
+
+      <!-- Notification bar -->
+      <div class="ls-notification-topbar">
+        <!-- Link of support/help -->
+        <div class="ls-alerts-list">
+          <a href="#" class="ls-ico-bell-o" data-counter="5" data-ls-module="topbarCurtain" data-target="#ls-notification-curtain"><span>Notificações</span></a>
+          <a href="#" class="ls-ico-bullhorn" data-ls-module="topbarCurtain" data-target="#ls-help-curtain"><span>Ajuda</span></a>
+          <a href="#" class="ls-ico-question" data-ls-module="topbarCurtain" data-target="#ls-feedback-curtain"><span>Sugestões</span></a>
+        </div>
+
+        <!-- User details -->
+        <div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
+          <a href="#" class="ls-ico-user">
+            Usuário
+            <small>(username)</small>
+          </a>
+          <nav class="ls-dropdown-nav ls-user-menu">
+            <ul class="ls-no-margin">
+              <li><a href="#">Conta</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <span class="ls-ico-menu"></span>
+
+      <!-- Nome do produto/marca -->
+      <h1 class="ls-brand-name"><a class="ls-ico-earth" href="/documentacao/exemplos/boilerplate">Boilerplate</a></h1>
+    </div>
+  </div>
+  <small><strong>*</strong>Exemplo de topbar não funcional, apenas para mostrar a mudança de tema.</small>
+  <hr class="doc-hr">
+  <h2 class="doc-title-3">Esquema de cores</h2>
+  <p>Entenda como trabalhamos as cores no Locaweb Style:</p>
+  <%= image_tag "docs/color-scheme.png" %>
+  <h2 class="doc-title-3">Botões</h2>
+  <p>Como aplicamos as cores nos botões.</p>
+  <%= image_tag "docs/buttons-color-scheme.png" %>
+
+
+</section>

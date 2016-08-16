@@ -1,0 +1,24 @@
+---
+title: Contador e limite de caracteres
+description: Conta e limita os caracteres.
+type: forms
+---
+<%= partial 'partials/doc-menu-forms'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <p>Para mostrar um indicador de caractéres em um <strong>input</strong>, basta adicionar as seguintes propriedades no input: <code>data-ls-module="charCounter"</code> e <code>maxlength</code> com o valor de limite.</p>
+
+  <p>A propriedade <code>data-ls-module="charCounter"</code> inicia a função, que adiciona um texto logo abaixo do input com a indicação de limite dos caractéres. O atributo <code>maxlength</code> é do próprio HTML e é ele que limita a quantidade de caracteres no input.</p>
+
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/contador.erb' %>
+  </div>
+  <% code("html") do %>
+  <%= partial 'documentacao/shared/contador.erb' %>
+  <% end %>
+
+</section>

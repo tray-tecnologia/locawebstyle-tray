@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var cp          = require('child_process');
+var deploy      = require('gulp-gh-pages');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -39,6 +40,14 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
  */
 gulp.task('watch', function () {
     gulp.watch(['./*', '_layouts/*', '_includes/*', '_posts/*', '_sass/*', 'css/*', 'js/*'], ['jekyll-rebuild']);
+});
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./**/*")
+    .pipe(deploy())
 });
 
 /**

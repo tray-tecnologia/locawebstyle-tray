@@ -1,0 +1,585 @@
+//
+// Spacing boxes (padding)
+//
+.ls-xs-space
+  padding: 5px !important
+
+.ls-sm-space
+  padding: 10px !important
+  font-size: remtopx(.75) !important
+
+.ls-md-space
+  padding: 20px !important
+  font-size: remtopx(.875) !important
+
+.ls-lg-space
+  padding: 40px !important
+
+// FLOAT and CLEAR
+.ls-clearfix:after
+  content: ""
+  display: block
+  clear: both
+
+.ls-no-float,
+.ls-float-none
+  float: none !important
+
+.ls-float-right
+  float: right !important
+
+.ls-float-left
+  float: left !important
+
+.ls-clear-both
+  clear: both !important
+
+.ls-clear-right
+  clear: right !important
+
+.ls-clear-left
+  clear: left !important
+
+.ls-overflow-hidden
+  overflow: hidden !important
+
+.ls-overflow-visible
+  overflow: visible !important
+
+// BLOCK and THREAD
+.ls-display-block
+  display: block !important
+
+.ls-display-inline
+  display: inline !important
+  float: none !important
+
+.ls-display-inline-block
+  display: inline-block !important
+  float: none !important
+
+.ls-display-none
+  display: none !important
+
+// SIZE
+.ls-width-auto
+  width: auto !important
+
+.ls-width-inherit
+  width: inherit
+
+.ls-full-width
+  width: 100% !important
+
+.ls-height-inherit
+  height: inherit
+
+.ls-height-auto
+  height: auto !important
+
+@for $width from 1 through 10
+  .ls-width-#{$width * 50 }
+    width: $width * 50px
+
+// MARGIN and PADDING
+.ls-no-margin
+  margin: 0 !important
+
+.ls-no-margin-left
+  margin-left: 0 !important
+
+.ls-no-margin-right
+  margin-right: 0 !important
+
+.ls-no-margin-top
+  margin-top: 0 !important
+
+.ls-no-margin-bottom
+  margin-bottom: 0 !important
+
+@each $size in $sizes
+  @each $direction in $directions
+    .ls-#{$size}-margin-#{$direction}
+      margin-#{$direction}: map-get($spacers, $size) !important
+
+.ls-no-padding
+  padding: 0 !important
+
+.ls-no-padding-left
+  padding-left: 0 !important
+
+.ls-no-padding-right
+  padding-right: 0 !important
+
+.ls-no-padding-top
+  padding-top: 0 !important
+
+.ls-no-padding-bottom
+  padding-bottom: 0 !important
+
+.ls-margin-auto
+  margin-left: auto !important
+  margin-right: auto !important
+
+// TEXT ALIGNMENT
+.ls-txt-left
+  text-align: left !important
+
+.ls-txt-right
+  text-align: right !important
+
+.ls-txt-justify
+  text-align: justify !important
+
+.ls-txt-center
+  text-align: center !important
+
+.ls-txt-center-all
+  +translate(-50%, -50%)
+  position: absolute !important
+  top: 50% !important
+  left: 50% !important
+  margin: 0 !important
+
+// ALIGNMENT VERTICAL
+.ls-v-align-top
+  vertical-align: top !important
+
+.ls-v-align-middle
+  vertical-align: middle !important
+
+.ls-v-align-bottom
+  vertical-align: bottom !important
+
+//
+// BACKGROUND AND BORDER
+//
+.ls-no-bg
+  background: none !important
+
+.ls-no-bghover:hover
+  background: none !important
+
+.ls-no-shadow
+  box-shadow: none !important
+
+.ls-no-border
+  border: none !important
+
+.ls-no-border-right
+  border-right: none !important
+
+.ls-no-border-left
+  border-left: none !important
+
+.ls-no-border-bottom
+  border-bottom: none !important
+
+.ls-no-border-top
+  border-top: none !important
+
+.ls-border
+  border-color: $gray1 !important
+
+.ls-word-dotted
+  border-bottom: 1px dotted $gray4
+
+//
+// MOUSE CURSOR
+//
+.ls-cursor-pointer
+  cursor: pointer !important
+
+.ls-cursor-default
+  cursor: default !important
+
+.ls-cursor-crosshair
+  cursor: crosshair !important
+
+.ls-cursor-move
+  cursor: move !important
+
+.ls-cursor-help
+  cursor: help !important
+
+.ls-cursor-wait
+  cursor: wait !important
+
+.ls-cursor-inherit
+  cursor: inherit !important
+
+.ls-cursor-text
+  cursor: text !important
+
+.ls-cursor-progress
+  cursor: progress !important
+
+.ls-cursor-grab
+  cursor: -ms-grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+  cursor: hand
+  cursor: grab
+
+.ls-cursor-grabbing
+  cursor: grabbing
+  cursor: -ms-grabbing
+  cursor: -moz-grabbing
+  cursor: -webkit-grabbing
+
+.ls-scroll-touch
+  -webkit-overflow-scrolling: touch
+  -moz-overflow-scrolling: touch
+  -ms-overflow-scrolling: touch
+  overflow-scrolling: touch
+
+// COLORS
+.ls-bg-white
+  background: #fff !important
+
+.ls-color-black
+  color: #000 !important
+
+.ls-color-white
+  color: #fff
+
+.ls-color-danger
+  color: $color-danger !important
+
+.ls-color-info
+  color: $color-info !important
+
+.ls-color-success
+  color: $color-success !important
+
+.ls-color-warning
+  color: $color-warning !important
+
+.ls-dropdown-menu
+  @extend .ls-color-white
+
+// INPUTS
+.ls-no-spin::-webkit-inner-spin-button
+  -webkit-appearance: none
+
+.ls-no-spin
+  -moz-appearance: textfield
+  appearance: textfield
+
+// STYLES
+.ls-ellipsis
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  display: inline-block !important
+
+.ls-nowrap
+  white-space: nowrap
+
+.ls-no-bold
+  font-weight: normal !important
+
+.ls-word-break-all
+  word-break: break-all !important
+  padding: 0
+
+.ls-word-break
+  word-break: break-word !important
+
+.ls-no-word-break
+  word-break: normal !important
+
+.ls-no-radius
+  +border-radius(0 !important)
+
+.ls-no-left-radius
+  +border-left-radius(0 !important)
+
+.ls-no-right-radius
+  +border-right-radius(0 !important)
+
+.ls-no-top-radius
+  +border-top-radius(0 !important)
+
+.ls-no-bottom-radius
+  +border-bottom-radius(0 !important)
+
+.ls-no-list-style
+  list-style: none !important
+
+.ls-transparent-25
+  opacity: .25 !important
+
+.ls-transparent-50
+  opacity: .5 !important
+
+.ls-transparent-75
+  opacity: .75 !important
+
+.ls-no-style-input,
+.ls-no-style-input:focus,
+.ls-no-style-input:active
+  outline: none !important
+  background: none !important
+  border: none !important
+  box-shadow: none !important
+  outline: 1px solid transparent !important
+  margin: 0 !important
+  padding: 0 !important
+  height: auto !important
+
+.ls-hidden-accessible
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+.ls-break-text
+  word-wrap: break-word !important
+
+.ls-table-layout-auto
+  table-layout: auto !important
+
+// TEXT SPACING
+.ls-small-letter-spacing
+  letter-spacing: -1px
+
+// TEXT SIZE
+.ls-text-default
+  color: $gray4
+  font-size: remtopx(.8125) !important
+
+.ls-text-xs
+  font-size: remtopx(.6875) !important
+
+.ls-text-sm
+  font-size: remtopx(.75) !important
+
+.ls-text-md
+  font-size: remtopx(.875) !important
+
+.ls-text-lg
+  font-size: remtopx(1.125) !important
+
+.ls-text-xl
+  font-size: remtopx(1.25) !important
+
+// TEXT TRANSFORM
+.ls-text-uppercase
+  text-transform: uppercase
+
+.ls-text-lowercase
+  text-transform: lowercase
+
+.ls-text-capitalize
+  text-transform: capitalize
+
+// LINK
+.ls-text-underline
+  text-decoration: underline !important
+
+.ls-text-decoration-none
+  text-decoration: none
+
+.ls-line-separator
+  width: calc(100% - 2rem)
+  width: 85%\9
+  float: none
+  clear: both
+  border: 1px solid red
+  border-color: #ccc transparent #ddd transparent
+  margin: 2rem 1rem
+
+  &:before, &:after
+    content: " "
+    display: table
+
+// BACKGROUND COLORS
+.ls-background-sucess,
+.ls-table .ls-background-sucess td,
+.ls-background-success,
+.ls-table .ls-background-success td
+  color: $color-success
+  background-color: lighten($color-success, 40%)
+
+.ls-background-info,
+.ls-table .ls-background-info td
+  color: $color-info
+  background-color: lighten($color-info, 40%)
+
+.ls-background-warning,
+.ls-table .ls-background-warning td
+  color: $color-warning
+  background-color: lighten($color-warning, 40%)
+
+.ls-background-danger,
+.ls-table .ls-background-danger td
+  color: $color-danger
+  background-color: lighten($color-danger, 40%)
+
+//
+// Styling List
+//
+.ls-style-list
+  margin-left: 18px
+  margin-bottom: 10px
+
+  li
+    line-height: 1.3
+
+
+.ls-position-absolute
+  position: absolute !important
+
+.ls-position-relative
+  position: relative !important
+
+
+@media screen and (max-width: $screen-sm)
+  .ls-float-none-xs
+    float: none !important
+
+  .ls-float-right-xs
+    float: right !important
+
+  .ls-float-left-xs
+    float: left !important
+
+  .ls-display-none-xs
+    display: none !important
+
+  .ls-display-inline-xs
+    display: inline !important
+
+  .ls-display-inline-block-xs
+    display: inline-block !important
+
+  .ls-display-block-xs
+    display: block !important
+
+  .ls-clear-both-xs
+    clear: both !important
+
+  .ls-clear-right-xs
+    clear: right !important
+
+  .ls-clear-left-xs
+    clear: left !important
+
+  .ls-txt-right-xs
+    text-align: right !important
+
+  .ls-txt-left-xs
+    text-align: left !important
+
+@media screen and (min-width: $screen-sm) and (max-width: $screen-md)
+  .ls-float-none-sm
+    float: none !important
+
+  .ls-float-right-sm
+    float: right !important
+
+  .ls-float-left-sm
+    float: left !important
+
+  .ls-display-none-sm
+    display: none !important
+
+  .ls-display-inline-sm
+    display: inline !important
+
+  .ls-display-inline-block-sm
+    display: inline-block !important
+
+  .ls-display-block-sm
+    display: block !important
+
+  .ls-clear-both-sm
+    clear: both !important
+
+  .ls-clear-right-sm
+    clear: right !important
+
+  .ls-clear-left-sm
+    clear: left !important
+
+  .ls-txt-right-sm
+    text-align: right !important
+
+  .ls-txt-left-sm
+    text-align: left !important
+
+  .ls-btn-block-sm
+    display: block !important
+    text-align: center !important
+    margin-bottom: 10px
+    width: 100% !important
+
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg)
+  .ls-float-none-md
+    float: none !important
+
+  .ls-float-right-md
+    float: right !important
+
+  .ls-float-left-md
+    float: left !important
+
+  .ls-display-none-md
+    display: none !important
+
+  .ls-display-inline-md
+    display: inline !important
+
+  .ls-display-inline-block-md
+    display: inline-block !important
+
+  .ls-display-block-md
+    display: block !important
+
+  .ls-clear-both-md
+    clear: both !important
+
+  .ls-clear-right-md
+    clear: right !important
+
+  .ls-clear-left-md
+    clear: left !important
+
+  .ls-txt-right-md
+    text-align: right !important
+
+  .ls-txt-left-md
+    text-align: left !important
+
+  .ls-btn-block-md
+    display: block !important
+    text-align: center !important
+    margin-bottom: 10px
+    width: 100% !important
+
+@media screen and (min-width: $screen-lg)
+  .ls-float-none-lg
+    float: none !important
+
+  .ls-float-right-lg
+    float: right !important
+
+  .ls-float-left-lg
+    float: left !important
+
+  .ls-display-none-lg
+    display: none !important
+
+  .ls-display-inline-lg
+    display: inline !important
+
+  .ls-display-inline-block-lg
+    display: inline-block !important
+
+  .ls-display-block-lg
+    display: block !important

@@ -1,0 +1,126 @@
+---
+title: Popover
+description: Balões de informação.
+type: component
+---
+<%= partial 'partials/doc-menu-components'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <h2 class="doc-title-3">Componente</h2>
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/popover' %>
+  </div>
+  <% code("html") do %><%= partial 'documentacao/shared/popover' %><% end %>
+
+  <h2 class="doc-title-3">Como usar</h2>
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Padrão</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>data-ls-module</td>
+        <td>popover</td>
+        <td>-</td>
+        <td>inicia o módulo de popover. Deve ser colocado no elemento que chamará o popover</td>
+      </tr>
+      <tr>
+        <td>data-trigger</td>
+        <td>hover</td>
+        <td>-</td>
+        <td>define qual a interação pelo qual o popover irá aparecer. Por padrão, o popover só aparece com click, mas esse atributo substitui o click pelo <code>hover</code></td>
+      </tr>
+      <tr>
+        <td>data-placement</td>
+        <td>top / bottom / left / right</td>
+        <td>top</td>
+        <td>posiciona o popover</td>
+      </tr>
+      <tr>
+        <td>data-title</td>
+        <td>text</td>
+        <td>-</td>
+        <td>insere o título no popover</td>
+      </tr>
+      <tr>
+        <td>data-content</td>
+        <td>texto e/ou tags HTML</td>
+        <td>--</td>
+        <td>insere o conteúdo no popover</td>
+      </tr>
+      <tr>
+        <td>data-custom-classes</td>
+        <td>classe</td>
+        <td>--</td>
+        <td>permite inserir qualquer classe para customização do popover. Os valores colocados aqui, serão herdados pelo elemento do popover</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="doc-title-3">Popover aberto ao carregar a página</h2>
+  <p>Basta adicionar o atributo <code>data-ls-popover="open"</code>. </p>
+
+  <div class="ls-box-demo">
+    <a href="#" class="ls-ico-help" data-ls-popover="open" data-placement="top" data-ls-module="popover" title="Titulo" data-content="Exemplo de popover Aberto, <br> ao carregar a página"></a>
+    <br>
+    <br>
+    <a href="#" class="ls-btn-primary" data-ls-module="popover" data-placement="right" data-ls-popover="open" data-title="Titulo do popover" data-content="<ul class='ls-no-list-style'>
+      <li>Lista 1</li>
+      <li>Lista 2</li>
+      <li>Lista 3</li>
+    </ul>" data-placement="top">
+      Start opened
+    </a>
+  </div>
+  <% code("html") do %>
+    <a href="#" class="ls-ico-help" data-ls-popover="open" data-placement="right" data-ls-module="popover" title="Titulo" data-content="Exemplo de popover Aberto, <br> ao carregar a página."></a>
+  <% end %>
+
+  <h2 class="doc-title-3">Eventos</h2>
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th width="200">Evento</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>popover:closed</th>
+        <td><p>Quando um popover fecha, o evento <code>popover:closed</code> é disparado no elemento do popover, aquele que recebe a classe <code>ls-popover</code>. Veja exemplo abaixo.</p></td>
+      </tr>
+      <tr>
+        <th>popover:opened</th>
+        <td><p>Quando o elemento que chama o popover é clicado (ou quando ouver hover), ele emite um evento chamado <code>popover:called</code>
+      </tr>
+      <tr>
+        <th>popover:destroyed</th>
+        <td><p>Quando os a função <code>locastyle.popover.destroy()</code> é acionado, ele emite um evento chamado <code>popover:destroyed</code></code>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Exemplo: </p>
+<% code("javascript") do %>
+// Um popover específico, caso você saiba o ID
+// (os IDs dos popovers são atribuidos pelo próprio módulo)
+$("#id-do-popover").on('popover:opened', function(){
+  // do something
+});
+
+// Todos os elementos de popover
+$(".ls-popover").on('popover:closed', function(){
+  // do something
+});
+<%end%>
+
+</section>

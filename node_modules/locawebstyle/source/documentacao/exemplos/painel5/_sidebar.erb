@@ -1,0 +1,10 @@
+<aside class="ls-sidebar">
+
+  <% if current_page.data.pre_panel %>
+    <h1 class="ls-brand-name ls-ico-earth"><%= link_to current_page.data.title_product, 'home' %></h1>
+  <% else %>
+  	<div class="ls-sidebar-inner">
+  	  <a href="<%= base_url %>/documentacao/exemplos/<%= current_page.data.panel %>/pre-painel"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
+  	</div>
+  <% end %>
+</aside>
