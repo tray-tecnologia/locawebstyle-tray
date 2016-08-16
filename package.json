@@ -19,5 +19,8 @@
   "devDependencies": {
     "browser-sync": "^2.14.0",
     "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "locawebstyle": "^3.8.5"
   }
 }

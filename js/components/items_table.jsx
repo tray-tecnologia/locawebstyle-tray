@@ -33,18 +33,17 @@ var ItemsTableHead = React.createClass({
 var ItemsTableBody = React.createClass({
     getInitialState: function () {
         return {
-            items: [],
+            items: [
+                { id: 1, name: 'Nome do item 1', category: 'Camisetas', price: 'R$ 210,00', stock: 6, status: 1, url: 'item/1', checked: false },
+                { id: 2, name: 'Nome do item 2', category: 'Camisetas', price: 'R$ 110,00', stock: 3, status: 1, url: 'item/2', checked: false },
+                { id: 3, name: 'Nome do item 3', category: 'Camisetas', price: 'R$ 310,00', stock: 4, status: 0, url: 'item/3', checked: false },
+            ],
         }
     },
 
     componentDidMount: function () {
-        var items = [
-            { id: 1, name: 'Nome do item 1', category: 'Camisetas', price: 'R$ 210,00', stock: 6, status: 1, url: 'item/1' },
-            { id: 2, name: 'Nome do item 2', category: 'Camisetas', price: 'R$ 110,00', stock: 3, status: 1, url: 'item/2' },
-            { id: 3, name: 'Nome do item 3', category: 'Camisetas', price: 'R$ 310,00', stock: 4, status: 0, url: 'item/3' },
-        ];
-
-        this.setState({ items: items });
+        // var items = [];
+        // this.setState({ items: items });
     },
 
     /**
@@ -80,11 +79,14 @@ var ItemsTableBody = React.createClass({
 });
 
 var ItemsTableItem = React.createClass({
+    handleChange: function(param1) {
+        
+    },
     render: function () {
         return (
             <tr>
                 <td>
-                    <input type="checkbox" data-checkbox-toggle="items-table"/>
+                    <input type="checkbox" data-checkbox-toggle="items-table" onChange={this.handleChange} />
                 </td>
                 <td>{this.props.item.id}</td>
                 <td>{this.props.item.status ? 'Ativo' : 'Inativo'}</td>
@@ -110,6 +112,43 @@ var ItemsTableItem = React.createClass({
     }
 });
 
+var ItemsFilter = React.createClass({
+    render: function() {
+        return (
+            <fieldset>
+                <label className="ls-label col-md-4 col-xs-12">
+                    <b className="ls-label-text">Código ou referência</b>
+                    <input type="text" name="nome" placeholder="Ex: 1234" className="ls-field" required />
+                </label>
+                <label className="ls-label col-md-3 col-xs-12">
+                    <b className="ls-label-text">Status</b>
+                    <div className="ls-custom-select">
+                        <select className="ls-select" name="" id="">
+                            <option value="">Todos</option>
+                            <option value="">Ativo</option>
+                            <option value="">Inativo</option>
+                        </select>
+                    </div>
+                </label>
+                <label className="ls-label col-md-4 col-xs-12">
+                    <b className="ls-label-text">Nome do produto</b>
+                    <input type="text" name="nome" placeholder="Ex: Smartphone novo" className="ls-field" required />
+                </label>
+                <label className="ls-label col-md-3 col-xs-12">
+                    <b className="ls-label-text">Categoria</b>
+                    <div className="ls-custom-select">
+                        <select className="ls-select" name="" id="">
+                            <option value="">Todas</option>
+                            <option value="">Acessórios</option>
+                            <option value="">Calçados</option>
+                        </select>
+                    </div>
+                </label>
+            </fieldset>
+        );
+    },
+});
+
 var itemsTables = document.querySelectorAll('[data-react="items-table-container"]');
 Object.keys(itemsTables).map(function (value, index) {
     ReactDOM.render(
@@ -117,3 +156,8 @@ Object.keys(itemsTables).map(function (value, index) {
         itemsTables[value]
     );
 });
+
+ReactDOM.render(
+    <ItemsFilter />,
+    document.querySelector('[data-react="items-table-filter"]')
+);
