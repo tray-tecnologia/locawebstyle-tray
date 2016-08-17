@@ -19,3 +19,8 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+incremental: true
+
+# Exclude
+exclude: ['node_modules/locawebstyle/source']

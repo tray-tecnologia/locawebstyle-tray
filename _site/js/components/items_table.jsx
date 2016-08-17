@@ -34,9 +34,9 @@ var ItemsTableBody = React.createClass({
     getInitialState: function () {
         return {
             items: [
-                { id: 1, name: 'Nome do item 1', category: 'Camisetas', price: 'R$ 210,00', stock: 6, status: 1, url: 'item/1', checked: 'checked' },
-                { id: 2, name: 'Nome do item 2', category: 'Camisetas', price: 'R$ 110,00', stock: 3, status: 1, url: 'item/2', checked: 'checked' },
-                { id: 3, name: 'Nome do item 3', category: 'Camisetas', price: 'R$ 310,00', stock: 4, status: 0, url: 'item/3', checked: '' },
+                { id: 1, name: 'Nome do item 1', category: 'Camisetas', price: 'R$ 210,00', stock: 6, status: 1, url: 'item/1', checked: false },
+                { id: 2, name: 'Nome do item 2', category: 'Camisetas', price: 'R$ 110,00', stock: 3, status: 1, url: 'item/2', checked: false },
+                { id: 3, name: 'Nome do item 3', category: 'Camisetas', price: 'R$ 310,00', stock: 4, status: 0, url: 'item/3', checked: false },
             ],
         }
     },

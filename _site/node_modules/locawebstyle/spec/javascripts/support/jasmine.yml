@@ -1,0 +1,119 @@
+# src_files
+#
+# Return an array of filepaths relative to src_dir to include before jasmine specs.
+# Default: []
+#
+# EXAMPLE:
+#
+# src_files:
+#   - lib/source1.js
+#   - lib/source2.js
+#   - dist/**/*.js
+#
+src_files:
+    - spec/javascripts/libs/*.js
+    - source/assets/javascripts/libs/_hopscotch.js
+    - source/assets/javascripts/libs/_jquery.cookie.js
+    - source/assets/javascripts/libs/jquery.mask.js
+    - source/assets/javascripts/libs/moment.min.js
+    - source/assets/javascripts/libs/pikaday.js
+    - source/assets/javascripts/libs/pikaday.jquery.js
+    - source/assets/javascripts/locastyle/_initializer.js
+    - source/assets/javascripts/locastyle/_datepicker.js
+    - source/assets/javascripts/locastyle/_popover.js
+    - source/assets/javascripts/locastyle/_templates.js
+    - source/assets/javascripts/locastyle/_collapse.js
+    - source/assets/javascripts/locastyle/_tabs.js
+    - source/assets/javascripts/locastyle/_dropdown.js
+    - source/assets/javascripts/locastyle/_general.js
+    - source/assets/javascripts/locastyle/_modal.js
+    - source/assets/javascripts/locastyle/_alert.js
+    - source/assets/javascripts/locastyle/_form.js
+    - source/assets/javascripts/locastyle/_dismiss.js
+    - source/assets/javascripts/locastyle/_breakpoint-check.js
+    - source/assets/javascripts/locastyle/_topbar-curtain.js
+    - source/assets/javascripts/locastyle/_btn-group.js
+    - source/assets/javascripts/locastyle/_sidebars.js
+    - source/assets/javascripts/locastyle/_sidebar-toggle.js
+    - source/assets/javascripts/locastyle/_progress-bar.js
+    - source/assets/javascripts/locastyle/_char-counter.js
+    - source/assets/javascripts/locastyle/_track-events.js
+    - source/assets/javascripts/locastyle/_browser-detect.js
+    - source/assets/javascripts/locastyle/_browser-unsupported-bar.js
+    - source/assets/javascripts/locastyle/_steps.js
+    - source/assets/javascripts/locastyle/_tabs-button.js
+    - source/assets/javascripts/locastyle/_switch-button.js
+    - source/assets/javascripts/locastyle/_toggle-text.js
+    - source/assets/javascripts/locastyle/_checkbox-toggle.js
+
+# stylesheets
+#
+# Return an array of stylesheet filepaths relative to src_dir to include before jasmine specs.
+# Default: []
+#
+# EXAMPLE:
+#
+# stylesheets:
+#   - css/style.css
+#   - stylesheets/*.css
+#
+stylesheets:
+
+# helpers
+#
+# Return an array of filepaths relative to spec_dir to include before jasmine specs.
+# Default: ["helpers/**/*.js"]
+#
+# EXAMPLE:
+#
+# helpers:
+#   - helpers/**/*.js
+#
+helpers:
+  - 'helpers/**/*.js'
+# spec_files
+#
+#  Return an array of filepaths relative to spec_dir to include.
+# Default: ["**/*[sS]pec.js"]
+#
+# EXAMPLE:
+#
+# spec_files:
+#   - **/*[sS]pec.js
+#
+spec_files:
+  - '**/*[sS]pec.js'
+
+# src_dir
+#
+# Source directory path. Your src_files must be returned relative to this path. Will use root if left blank.
+# Default: project root
+#
+# EXAMPLE:
+#
+# src_dir: public
+#
+src_dir:
+
+# spec_dir
+#
+# Spec directory path. Your spec_files must be returned relative to this path.
+# Default: spec/javascripts
+#
+# EXAMPLE:
+#
+# spec_dir: spec/javascripts
+#
+spec_dir:
+
+# spec_helper
+#
+# Ruby file that Jasmine server will require before starting.
+# Returned relative to your root path
+# Default spec/support/jasmine_helper.rb
+#
+# EXAMPLE:
+#
+# spec_helper: spec/support/jasmine_helper.rb
+#
+spec_helper: spec/support/jasmine_helper.rb

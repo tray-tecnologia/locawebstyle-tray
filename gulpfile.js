@@ -2,6 +2,8 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var cp          = require('child_process');
 var deploy      = require('gulp-gh-pages');
+var webpack     = require('webpack-stream');
+var webpackConf = require('./webpack.config.js');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -34,12 +36,19 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
     });
 });
 
+gulp.task('webpack', function() {
+    return gulp.src('js/main.jsx')
+        .pipe(webpack(webpackConf))
+        .pipe(gulp.dest('js/dist/'));
+});
+
 /**
  * Watch html/md files, run jekyll & reload BrowserSync
  * if you add folder for pages, collection or datas, add them to this list
  */
 gulp.task('watch', function () {
-    gulp.watch(['./*', '_layouts/*', '_includes/*', '_posts/*', '_sass/*', 'css/*', 'js/*'], ['jekyll-rebuild']);
+    gulp.watch(['_layouts/*', '_includes/*', '_posts/*', '_sass/*', 'css/*', 'js/dist/*'], ['jekyll-rebuild']);
+    gulp.watch(['js/**/*.jsx',], ['webpack']);
 });
 
 /**
