@@ -1,14 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 // Layouts
-import App from './layout/app.jsx';
+import App from '../layout/app.jsx';
 
 // Pages
-import Home from './pages/home.jsx';
-import Items from './pages/items.jsx';
+import Home from '../pages/home.jsx';
+import Items from '../pages/items.jsx';
 
 // Routes
 render((

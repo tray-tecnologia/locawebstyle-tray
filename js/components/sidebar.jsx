@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
 
                 <nav className="ls-menu">
                     <ul>
-                        <li><Link className="ls-ico-users" to="/">Home</Link></li>
+                        <li><Link className="ls-ico-users" to="/">Início</Link></li>
                         <li><Link className="ls-ico-users" to="/items">Lista de itens</Link></li>
                         <li><Link className="ls-ico-users" to="/apps">Página de aplicativo</Link></li>
                     </ul>
