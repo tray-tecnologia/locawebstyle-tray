@@ -2,7 +2,6 @@ import React from 'react';
 
 class ItemsEmpty extends React.Component {
     render () {
-        console.log(this.props);
         return (
             <div>
                 <h2 className="ls-title-5">Você ainda não possui itens cadastrados.</h2>
