@@ -27812,7 +27812,6 @@
 	    _createClass(ItemsEmpty, [{
 	        key: "render",
 	        value: function render() {
-	            console.log(this.props);
 	            return _react2.default.createElement(
 	                "div",
 	                null,
@@ -27922,9 +27921,14 @@
 	        };
 	    },
 	    addItems: function addItems() {
-	        var items = [{ id: 1, name: 'Item 1', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 2, name: 'Item 2', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 3, name: 'Item 3', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 4, name: 'Item 4', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 5, name: 'Item 5', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 6, name: 'Item 6', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 7, name: 'Item 7', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 8, name: 'Item 8', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 9, name: 'Item 9', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 10, name: 'Item 10', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 11, name: 'Item 11', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 12, name: 'Item 12', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 13, name: 'Item 13', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 14, name: 'Item 14', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 15, name: 'Item 15', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 }];
+	        var _this = this;
 
-	        this.setState({ items: items });
+	        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', function (response) {
+	            _this.setState({ items: response.items });
+	        });
+	    },
+	    removeItems: function removeItems() {
+	        this.setState({ items: [] });
 	    },
 	    render: function render() {
 	        if (!this.state.items.length) {
@@ -28016,6 +28020,11 @@
 	    }
 
 	    _createClass(ItemsTableBody, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            locastyle.init();
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            if (!this.props.items || !this.props.items.length) {
