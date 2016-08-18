@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+
 class Sidebar extends React.Component {
   render () {
     return (
@@ -8,9 +10,9 @@ class Sidebar extends React.Component {
 
                 <nav className="ls-menu">
                     <ul>
-                        <li><a href="/#" className="ls-ico-users" title="Lista de itens">Lista de itens</a></li>
-                        <li><a href="/#" className="ls-ico-users" title="Lista vazia">Lista vazia</a></li>
-                        <li><a href="/#" className="ls-ico-users" title="Página de aplicativo">Página de aplicativo</a></li>
+                        <li><Link className="ls-ico-users" to="/">Home</Link></li>
+                        <li><Link className="ls-ico-users" to="/items">Lista de itens</Link></li>
+                        <li><Link className="ls-ico-users" to="/apps">Página de aplicativo</Link></li>
                     </ul>
                 </nav>
 
