@@ -27558,7 +27558,7 @@
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
 	                                    { className: 'ls-ico-users', to: '/' },
-	                                    'Home'
+	                                    'Início'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
@@ -27634,7 +27634,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_breadcrumb2.default, null)
+	        _react2.default.createElement(_breadcrumb2.default, { title: 'Início' })
 	      );
 	    }
 	  }]);
@@ -27646,6 +27646,138 @@
 
 /***/ },
 /* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(176);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Breadcrumb = function (_React$Component) {
+	    _inherits(Breadcrumb, _React$Component);
+
+	    function Breadcrumb() {
+	        _classCallCheck(this, Breadcrumb);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Breadcrumb).apply(this, arguments));
+	    }
+
+	    _createClass(Breadcrumb, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ls-title-intro ls-no-margin-bottom ls-no-border' },
+	                    _react2.default.createElement(
+	                        'ol',
+	                        { className: 'ls-breadcrumb ls-no-border' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            { className: 'ls-no-padding-left' },
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/' },
+	                                'Início'
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'h1',
+	                    { className: 'ls-title-intro ls-ico-home ls-no-border ls-no-padding-top' },
+	                    this.props.title
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Breadcrumb;
+	}(_react2.default.Component);
+
+	exports.default = Breadcrumb;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _breadcrumb = __webpack_require__(243);
+
+	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+
+	var _items_empty = __webpack_require__(245);
+
+	var _items_empty2 = _interopRequireDefault(_items_empty);
+
+	var _items_full = __webpack_require__(246);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Items = function (_React$Component) {
+	    _inherits(Items, _React$Component);
+
+	    function Items() {
+	        _classCallCheck(this, Items);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Items).apply(this, arguments));
+	    }
+
+	    _createClass(Items, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_breadcrumb2.default, { title: 'Itens' }),
+	                _react2.default.createElement(_items_full.ItemsTable, null)
+	            );
+	        }
+	    }]);
+
+	    return Items;
+	}(_react2.default.Component);
+
+	exports.default = Items;
+
+/***/ },
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27668,66 +27800,101 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Breadcrumb = function (_React$Component) {
-	    _inherits(Breadcrumb, _React$Component);
+	var ItemsEmpty = function (_React$Component) {
+	    _inherits(ItemsEmpty, _React$Component);
 
-	    function Breadcrumb() {
-	        _classCallCheck(this, Breadcrumb);
+	    function ItemsEmpty() {
+	        _classCallCheck(this, ItemsEmpty);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Breadcrumb).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsEmpty).apply(this, arguments));
 	    }
 
-	    _createClass(Breadcrumb, [{
+	    _createClass(ItemsEmpty, [{
 	        key: "render",
 	        value: function render() {
+	            console.log(this.props);
 	            return _react2.default.createElement(
 	                "div",
 	                null,
 	                _react2.default.createElement(
+	                    "h2",
+	                    { className: "ls-title-5" },
+	                    "Você ainda não possui itens cadastrados."
+	                ),
+	                _react2.default.createElement("hr", { className: "ls-no-border" }),
+	                _react2.default.createElement(
 	                    "div",
-	                    { className: "ls-title-intro ls-no-margin-bottom ls-no-border" },
+	                    { className: "ls-box ls-lg-space" },
 	                    _react2.default.createElement(
-	                        "ol",
-	                        { className: "ls-breadcrumb ls-no-border" },
-	                        _react2.default.createElement(
-	                            "li",
-	                            { className: "ls-no-padding-left" },
-	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "/" },
-	                                "Início"
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Itens"
-	                        )
+	                        "h2",
+	                        { className: "ls-title-3" },
+	                        "Inclua seu primeiro item"
+	                    ),
+	                    _react2.default.createElement("hr", { className: "ls-no-border" }),
+	                    _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { onClick: this.props.addItems, className: "ls-btn-primary" },
+	                        "Incluir item"
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "h1",
-	                    { className: "ls-title-intro ls-ico-home ls-no-border ls-no-padding-top" },
-	                    "Page title"
+	                    "div",
+	                    { className: "ls-box ls-lg-space" },
+	                    _react2.default.createElement(
+	                        "h2",
+	                        { className: "ls-title-3" },
+	                        "Importe seus itens rapidamente"
+	                    ),
+	                    _react2.default.createElement("hr", { className: "ls-no-border" }),
+	                    _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
+	                    ),
+	                    _react2.default.createElement(
+	                        "p",
+	                        null,
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#", className: "ls-btn-primary" },
+	                            "Opção 1"
+	                        ),
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#", className: "ls-btn-primary" },
+	                            "Opção 2"
+	                        ),
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#", className: "ls-btn-primary" },
+	                            "Opção 3"
+	                        )
+	                    )
 	                )
 	            );
 	        }
 	    }]);
 
-	    return Breadcrumb;
+	    return ItemsEmpty;
 	}(_react2.default.Component);
 
-	exports.default = Breadcrumb;
+	exports.default = ItemsEmpty;
 
 /***/ },
-/* 244 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
+	exports.ItemsTableItem = exports.ItemsTableBody = exports.ItemsTableHead = exports.ItemsTable = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27735,9 +27902,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _breadcrumb = __webpack_require__(243);
+	var _items_empty = __webpack_require__(245);
 
-	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+	var _items_empty2 = _interopRequireDefault(_items_empty);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27747,30 +27914,301 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Items = function (_React$Component) {
-	  _inherits(Items, _React$Component);
+	var ItemsTable = _react2.default.createClass({
+	    displayName: 'ItemsTable',
+	    getInitialState: function getInitialState() {
+	        return {
+	            items: []
+	        };
+	    },
+	    addItems: function addItems() {
+	        var items = [{ id: 1, name: 'Item 1', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 2, name: 'Item 2', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 3, name: 'Item 3', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 4, name: 'Item 4', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 5, name: 'Item 5', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 6, name: 'Item 6', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 7, name: 'Item 7', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 8, name: 'Item 8', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 9, name: 'Item 9', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 10, name: 'Item 10', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 11, name: 'Item 11', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 12, name: 'Item 12', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 13, name: 'Item 13', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 14, name: 'Item 14', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 }, { id: 15, name: 'Item 15', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 }];
 
-	  function Items() {
-	    _classCallCheck(this, Items);
+	        this.setState({ items: items });
+	    },
+	    render: function render() {
+	        if (!this.state.items.length) {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_items_empty2.default, { addItems: this.addItems })
+	            );
+	        }
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Items).apply(this, arguments));
-	  }
-
-	  _createClass(Items, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_breadcrumb2.default, null)
-	      );
+	        return _react2.default.createElement(
+	            'table',
+	            { className: 'ls-table ls-no-hover' },
+	            _react2.default.createElement(ItemsTableHead, null),
+	            _react2.default.createElement(ItemsTableBody, { items: this.state.items })
+	        );
 	    }
-	  }]);
+	});
 
-	  return Items;
+	var ItemsTableHead = function (_React$Component) {
+	    _inherits(ItemsTableHead, _React$Component);
+
+	    function ItemsTableHead() {
+	        _classCallCheck(this, ItemsTableHead);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableHead).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTableHead, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'thead',
+	                null,
+	                _react2.default.createElement(
+	                    'tr',
+	                    null,
+	                    _react2.default.createElement(
+	                        'th',
+	                        { className: 'ls-width-50' },
+	                        _react2.default.createElement('input', { type: 'checkbox', 'data-ls-module': 'checkboxToggle', 'data-checkbox-target': 'items-table' })
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Código'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Status'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Nome'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Categoria'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Preço'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Estoque'
+	                    ),
+	                    _react2.default.createElement('th', null)
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsTableHead;
 	}(_react2.default.Component);
 
-	exports.default = Items;
+	var ItemsTableBody = function (_React$Component2) {
+	    _inherits(ItemsTableBody, _React$Component2);
+
+	    function ItemsTableBody() {
+	        _classCallCheck(this, ItemsTableBody);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableBody).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTableBody, [{
+	        key: 'render',
+	        value: function render() {
+	            if (!this.props.items || !this.props.items.length) {
+	                return null;
+	            }
+
+	            var itemsNodes = this.props.items.map(function (item) {
+	                return _react2.default.createElement(ItemsTableItem, { item: item, key: item.id });
+	            });
+
+	            return _react2.default.createElement(
+	                'tbody',
+	                null,
+	                itemsNodes
+	            );
+	        }
+	    }]);
+
+	    return ItemsTableBody;
+	}(_react2.default.Component);
+
+	;
+
+	var ItemsTableItem = function (_React$Component3) {
+	    _inherits(ItemsTableItem, _React$Component3);
+
+	    function ItemsTableItem() {
+	        _classCallCheck(this, ItemsTableItem);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableItem).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTableItem, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'tr',
+	                null,
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    _react2.default.createElement('input', { type: 'checkbox', 'data-checkbox-toggle': 'items-table', onChange: this.handleChange })
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    this.props.item.id
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    this.props.item.status ? 'Ativo' : 'Inativo'
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    _react2.default.createElement(
+	                        'a',
+	                        { className: 'ls-ico-external', href: '{this.props.item.url}' },
+	                        this.props.item.name
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    this.props.item.category
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    this.props.item.price
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    null,
+	                    this.props.item.stock
+	                ),
+	                _react2.default.createElement(
+	                    'td',
+	                    { className: 'ls-txt-right' },
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: '#', className: 'ls-btn-default ls-display-none' },
+	                        'Detalhes'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { 'data-ls-module': 'dropdown', className: 'ls-dropdown' },
+	                        _react2.default.createElement('button', { className: 'ls-btn' }),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: 'ls-dropdown-nav' },
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Editar'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Duplicar'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { className: 'ls-text-danger', href: '#' },
+	                                    'Excluir'
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsTableItem;
+	}(_react2.default.Component);
+
+	;
+
+	var ItemsFilter = function (_React$Component4) {
+	    _inherits(ItemsFilter, _React$Component4);
+
+	    function ItemsFilter() {
+	        _classCallCheck(this, ItemsFilter);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsFilter).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsFilter, [{
+	        key: 'render',
+	        value: function render() {
+	            return null;
+	        }
+	        /*
+	        render() {
+	            return (
+	                <fieldset>
+	                    <label className="ls-label col-md-4 col-xs-12">
+	                        <b className="ls-label-text">Código ou referência</b>
+	                        <input type="text" name="nome" placeholder="Ex: 1234" className="ls-field" required />
+	                    </label>
+	                    <label className="ls-label col-md-3 col-xs-12">
+	                        <b className="ls-label-text">Status</b>
+	                        <div className="ls-custom-select">
+	                            <select className="ls-select" name="" id="">
+	                                <option value="">Todos</option>
+	                                <option value="">Ativo</option>
+	                                <option value="">Inativo</option>
+	                            </select>
+	                        </div>
+	                    </label>
+	                    <label className="ls-label col-md-4 col-xs-12">
+	                        <b className="ls-label-text">Nome do produto</b>
+	                        <input type="text" name="nome" placeholder="Ex: Smartphone novo" className="ls-field" required />
+	                    </label>
+	                    <label className="ls-label col-md-3 col-xs-12">
+	                        <b className="ls-label-text">Categoria</b>
+	                        <div className="ls-custom-select">
+	                            <select className="ls-select" name="" id="">
+	                                <option value="">Todas</option>
+	                                <option value="">Acessórios</option>
+	                                <option value="">Calçados</option>
+	                            </select>
+	                        </div>
+	                    </label>
+	                </fieldset>
+	            );
+	        }
+	        */
+
+	    }]);
+
+	    return ItemsFilter;
+	}(_react2.default.Component);
+
+	;
+
+	exports.ItemsTable = ItemsTable;
+	exports.ItemsTableHead = ItemsTableHead;
+	exports.ItemsTableBody = ItemsTableBody;
+	exports.ItemsTableItem = ItemsTableItem;
 
 /***/ }
 /******/ ]);

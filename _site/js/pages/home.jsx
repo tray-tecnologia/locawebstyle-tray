@@ -6,7 +6,7 @@ class Home extends React.Component {
   render () {
     return (
         <div>
-            <Breadcrumb />
+            <Breadcrumb title="Início" />
         </div>
     );
   }

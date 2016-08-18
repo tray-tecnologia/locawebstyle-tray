@@ -1,16 +1,56 @@
-var ItemsTable = React.createClass({
-    render: function () {
+import React from 'react';
+
+import ItemsEmpty from './items_empty.jsx';
+
+const ItemsTable = React.createClass({
+    getInitialState() {
+        return {
+            items: [],
+        };
+    },
+
+    addItems() {
+        let items = [
+            { id: 1, name: 'Item 1', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 2, name: 'Item 2', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 3, name: 'Item 3', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 4, name: 'Item 4', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 5, name: 'Item 5', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 6, name: 'Item 6', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 7, name: 'Item 7', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 8, name: 'Item 8', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 9, name: 'Item 9', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 10, name: 'Item 10', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 11, name: 'Item 11', status: true, url: '/item/1', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 12, name: 'Item 12', status: false, url: '/item/2', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 13, name: 'Item 13', status: true, url: '/item/3', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 14, name: 'Item 14', status: false, url: '/item/4', category: 'Imediato', price: 9.99, stock: 1000 },
+            { id: 15, name: 'Item 15', status: true, url: '/item/5', category: 'Imediato', price: 9.99, stock: 1000 },
+        ];
+
+        this.setState({ items: items });
+    },
+
+    render() {
+        if (!this.state.items.length) {
+            return (
+                <div>
+                    <ItemsEmpty addItems={this.addItems} />
+                </div>
+            );
+        }
+
         return (
             <table className="ls-table ls-no-hover">
                 <ItemsTableHead />
-                <ItemsTableBody />
+                <ItemsTableBody items={this.state.items} />
             </table>
         );
     }
-});
+})
 
-var ItemsTableHead = React.createClass({
-    render: function () {
+class ItemsTableHead extends React.Component {
+    render() {
         return (
             <thead>
                 <tr>
@@ -28,61 +68,30 @@ var ItemsTableHead = React.createClass({
             </thead>
         );
     }
-});
+}
 
-var ItemsTableBody = React.createClass({
-    getInitialState: function () {
-        return {
-            items: [
-                { id: 1, name: 'Nome do item 1', category: 'Camisetas', price: 'R$ 210,00', stock: 6, status: 1, url: 'item/1', checked: false },
-                { id: 2, name: 'Nome do item 2', category: 'Camisetas', price: 'R$ 110,00', stock: 3, status: 1, url: 'item/2', checked: false },
-                { id: 3, name: 'Nome do item 3', category: 'Camisetas', price: 'R$ 310,00', stock: 4, status: 0, url: 'item/3', checked: false },
-            ],
+class ItemsTableBody extends React.Component {
+    render() {
+        if (!this.props.items || !this.props.items.length) {
+            return null;
         }
-    },
 
-    componentDidMount: function () {
-        // var items = [];
-        // this.setState({ items: items });
-    },
-
-    /**
-     * When DOM update
-     */
-    componentDidUpdate: function() {
-        locastyle.init();
-    },
-
-    render: function () {
-        var itemNodes;
-
-        if (!this.state.items.length) {
-            itemNodes = (
-                <tr>
-                    <td className="ls-txt-center" colSpan="8">Nenhum item encontrado</td>
-                </tr>
+        var itemsNodes = this.props.items.map((item) => {
+            return (
+                <ItemsTableItem item={item} key={item.id} />
             );
-        } else {
-            itemNodes = this.state.items.map(function (item) {
-                return (
-                    <ItemsTableItem item={item} key={item.id} />
-                );
-            });
-        }
+        });
 
         return (
             <tbody>
-                {itemNodes}
+                {itemsNodes}
             </tbody>
         );
     }
-});
+};
 
-var ItemsTableItem = React.createClass({
-    handleChange: function(param1) {
-        
-    },
-    render: function () {
+class ItemsTableItem extends React.Component {
+    render() {
         return (
             <tr>
                 <td>
@@ -110,10 +119,14 @@ var ItemsTableItem = React.createClass({
             </tr>
         );
     }
-});
+};
 
-var ItemsFilter = React.createClass({
-    render: function() {
+class ItemsFilter extends React.Component {
+    render() {
+        return null;
+    }
+    /*
+    render() {
         return (
             <fieldset>
                 <label className="ls-label col-md-4 col-xs-12">
@@ -146,18 +159,8 @@ var ItemsFilter = React.createClass({
                 </label>
             </fieldset>
         );
-    },
-});
+    }
+    */
+};
 
-var itemsTables = document.querySelectorAll('[data-react="items-table-container"]');
-Object.keys(itemsTables).map(function (value, index) {
-    ReactDOM.render(
-        <ItemsTable />,
-        itemsTables[value]
-    );
-});
-
-ReactDOM.render(
-    <ItemsFilter />,
-    document.querySelector('[data-react="items-table-filter"]')
-);
+export { ItemsTable, ItemsTableHead, ItemsTableBody, ItemsTableItem };
