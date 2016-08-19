@@ -21490,12 +21490,16 @@
 
 	var _items2 = _interopRequireDefault(_items);
 
+	var _apps = __webpack_require__(248);
+
+	var _apps2 = _interopRequireDefault(_apps);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Routes
 
 
-	// Pages
+	// Layouts
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
@@ -21503,11 +21507,12 @@
 	    _reactRouter.Route,
 	    { path: '/', component: _app2.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'items', component: _items2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'items', component: _items2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'apps', component: _apps2.default })
 	  )
 	), document.getElementById('app'));
 
-	// Layouts
+	// Pages
 
 /***/ },
 /* 176 */
@@ -28264,6 +28269,167 @@
 	exports.ItemsTableHead = ItemsTableHead;
 	exports.ItemsTableBody = ItemsTableBody;
 	exports.ItemsTableItem = ItemsTableItem;
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _breadcrumb = __webpack_require__(243);
+
+	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Apps = _react2.default.createClass({
+	    displayName: 'Apps',
+	    getInitialState: function getInitialState() {
+	        return {};
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(_breadcrumb2.default, { title: 'Página de aplicativo' }),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'ls-md-space ls-no-padding-top ls-no-padding-right ls-txt-right' },
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#', className: 'ls-btn-danger' },
+	                    'Desabilitar aplicativo'
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'ls-box-group ls-overflow-hidden ls-sm-space ls-no-padding-left ls-no-padding-right ls-no-padding-top' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'row' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-4' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ls-box ls-md-space ls-no-bg' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'ls-box-head' },
+	                                _react2.default.createElement(
+	                                    'h6',
+	                                    { className: 'ls-title-6' },
+	                                    'Titulo da caixa'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'ls-sm-space ls-no-padding-left' },
+	                                    'Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'ls-box-body' },
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
+	                                    'Botão principal'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
+	                                    'Botão secundário'
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-4' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ls-box ls-md-space ls-no-bg' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'ls-box-head' },
+	                                _react2.default.createElement(
+	                                    'h6',
+	                                    { className: 'ls-title-6' },
+	                                    'Titulo da caixa'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'ls-sm-space ls-no-padding-left' },
+	                                    'Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'ls-box-body' },
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
+	                                    'Botão principal'
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-md-4' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ls-box ls-md-space ls-no-bg' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'ls-box-head' },
+	                                _react2.default.createElement(
+	                                    'h6',
+	                                    { className: 'ls-title-6' },
+	                                    'Titulo da caixa'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    { className: 'ls-sm-space ls-no-padding-left' },
+	                                    'Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'ls-box-body' },
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
+	                                    'Botão principal'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
+	                                    'Botão secundário'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
+	                                    'Botão secundário'
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+	exports.default = Apps;
 
 /***/ }
 /******/ ]);
