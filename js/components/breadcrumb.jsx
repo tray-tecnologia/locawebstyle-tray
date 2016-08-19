@@ -12,7 +12,7 @@ class Breadcrumb extends React.Component {
                     </ol>
                 </div>
 
-                <h1 className="ls-title-intro ls-ico-home ls-no-border ls-no-padding-top">
+                <h1 className="ls-title-intro ls-ico-home ls-no-border ls-no-padding-top ls-lg-margin-bottom">
                     {this.props.title}
                 </h1>
             </div>

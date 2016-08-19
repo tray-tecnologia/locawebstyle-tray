@@ -4,18 +4,12 @@ import Breadcrumb from '../components/breadcrumb.jsx';
 
 const AppsPage = React.createClass({
 
-  getInitialState() {
-      return {
-
-      };
-  },
-
   render () {
     return (
         <div>
             <Breadcrumb title="Página de aplicativo" />
 
-            <div className="ls-md-space ls-no-padding-top ls-no-padding-right ls-txt-right">
+            <div className="ls-lg-margin-bottom ls-txt-right">
                 <a href="#" className="ls-btn-danger">Desabilitar aplicativo</a>
             </div>
 
@@ -25,8 +19,8 @@ const AppsPage = React.createClass({
                     <div className="col-md-4">
                         <div className="ls-box ls-md-space ls-no-bg">
                             <div className="ls-box-head">
-                                <h6 className="ls-title-6">Titulo da caixa</h6>
-                                <p className="ls-sm-space ls-no-padding-left">
+                                <h6 className="ls-title-6 ls-sm-margin-bottom">Titulo da caixa</h6>
+                                <p className="ls-md-margin-bottom">
                                     Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros.
                                     Vivamus sit amet nibh non tellus tristique interdum.
                                 </p>
@@ -40,8 +34,8 @@ const AppsPage = React.createClass({
                     <div className="col-md-4">
                         <div className="ls-box ls-md-space ls-no-bg">
                             <div className="ls-box-head">
-                                <h6 className="ls-title-6">Titulo da caixa</h6>
-                                <p className="ls-sm-space ls-no-padding-left">
+                                <h6 className="ls-title-6 ls-sm-margin-bottom">Titulo da caixa</h6>
+                                <p className="ls-md-margin-bottom">
                                     Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros.
                                     Vivamus sit amet nibh non tellus tristique interdum.
                                 </p>
@@ -54,8 +48,8 @@ const AppsPage = React.createClass({
                     <div className="col-md-4">
                         <div className="ls-box ls-md-space ls-no-bg">
                             <div className="ls-box-head">
-                                <h6 className="ls-title-6">Titulo da caixa</h6>
-                                <p className="ls-sm-space ls-no-padding-left">
+                                <h6 className="ls-title-6 ls-sm-margin-bottom">Titulo da caixa</h6>
+                                <p className="ls-md-margin-bottom">
                                     Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros.
                                     Vivamus sit amet nibh non tellus tristique interdum.
                                 </p>

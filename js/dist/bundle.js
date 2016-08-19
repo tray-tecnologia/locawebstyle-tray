@@ -27709,7 +27709,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    'h1',
-	                    { className: 'ls-title-intro ls-ico-home ls-no-border ls-no-padding-top' },
+	                    { className: 'ls-title-intro ls-ico-home ls-no-border ls-no-padding-top ls-lg-margin-bottom' },
 	                    this.props.title
 	                )
 	            );
@@ -27830,28 +27830,30 @@
 	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    'h2',
-	                    { className: 'ls-title-5' },
-	                    'Você ainda não possui itens cadastrados.'
+	                    'div',
+	                    { className: 'ls-lg-margin-bottom' },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        { className: 'ls-title-5' },
+	                        'Você ainda não possui itens cadastrados.'
+	                    )
 	                ),
-	                _react2.default.createElement('hr', { className: 'ls-no-border' }),
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'ls-box ls-lg-space' },
 	                    _react2.default.createElement(
 	                        'h2',
-	                        { className: 'ls-title-3' },
+	                        { className: 'ls-title-3 ls-sm-margin-bottom' },
 	                        'Inclua seu primeiro item'
 	                    ),
-	                    _react2.default.createElement('hr', { className: 'ls-no-border' }),
 	                    _react2.default.createElement(
 	                        'p',
-	                        null,
+	                        { className: 'ls-md-margin-bottom' },
 	                        'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.'
 	                    ),
 	                    _react2.default.createElement(
 	                        'button',
-	                        { className: 'ls-btn-primary', onClick: this.props.addItems },
+	                        { className: 'ls-btn-primary ls-sm-margin-top', onClick: this.props.addItems },
 	                        _react2.default.createElement(_change_text2.default, { from: 'Incluir item', to: 'Aguarde, salvando os dados...' })
 	                    )
 	                ),
@@ -27860,18 +27862,17 @@
 	                    { className: 'ls-box ls-lg-space' },
 	                    _react2.default.createElement(
 	                        'h2',
-	                        { className: 'ls-title-3' },
+	                        { className: 'ls-title-3 ls-sm-margin-bottom' },
 	                        'Importe seus itens rapidamente'
 	                    ),
-	                    _react2.default.createElement('hr', { className: 'ls-no-border' }),
 	                    _react2.default.createElement(
 	                        'p',
-	                        null,
+	                        { className: 'ls-md-margin-bottom' },
 	                        'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.'
 	                    ),
 	                    _react2.default.createElement(
 	                        'p',
-	                        null,
+	                        { className: 'ls-sm-margin-top' },
 	                        _react2.default.createElement(
 	                            'a',
 	                            { href: '#', className: 'ls-btn-primary' },
@@ -28292,9 +28293,6 @@
 
 	var AppsPage = _react2.default.createClass({
 	    displayName: 'AppsPage',
-	    getInitialState: function getInitialState() {
-	        return {};
-	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
@@ -28302,7 +28300,7 @@
 	            _react2.default.createElement(_breadcrumb2.default, { title: 'Página de aplicativo' }),
 	            _react2.default.createElement(
 	                'div',
-	                { className: 'ls-md-space ls-no-padding-top ls-no-padding-right ls-txt-right' },
+	                { className: 'ls-lg-margin-bottom ls-txt-right' },
 	                _react2.default.createElement(
 	                    'a',
 	                    { href: '#', className: 'ls-btn-danger' },
@@ -28326,12 +28324,12 @@
 	                                { className: 'ls-box-head' },
 	                                _react2.default.createElement(
 	                                    'h6',
-	                                    { className: 'ls-title-6' },
+	                                    { className: 'ls-title-6 ls-sm-margin-bottom' },
 	                                    'Titulo da caixa'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'p',
-	                                    { className: 'ls-sm-space ls-no-padding-left' },
+	                                    { className: 'ls-md-margin-bottom' },
 	                                    'Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.'
 	                                )
 	                            ),
@@ -28362,12 +28360,12 @@
 	                                { className: 'ls-box-head' },
 	                                _react2.default.createElement(
 	                                    'h6',
-	                                    { className: 'ls-title-6' },
+	                                    { className: 'ls-title-6 ls-sm-margin-bottom' },
 	                                    'Titulo da caixa'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'p',
-	                                    { className: 'ls-sm-space ls-no-padding-left' },
+	                                    { className: 'ls-md-margin-bottom' },
 	                                    'Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.'
 	                                )
 	                            ),
@@ -28393,12 +28391,12 @@
 	                                { className: 'ls-box-head' },
 	                                _react2.default.createElement(
 	                                    'h6',
-	                                    { className: 'ls-title-6' },
+	                                    { className: 'ls-title-6 ls-sm-margin-bottom' },
 	                                    'Titulo da caixa'
 	                                ),
 	                                _react2.default.createElement(
 	                                    'p',
-	                                    { className: 'ls-sm-space ls-no-padding-left' },
+	                                    { className: 'ls-md-margin-bottom' },
 	                                    'Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.'
 	                                )
 	                            ),
