@@ -1,6 +1,6 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/Users/rsantos/.nvm/versions/node/v6.4.0/bin/node',
-1 verbose cli   '/Users/rsantos/.nvm/versions/node/v6.4.0/bin/npm',
+1 verbose cli [ '/Users/richardsantos/.nvm/versions/node/v6.4.0/bin/node',
+1 verbose cli   '/Users/richardsantos/.nvm/versions/node/v6.4.0/bin/npm',
 1 verbose cli   'start' ]
 2 info using npm@3.10.3
 3 info using node@v6.4.0
@@ -9,25 +9,25 @@
 6 silly lifecycle locawebstyle-tray@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle locawebstyle-tray@0.0.1~start: locawebstyle-tray@0.0.1
 8 verbose lifecycle locawebstyle-tray@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle locawebstyle-tray@0.0.1~start: PATH: /Users/rsantos/.nvm/versions/node/v6.4.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/rsantos/locawebstyle-tray/node_modules/.bin:/Users/rsantos/.nvm/versions/node/v6.4.0/bin:/Users/rsantos/.nvm/versions/node/v6.4.0/bin:/Users/rsantos/.rvm/gems/ruby-2.3.0/bin:/Users/rsantos/.rvm/gems/ruby-2.3.0@global/bin:/Users/rsantos/.rvm/rubies/ruby-2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/rsantos/.rvm/bin:/Users/rsantos/.rvm/bin
-10 verbose lifecycle locawebstyle-tray@0.0.1~start: CWD: /Users/rsantos/locawebstyle-tray
+9 verbose lifecycle locawebstyle-tray@0.0.1~start: PATH: /Users/richardsantos/.nvm/versions/node/v6.4.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/richardsantos/projects/locawebstyle-tray/node_modules/.bin:/Users/richardsantos/.nvm/versions/node/v6.4.0/bin:/Users/richardsantos/.nvm/versions/node/v6.4.0/bin:/Users/richardsantos/.composer/vendor/bin:/Users/richardsantos/bin:/Users/richardsantos/mongodb/bin:/Users/richardsantos/.composer/vendor/bin:/Users/richardsantos/bin:/Users/richardsantos/mongodb/bin:/Users/richardsantos/.rbenv/shims:/Users/richardsantos/.rbenv/shims:/Users/richardsantos/.rbenv/shims:/Users/richardsantos/.rbenv/shims:/Users/richardsantos/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/richardsantos/.rvm/bin:/Users/richardsantos/.rvm/bin:/Users/richardsantos/.rvm/bin
+10 verbose lifecycle locawebstyle-tray@0.0.1~start: CWD: /Users/richardsantos/projects/locawebstyle-tray
 11 silly lifecycle locawebstyle-tray@0.0.1~start: Args: [ '-c', 'gulp' ]
 12 silly lifecycle locawebstyle-tray@0.0.1~start: Returned: code: 1  signal: null
 13 info lifecycle locawebstyle-tray@0.0.1~start: Failed to exec start script
 14 verbose stack Error: locawebstyle-tray@0.0.1 start: `gulp`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (/Users/rsantos/.nvm/versions/node/v6.4.0/lib/node_modules/npm/lib/utils/lifecycle.js:242:16)
+14 verbose stack     at EventEmitter.<anonymous> (/Users/richardsantos/.nvm/versions/node/v6.4.0/lib/node_modules/npm/lib/utils/lifecycle.js:242:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/Users/rsantos/.nvm/versions/node/v6.4.0/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at ChildProcess.<anonymous> (/Users/richardsantos/.nvm/versions/node/v6.4.0/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:852:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
 15 verbose pkgid locawebstyle-tray@0.0.1
-16 verbose cwd /Users/rsantos/locawebstyle-tray
-17 error Darwin 15.2.0
-18 error argv "/Users/rsantos/.nvm/versions/node/v6.4.0/bin/node" "/Users/rsantos/.nvm/versions/node/v6.4.0/bin/npm" "start"
+16 verbose cwd /Users/richardsantos/projects/locawebstyle-tray
+17 error Darwin 15.6.0
+18 error argv "/Users/richardsantos/.nvm/versions/node/v6.4.0/bin/node" "/Users/richardsantos/.nvm/versions/node/v6.4.0/bin/npm" "start"
 19 error node v6.4.0
 20 error npm  v3.10.3
 21 error code ELIFECYCLE

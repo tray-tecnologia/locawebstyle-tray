@@ -63,4 +63,4 @@ gulp.task('deploy', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['webpack', 'browser-sync', 'watch']);

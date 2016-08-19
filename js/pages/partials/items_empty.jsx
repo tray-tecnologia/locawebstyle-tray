@@ -1,6 +1,13 @@
 import React from 'react';
 
+import ChangeText from '../../components/change_text.jsx';
+
 class ItemsEmpty extends React.Component {
+
+    componentDidMount() {
+        locastyle.init();
+    }
+
     render () {
         return (
             <div>
@@ -11,19 +18,21 @@ class ItemsEmpty extends React.Component {
                     <h2 className="ls-title-3">Inclua seu primeiro item</h2>
                     <hr className="ls-no-border" />
                     <p>
-                        Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. 
-                        Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. 
+                        Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis.
+                        Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
                         Manduma pindureta quium dia nois paga.
                     </p>
-                    <button onClick={this.props.addItems} className="ls-btn-primary">Incluir item</button>
+                    <button onClick={this.props.addItems} data-toggle-class="ls-btn-dark" className="ls-btn-primary">
+                        <ChangeText from="Incluir item" to="Carregando..." />
+                    </button>
                 </div>
 
                 <div className="ls-box ls-lg-space">
                     <h2 className="ls-title-3">Importe seus itens rapidamente</h2>
                     <hr className="ls-no-border" />
                     <p>
-                        Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. 
-                        Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. 
+                        Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis.
+                        Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
                         Manduma pindureta quium dia nois paga.
                     </p>
                     <p>

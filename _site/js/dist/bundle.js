@@ -27740,7 +27740,7 @@
 
 	var _items_empty2 = _interopRequireDefault(_items_empty);
 
-	var _items_full = __webpack_require__(246);
+	var _items_full = __webpack_require__(247);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27780,7 +27780,7 @@
 /* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -27791,6 +27791,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _change_text = __webpack_require__(246);
+
+	var _change_text2 = _interopRequireDefault(_change_text);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27810,68 +27814,73 @@
 	    }
 
 	    _createClass(ItemsEmpty, [{
-	        key: "render",
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            locastyle.init();
+	        }
+	    }, {
+	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                "div",
+	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    "h2",
-	                    { className: "ls-title-5" },
-	                    "Você ainda não possui itens cadastrados."
+	                    'h2',
+	                    { className: 'ls-title-5' },
+	                    'Você ainda não possui itens cadastrados.'
 	                ),
-	                _react2.default.createElement("hr", { className: "ls-no-border" }),
+	                _react2.default.createElement('hr', { className: 'ls-no-border' }),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "ls-box ls-lg-space" },
+	                    'div',
+	                    { className: 'ls-box ls-lg-space' },
 	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "ls-title-3" },
-	                        "Inclua seu primeiro item"
+	                        'h2',
+	                        { className: 'ls-title-3' },
+	                        'Inclua seu primeiro item'
 	                    ),
-	                    _react2.default.createElement("hr", { className: "ls-no-border" }),
+	                    _react2.default.createElement('hr', { className: 'ls-no-border' }),
 	                    _react2.default.createElement(
-	                        "p",
+	                        'p',
 	                        null,
-	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
+	                        'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.'
 	                    ),
 	                    _react2.default.createElement(
-	                        "button",
-	                        { onClick: this.props.addItems, className: "ls-btn-primary" },
-	                        "Incluir item"
+	                        'button',
+	                        { onClick: this.props.addItems, 'data-toggle-class': 'ls-btn-dark', className: 'ls-btn-primary' },
+	                        _react2.default.createElement(_change_text2.default, { from: 'Incluir item', to: 'Carregando...' })
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "ls-box ls-lg-space" },
+	                    'div',
+	                    { className: 'ls-box ls-lg-space' },
 	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "ls-title-3" },
-	                        "Importe seus itens rapidamente"
+	                        'h2',
+	                        { className: 'ls-title-3' },
+	                        'Importe seus itens rapidamente'
 	                    ),
-	                    _react2.default.createElement("hr", { className: "ls-no-border" }),
+	                    _react2.default.createElement('hr', { className: 'ls-no-border' }),
 	                    _react2.default.createElement(
-	                        "p",
+	                        'p',
 	                        null,
-	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
+	                        'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga.'
 	                    ),
 	                    _react2.default.createElement(
-	                        "p",
+	                        'p',
 	                        null,
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", className: "ls-btn-primary" },
-	                            "Opção 1"
+	                            'a',
+	                            { href: '#', className: 'ls-btn-primary' },
+	                            'Opção 1'
 	                        ),
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", className: "ls-btn-primary" },
-	                            "Opção 2"
+	                            'a',
+	                            { href: '#', className: 'ls-btn-primary' },
+	                            'Opção 2'
 	                        ),
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", className: "ls-btn-primary" },
-	                            "Opção 3"
+	                            'a',
+	                            { href: '#', className: 'ls-btn-primary' },
+	                            'Opção 3'
 	                        )
 	                    )
 	                )
@@ -27886,6 +27895,43 @@
 
 /***/ },
 /* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ChangeText = _react2.default.createClass({
+	    displayName: 'ChangeText',
+	    getInitialState: function getInitialState() {
+	        return {
+	            text: this.props.from
+	        };
+	    },
+	    changeText: function changeText() {
+	        this.setState({ text: this.props.to });
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'span',
+	            { onClick: this.changeText },
+	            this.state.text
+	        );
+	    }
+	});
+
+	exports.default = ChangeText;
+
+/***/ },
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
