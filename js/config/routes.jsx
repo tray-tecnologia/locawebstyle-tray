@@ -7,17 +7,17 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import App from '../layout/app.jsx';
 
 // Pages
-import Home from '../pages/home.jsx';
-import Items from '../pages/items.jsx';
-import Apps from '../pages/apps.jsx';
+import HomePage from '../pages/home.jsx';
+import ItemsPage from '../pages/items.jsx';
+import AppsPage from '../pages/apps.jsx';
 
 // Routes
 render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="items" component={Items} />
-      <Route path="apps" component={Apps} />
+      <IndexRoute component={HomePage} />
+      <Route path="items" component={ItemsPage} />
+      <Route path="apps" component={AppsPage} />
     </Route>
   </Router>
 ), document.getElementById('app'))

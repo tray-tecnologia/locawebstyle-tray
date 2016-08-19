@@ -2,7 +2,7 @@ import React from 'react';
 
 import Breadcrumb from '../components/breadcrumb.jsx';
 
-const Apps = React.createClass({
+const AppsPage = React.createClass({
 
   getInitialState() {
       return {
@@ -74,4 +74,4 @@ const Apps = React.createClass({
   }
 });
 
-export default Apps;
+export default AppsPage;

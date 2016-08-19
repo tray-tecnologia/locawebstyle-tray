@@ -4,7 +4,7 @@ import Breadcrumb from '../components/breadcrumb.jsx';
 import ItemsEmpty from '../pages/partials/items_empty.jsx';
 import { ItemsTable } from '../pages/partials/items_full.jsx';
 
-class Items extends React.Component {
+class ItemsPage extends React.Component {
   render () {
     return (
         <div>
@@ -15,4 +15,4 @@ class Items extends React.Component {
   }
 }
 
-export default Items;
+export default ItemsPage;

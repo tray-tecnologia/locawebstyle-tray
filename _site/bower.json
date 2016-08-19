@@ -1,0 +1,24 @@
+{
+  "name": "locawebstyle-tray",
+  "description": "Padrão de utilização do LS na Tray",
+  "main": "index.js",
+  "authors": [
+    "Richard Santos <rsantos@tray.com.br>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/tray-tecnologia/locawebstyle-tray",
+  "moduleType": [
+    "es6"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "locawebstyle": "~3.8.6"
+  }
+}

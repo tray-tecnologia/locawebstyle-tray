@@ -27624,16 +27624,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = function (_React$Component) {
-	  _inherits(Home, _React$Component);
+	var HomePage = function (_React$Component) {
+	  _inherits(HomePage, _React$Component);
 
-	  function Home() {
-	    _classCallCheck(this, Home);
+	  function HomePage() {
+	    _classCallCheck(this, HomePage);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Home).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(HomePage).apply(this, arguments));
 	  }
 
-	  _createClass(Home, [{
+	  _createClass(HomePage, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -27644,10 +27644,10 @@
 	    }
 	  }]);
 
-	  return Home;
+	  return HomePage;
 	}(_react2.default.Component);
 
-	exports.default = Home;
+	exports.default = HomePage;
 
 /***/ },
 /* 243 */
@@ -27755,16 +27755,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Items = function (_React$Component) {
-	    _inherits(Items, _React$Component);
+	var ItemsPage = function (_React$Component) {
+	    _inherits(ItemsPage, _React$Component);
 
-	    function Items() {
-	        _classCallCheck(this, Items);
+	    function ItemsPage() {
+	        _classCallCheck(this, ItemsPage);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Items).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsPage).apply(this, arguments));
 	    }
 
-	    _createClass(Items, [{
+	    _createClass(ItemsPage, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -27776,10 +27776,10 @@
 	        }
 	    }]);
 
-	    return Items;
+	    return ItemsPage;
 	}(_react2.default.Component);
 
-	exports.default = Items;
+	exports.default = ItemsPage;
 
 /***/ },
 /* 245 */
@@ -27851,8 +27851,8 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        'button',
-	                        { onClick: this.props.addItems, 'data-toggle-class': 'ls-btn-dark', className: 'ls-btn-primary' },
-	                        _react2.default.createElement(_change_text2.default, { from: 'Incluir item', to: 'Carregando...' })
+	                        { className: 'ls-btn-primary', onClick: this.props.addItems },
+	                        _react2.default.createElement(_change_text2.default, { from: 'Incluir item', to: 'Aguarde, salvando os dados...' })
 	                    )
 	                ),
 	                _react2.default.createElement(
@@ -28290,8 +28290,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Apps = _react2.default.createClass({
-	    displayName: 'Apps',
+	var AppsPage = _react2.default.createClass({
+	    displayName: 'AppsPage',
 	    getInitialState: function getInitialState() {
 	        return {};
 	    },
@@ -28429,7 +28429,7 @@
 	    }
 	});
 
-	exports.default = Apps;
+	exports.default = AppsPage;
 
 /***/ }
 /******/ ]);

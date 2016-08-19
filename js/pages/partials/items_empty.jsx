@@ -22,8 +22,8 @@ class ItemsEmpty extends React.Component {
                         Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
                         Manduma pindureta quium dia nois paga.
                     </p>
-                    <button onClick={this.props.addItems} data-toggle-class="ls-btn-dark" className="ls-btn-primary">
-                        <ChangeText from="Incluir item" to="Carregando..." />
+                    <button className="ls-btn-primary" onClick={this.props.addItems}>
+                        <ChangeText from="Incluir item" to="Aguarde, salvando os dados..." />
                     </button>
                 </div>
 
