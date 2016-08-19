@@ -28289,6 +28289,10 @@
 
 	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
 
+	var _modal = __webpack_require__(249);
+
+	var _modal2 = _interopRequireDefault(_modal);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var AppsPage = _react2.default.createClass({
@@ -28302,14 +28306,14 @@
 	                'div',
 	                { className: 'ls-lg-margin-bottom ls-txt-right' },
 	                _react2.default.createElement(
-	                    'a',
-	                    { href: '#', className: 'ls-btn-danger' },
+	                    'button',
+	                    { className: 'ls-btn-danger', 'data-ls-module': 'modal', 'data-target': '#modal' },
 	                    'Desabilitar aplicativo'
 	                )
 	            ),
 	            _react2.default.createElement(
 	                'div',
-	                { className: 'ls-box-group ls-overflow-hidden ls-sm-space ls-no-padding-left ls-no-padding-right ls-no-padding-top' },
+	                { className: 'ls-box-group ls-overflow-hidden' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'row' },
@@ -28422,12 +28426,111 @@
 	                        )
 	                    )
 	                )
-	            )
+	            ),
+	            _react2.default.createElement(_modal2.default, null)
 	        );
 	    }
 	});
 
 	exports.default = AppsPage;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Modal = function (_React$Component) {
+	    _inherits(Modal, _React$Component);
+
+	    function Modal() {
+	        _classCallCheck(this, Modal);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Modal).apply(this, arguments));
+	    }
+
+	    _createClass(Modal, [{
+	        key: "componentDidMount",
+	        value: function componentDidMount() {
+	            locastyle.modal.init();
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                null,
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "ls-modal", id: "modal" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "ls-modal-box" },
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "ls-modal-header" },
+	                            _react2.default.createElement(
+	                                "button",
+	                                { "data-dismiss": "modal" },
+	                                "× "
+	                            ),
+	                            _react2.default.createElement(
+	                                "h4",
+	                                { className: "ls-modal-title" },
+	                                "Desativar aplicativo"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "ls-modal-body", id: "myModalBody" },
+	                            _react2.default.createElement(
+	                                "p",
+	                                null,
+	                                "Deseja desativar o aplicativo?"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "ls-modal-footer ls-txt-right" },
+	                            _react2.default.createElement(
+	                                "button",
+	                                { className: "ls-btn ls-float-left", "data-dismiss": "modal" },
+	                                "Fechar"
+	                            ),
+	                            _react2.default.createElement(
+	                                "button",
+	                                { type: "submit", className: "ls-btn-danger" },
+	                                "Desativar"
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Modal;
+	}(_react2.default.Component);
+
+	exports.default = Modal;
 
 /***/ }
 /******/ ]);

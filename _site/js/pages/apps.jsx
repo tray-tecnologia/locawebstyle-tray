@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '../components/breadcrumb.jsx';
+import Modal from '../components/modal.jsx';
 
 const AppsPage = React.createClass({
 
@@ -10,10 +11,10 @@ const AppsPage = React.createClass({
             <Breadcrumb title="Página de aplicativo" />
 
             <div className="ls-lg-margin-bottom ls-txt-right">
-                <a href="#" className="ls-btn-danger">Desabilitar aplicativo</a>
+                <button className="ls-btn-danger" data-ls-module="modal" data-target="#modal">Desabilitar aplicativo</button>
             </div>
 
-            <div className="ls-box-group ls-overflow-hidden ls-sm-space ls-no-padding-left ls-no-padding-right ls-no-padding-top">
+            <div className="ls-box-group ls-overflow-hidden">
 
                 <div className="row">
                     <div className="col-md-4">
@@ -63,6 +64,8 @@ const AppsPage = React.createClass({
                     </div>
                 </div>
             </div>
+
+            <Modal />
         </div>
     );
   }
