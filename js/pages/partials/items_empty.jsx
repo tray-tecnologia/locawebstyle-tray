@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ChangeText from '../../components/change_text.jsx';
-
 class ItemsEmpty extends React.Component {
 
     componentDidMount() {
@@ -24,9 +22,15 @@ class ItemsEmpty extends React.Component {
                         Manduma pindureta quium dia nois paga.
                     </p>
 
-                    <button className="ls-btn-primary ls-sm-margin-top" onClick={this.props.addItems}>
-                        <ChangeText from="Incluir item" to="Aguarde, salvando os dados..." />
+                    <button id="btn-action" className="ls-btn-primary ls-sm-margin-top" onClick={this.props.addItems} data-toggle-class="ls-display-none" data-target="#btn-action, #btn-action-disabled">
+                        Incluir item
                     </button>
+
+                    <div>
+                        <button id="btn-action-disabled" className="ls-btn-primary ls-sm-margin-top ls-disabled ls-display-none">
+                            Incluindo itens...
+                        </button>
+                    </div>
                 </div>
 
                 <div className="ls-box ls-lg-space">
