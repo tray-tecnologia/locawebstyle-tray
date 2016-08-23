@@ -32,22 +32,6 @@ class ItemsEmpty extends React.Component {
                         </button>
                     </div>
                 </div>
-
-                <div className="ls-box ls-lg-space">
-                    <h2 className="ls-title-3 ls-sm-margin-bottom">Importe seus itens rapidamente</h2>
-
-                    <p className="ls-md-margin-bottom">
-                        Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis.
-                        Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                        Manduma pindureta quium dia nois paga.
-                    </p>
-
-                    <p className="ls-sm-margin-top">
-                        <a href="#" className="ls-btn-primary">Opção 1</a>
-                        <a href="#" className="ls-btn-primary">Opção 2</a>
-                        <a href="#" className="ls-btn-primary">Opção 3</a>
-                    </p>
-                </div>
             </div>
         );
     }
