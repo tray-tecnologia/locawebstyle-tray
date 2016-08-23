@@ -4,12 +4,12 @@ import { render } from 'react-dom'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 // Layouts
-import App from '../layout/app.jsx';
+import App from '../layout/App.jsx';
 
 // Pages
-import HomePage from '../pages/home.jsx';
-import ItemsPage from '../pages/items.jsx';
-import AppsPage from '../pages/apps.jsx';
+import HomePage from '../pages/Home.jsx';
+import ItemsPage from '../pages/Items.jsx';
+import AppsPage from '../pages/Apps.jsx';
 
 // Routes
 render((

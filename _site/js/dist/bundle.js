@@ -52,9 +52,9 @@
 
 	var _reactDom = __webpack_require__(35);
 
-	var _routes = __webpack_require__(175);
+	var _Routes = __webpack_require__(175);
 
-	var _routes2 = _interopRequireDefault(_routes);
+	var _Routes2 = _interopRequireDefault(_Routes);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21478,21 +21478,21 @@
 
 	var _reactRouter = __webpack_require__(176);
 
-	var _app = __webpack_require__(239);
+	var _App = __webpack_require__(239);
 
-	var _app2 = _interopRequireDefault(_app);
+	var _App2 = _interopRequireDefault(_App);
 
-	var _home = __webpack_require__(242);
+	var _Home = __webpack_require__(242);
 
-	var _home2 = _interopRequireDefault(_home);
+	var _Home2 = _interopRequireDefault(_Home);
 
-	var _items = __webpack_require__(244);
+	var _Items = __webpack_require__(244);
 
-	var _items2 = _interopRequireDefault(_items);
+	var _Items2 = _interopRequireDefault(_Items);
 
-	var _apps = __webpack_require__(247);
+	var _Apps = __webpack_require__(248);
 
-	var _apps2 = _interopRequireDefault(_apps);
+	var _Apps2 = _interopRequireDefault(_Apps);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21505,10 +21505,10 @@
 	  { history: _reactRouter.hashHistory },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: '/', component: _app2.default },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'items', component: _items2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'apps', component: _apps2.default })
+	    { path: '/', component: _App2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'items', component: _Items2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'apps', component: _Apps2.default })
 	  )
 	), document.getElementById('app'));
 
@@ -27148,13 +27148,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _header = __webpack_require__(240);
+	var _Header = __webpack_require__(240);
 
-	var _header2 = _interopRequireDefault(_header);
+	var _Header2 = _interopRequireDefault(_Header);
 
-	var _sidebar = __webpack_require__(241);
+	var _Sidebar = __webpack_require__(241);
 
-	var _sidebar2 = _interopRequireDefault(_sidebar);
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27179,8 +27179,8 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_header2.default, null),
-	        _react2.default.createElement(_sidebar2.default, null),
+	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Sidebar2.default, null),
 	        _react2.default.createElement(
 	          'main',
 	          { className: 'ls-main' },
@@ -27612,9 +27612,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _breadcrumb = __webpack_require__(243);
+	var _Breadcrumb = __webpack_require__(243);
 
-	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27639,7 +27639,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_breadcrumb2.default, { title: 'Início' })
+	        _react2.default.createElement(_Breadcrumb2.default, { title: 'Início' })
 	      );
 	    }
 	  }]);
@@ -27737,15 +27737,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _breadcrumb = __webpack_require__(243);
+	var _Breadcrumb = __webpack_require__(243);
 
-	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _items_empty = __webpack_require__(245);
+	var _ItemsEmpty = __webpack_require__(245);
 
-	var _items_empty2 = _interopRequireDefault(_items_empty);
+	var _ItemsEmpty2 = _interopRequireDefault(_ItemsEmpty);
 
-	var _items_full = __webpack_require__(246);
+	var _ItemsFull = __webpack_require__(246);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27770,8 +27770,8 @@
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(_breadcrumb2.default, { title: 'Itens' }),
-	                _react2.default.createElement(_items_full.ItemsTable, null)
+	                _react2.default.createElement(_Breadcrumb2.default, { title: 'Itens' }),
+	                _react2.default.createElement(_ItemsFull.FilterableItemsTable, null)
 	            );
 	        }
 	    }]);
@@ -27913,7 +27913,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.ItemsTableItem = exports.ItemsTableBody = exports.ItemsTableHead = exports.ItemsTable = undefined;
+	exports.FilterableItemsTable = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27921,9 +27921,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _items_empty = __webpack_require__(245);
+	var _ItemsEmpty = __webpack_require__(245);
 
-	var _items_empty2 = _interopRequireDefault(_items_empty);
+	var _ItemsEmpty2 = _interopRequireDefault(_ItemsEmpty);
+
+	var _ItemsFilterFields = __webpack_require__(247);
+
+	var _ItemsFilterFields2 = _interopRequireDefault(_ItemsFilterFields);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27935,35 +27939,16 @@
 
 	var ItemsTable = _react2.default.createClass({
 	    displayName: 'ItemsTable',
-	    getInitialState: function getInitialState() {
-	        return {
-	            items: []
-	        };
-	    },
-	    addItems: function addItems() {
-	        var _this = this;
-
-	        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', function (response) {
-	            _this.setState({ items: response.items });
-	        });
-	    },
-	    removeItems: function removeItems() {
-	        this.setState({ items: [] });
-	    },
 	    render: function render() {
-	        if (!this.state.items.length) {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(_items_empty2.default, { addItems: this.addItems })
-	            );
-	        }
-
 	        return _react2.default.createElement(
-	            'table',
-	            { className: 'ls-table ls-no-hover' },
-	            _react2.default.createElement(ItemsTableHead, null),
-	            _react2.default.createElement(ItemsTableBody, { items: this.state.items })
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'table',
+	                { className: 'ls-table ls-no-hover' },
+	                _react2.default.createElement(ItemsTableHead, null),
+	                _react2.default.createElement(ItemsTableBody, { items: this.props.items })
+	            )
 	        );
 	    }
 	});
@@ -28048,7 +28033,19 @@
 	        key: 'render',
 	        value: function render() {
 	            if (!this.props.items || !this.props.items.length) {
-	                return null;
+	                return _react2.default.createElement(
+	                    'tbody',
+	                    null,
+	                    _react2.default.createElement(
+	                        'tr',
+	                        null,
+	                        _react2.default.createElement(
+	                            'td',
+	                            { className: 'ls-txt-center', colSpan: '8' },
+	                            'Nenhum item encontrado.'
+	                        )
+	                    )
+	                );
 	            }
 
 	            var itemsNodes = this.props.items.map(function (item) {
@@ -28086,7 +28083,7 @@
 	                _react2.default.createElement(
 	                    'td',
 	                    null,
-	                    _react2.default.createElement('input', { type: 'checkbox', 'data-checkbox-toggle': 'items-table', onChange: this.handleChange })
+	                    _react2.default.createElement('input', { type: 'checkbox', 'data-checkbox-toggle': 'items-table' })
 	                ),
 	                _react2.default.createElement(
 	                    'td',
@@ -28103,7 +28100,7 @@
 	                    null,
 	                    _react2.default.createElement(
 	                        'a',
-	                        { className: 'ls-ico-external', href: '{this.props.item.url}' },
+	                        { className: 'ls-ico-external', href: this.props.item.url },
 	                        this.props.item.name
 	                    )
 	                ),
@@ -28176,71 +28173,294 @@
 
 	;
 
-	var ItemsFilter = function (_React$Component4) {
-	    _inherits(ItemsFilter, _React$Component4);
+	var FilterableItemsTable = _react2.default.createClass({
+	    displayName: 'FilterableItemsTable',
+	    getInitialState: function getInitialState() {
+	        return {
+	            filters: {
+	                code: '',
+	                status: '',
+	                name: '',
+	                price_start: '',
+	                price_end: ''
+	            },
+	            items: [],
+	            filteredItems: []
+	        };
+	    },
+	    addItems: function addItems() {
+	        var _this4 = this;
 
-	    function ItemsFilter() {
-	        _classCallCheck(this, ItemsFilter);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsFilter).apply(this, arguments));
-	    }
-
-	    _createClass(ItemsFilter, [{
-	        key: 'render',
-	        value: function render() {
-	            return null;
-	        }
-	        /*
-	        render() {
-	            return (
-	                <fieldset>
-	                    <label className="ls-label col-md-4 col-xs-12">
-	                        <b className="ls-label-text">Código ou referência</b>
-	                        <input type="text" name="nome" placeholder="Ex: 1234" className="ls-field" required />
-	                    </label>
-	                    <label className="ls-label col-md-3 col-xs-12">
-	                        <b className="ls-label-text">Status</b>
-	                        <div className="ls-custom-select">
-	                            <select className="ls-select" name="" id="">
-	                                <option value="">Todos</option>
-	                                <option value="">Ativo</option>
-	                                <option value="">Inativo</option>
-	                            </select>
-	                        </div>
-	                    </label>
-	                    <label className="ls-label col-md-4 col-xs-12">
-	                        <b className="ls-label-text">Nome do produto</b>
-	                        <input type="text" name="nome" placeholder="Ex: Smartphone novo" className="ls-field" required />
-	                    </label>
-	                    <label className="ls-label col-md-3 col-xs-12">
-	                        <b className="ls-label-text">Categoria</b>
-	                        <div className="ls-custom-select">
-	                            <select className="ls-select" name="" id="">
-	                                <option value="">Todas</option>
-	                                <option value="">Acessórios</option>
-	                                <option value="">Calçados</option>
-	                            </select>
-	                        </div>
-	                    </label>
-	                </fieldset>
+	        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', function (response) {
+	            _this4.setState({ items: response.items });
+	        });
+	    },
+	    removeItems: function removeItems() {
+	        this.setState({ items: [] });
+	    },
+	    render: function render() {
+	        if (!this.state.items || !this.state.items.length) {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_ItemsEmpty2.default, { addItems: this.addItems })
 	            );
 	        }
-	        */
 
-	    }]);
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(_ItemsFilterFields2.default, null),
+	            _react2.default.createElement(ItemsTable, { items: this.state.filteredItems.length ? this.state.filteredItems : this.state.items })
+	        );
+	    }
+	});
 
-	    return ItemsFilter;
-	}(_react2.default.Component);
-
-	;
-
-	exports.ItemsTable = ItemsTable;
-	exports.ItemsTableHead = ItemsTableHead;
-	exports.ItemsTableBody = ItemsTableBody;
-	exports.ItemsTableItem = ItemsTableItem;
+	exports.FilterableItemsTable = FilterableItemsTable;
 
 /***/ },
 /* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsFilterFields = function (_React$Component) {
+	    _inherits(ItemsFilterFields, _React$Component);
+
+	    function ItemsFilterFields() {
+	        _classCallCheck(this, ItemsFilterFields);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsFilterFields).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsFilterFields, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "ls-box-filter" },
+	                _react2.default.createElement(
+	                    "form",
+	                    { className: "ls-form ls-form-horizontal", "data-ls-module": "form" },
+	                    _react2.default.createElement(
+	                        "fieldset",
+	                        null,
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "row ls-sm-margin-bottom" },
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-3 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Código ou referência"
+	                                ),
+	                                _react2.default.createElement("input", { className: "ls-field", type: "text", name: "name", placeholder: "Ex: 1234", required: true })
+	                            ),
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-3 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Status"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "ls-custom-select" },
+	                                    _react2.default.createElement(
+	                                        "select",
+	                                        { className: "ls-select", name: "", id: "" },
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "" },
+	                                            "Todos"
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "true" },
+	                                            "Ativo"
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "false" },
+	                                            "Inativo"
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-4 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Nome do item"
+	                                ),
+	                                _react2.default.createElement("input", { type: "text", name: "nome", placeholder: "Ex: Camiseta", className: "ls-field", required: true })
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "col-md-2 col-xs-12 ls-md-margin-bottom" },
+	                                _react2.default.createElement(
+	                                    "button",
+	                                    { className: "ls-btn" },
+	                                    "Filtrar"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { "data-ls-module": "dropdown", className: "ls-dropdown ls-no-margin-top" },
+	                                    _react2.default.createElement("button", { className: "ls-btn" }),
+	                                    _react2.default.createElement(
+	                                        "ul",
+	                                        { className: "ls-dropdown-nav" },
+	                                        _react2.default.createElement(
+	                                            "li",
+	                                            null,
+	                                            _react2.default.createElement(
+	                                                "a",
+	                                                { href: "#", className: "ls-color-danger" },
+	                                                "Limpar filtro"
+	                                            )
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-3 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Categoria"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "ls-custom-select" },
+	                                    _react2.default.createElement(
+	                                        "select",
+	                                        { className: "ls-select", name: "", id: "" },
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "" },
+	                                            "Todas"
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "Principal" },
+	                                            "Principal"
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-3 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Estoque"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "ls-custom-select" },
+	                                    _react2.default.createElement(
+	                                        "select",
+	                                        { className: "ls-select", name: "", id: "" },
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "0" },
+	                                            "Todos"
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "1" },
+	                                            "Maior que 0"
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "2" },
+	                                            "Igual a 0"
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            "option",
+	                                            { value: "3" },
+	                                            "Menor que 0"
+	                                        )
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-2 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Preço inicial"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "ls-prefix-group" },
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        { className: "ls-label-text-prefix" },
+	                                        "R$"
+	                                    ),
+	                                    _react2.default.createElement("input", { className: "ls-mask-money", type: "text", name: "price_start", required: true })
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "label",
+	                                { className: "ls-label col-md-2 col-xs-12" },
+	                                _react2.default.createElement(
+	                                    "b",
+	                                    { className: "ls-label-text" },
+	                                    "Preço final"
+	                                ),
+	                                _react2.default.createElement(
+	                                    "div",
+	                                    { className: "ls-prefix-group" },
+	                                    _react2.default.createElement(
+	                                        "span",
+	                                        { className: "ls-label-text-prefix" },
+	                                        "R$"
+	                                    ),
+	                                    _react2.default.createElement("input", { className: "ls-mask-money", type: "text", name: "price_end", required: true })
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsFilterFields;
+	}(_react2.default.Component);
+
+	exports.default = ItemsFilterFields;
+
+/***/ },
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28253,13 +28473,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _breadcrumb = __webpack_require__(243);
+	var _Breadcrumb = __webpack_require__(243);
 
-	var _breadcrumb2 = _interopRequireDefault(_breadcrumb);
+	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _modal = __webpack_require__(248);
+	var _Modal = __webpack_require__(249);
 
-	var _modal2 = _interopRequireDefault(_modal);
+	var _Modal2 = _interopRequireDefault(_Modal);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28269,7 +28489,7 @@
 	        return _react2.default.createElement(
 	            'div',
 	            null,
-	            _react2.default.createElement(_breadcrumb2.default, { title: 'Página de aplicativo' }),
+	            _react2.default.createElement(_Breadcrumb2.default, { title: 'Página de aplicativo' }),
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'ls-lg-margin-bottom ls-txt-right' },
@@ -28395,7 +28615,7 @@
 	                    )
 	                )
 	            ),
-	            _react2.default.createElement(_modal2.default, null)
+	            _react2.default.createElement(_Modal2.default, null)
 	        );
 	    }
 	});
@@ -28403,7 +28623,7 @@
 	exports.default = AppsPage;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

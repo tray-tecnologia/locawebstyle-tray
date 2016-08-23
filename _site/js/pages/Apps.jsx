@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Breadcrumb from '../components/breadcrumb.jsx';
-import Modal from '../components/modal.jsx';
+import Breadcrumb from '../components/Breadcrumb.jsx';
+import Modal from '../components/Modal.jsx';
 
 const AppsPage = React.createClass({
 
