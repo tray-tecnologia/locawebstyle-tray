@@ -48,7 +48,7 @@ gulp.task('webpack', function() {
  * if you add folder for pages, collection or datas, add them to this list
  */
 gulp.task('watch', function () {
-    gulp.watch(['_layouts/*', '_includes/*', '_posts/*', '_sass/*', 'css/*', 'js/dist/*'], ['jekyll-rebuild']);
+    gulp.watch(['_layouts/*', 'js/dist/*'], ['jekyll-rebuild']);
     gulp.watch(['js/**/*.jsx',], ['webpack']);
 });
 

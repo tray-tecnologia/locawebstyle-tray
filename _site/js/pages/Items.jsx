@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb.jsx';
-import ItemsEmpty from '../pages/partials/ItemsEmpty.jsx';
-import { FilterableItemsTable } from '../pages/partials/ItemsFull.jsx';
+import FilterableItemsTable from '../pages/partials/FilterableItemsTable.jsx';
 
 class ItemsPage extends React.Component {
   render () {

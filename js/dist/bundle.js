@@ -21490,7 +21490,7 @@
 
 	var _Items2 = _interopRequireDefault(_Items);
 
-	var _Apps = __webpack_require__(248);
+	var _Apps = __webpack_require__(252);
 
 	var _Apps2 = _interopRequireDefault(_Apps);
 
@@ -27562,7 +27562,7 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
-	                                    { className: 'ls-ico-users', to: '/' },
+	                                    { className: 'ls-ico-home', to: '/' },
 	                                    'Início'
 	                                )
 	                            ),
@@ -27580,7 +27580,7 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
-	                                    { className: 'ls-ico-users', to: '/apps' },
+	                                    { className: 'ls-ico-table-alt', to: '/apps' },
 	                                    'Página de aplicativo'
 	                                )
 	                            )
@@ -27741,11 +27741,9 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _ItemsEmpty = __webpack_require__(245);
+	var _FilterableItemsTable = __webpack_require__(245);
 
-	var _ItemsEmpty2 = _interopRequireDefault(_ItemsEmpty);
-
-	var _ItemsFull = __webpack_require__(246);
+	var _FilterableItemsTable2 = _interopRequireDefault(_FilterableItemsTable);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27771,7 +27769,7 @@
 	                'div',
 	                null,
 	                _react2.default.createElement(_Breadcrumb2.default, { title: 'Itens' }),
-	                _react2.default.createElement(_ItemsFull.FilterableItemsTable, null)
+	                _react2.default.createElement(_FilterableItemsTable2.default, null)
 	            );
 	        }
 	    }]);
@@ -27785,393 +27783,29 @@
 /* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ItemsEmpty = function (_React$Component) {
-	    _inherits(ItemsEmpty, _React$Component);
-
-	    function ItemsEmpty() {
-	        _classCallCheck(this, ItemsEmpty);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsEmpty).apply(this, arguments));
-	    }
-
-	    _createClass(ItemsEmpty, [{
-	        key: "componentDidMount",
-	        value: function componentDidMount() {
-	            locastyle.init();
-	        }
-	    }, {
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                null,
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "ls-lg-margin-bottom" },
-	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "ls-title-5" },
-	                        "Você ainda não possui itens cadastrados."
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "ls-box ls-lg-space" },
-	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "ls-title-3 ls-sm-margin-bottom" },
-	                        "Inclua seu primeiro item"
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "ls-md-margin-bottom" },
-	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
-	                    ),
-	                    _react2.default.createElement(
-	                        "button",
-	                        { id: "btn-action", className: "ls-btn-primary ls-sm-margin-top", onClick: this.props.addItems, "data-toggle-class": "ls-display-none", "data-target": "#btn-action, #btn-action-disabled" },
-	                        "Incluir item"
-	                    ),
-	                    _react2.default.createElement(
-	                        "div",
-	                        null,
-	                        _react2.default.createElement(
-	                            "button",
-	                            { id: "btn-action-disabled", className: "ls-btn-primary ls-sm-margin-top ls-disabled ls-display-none" },
-	                            "Incluindo itens..."
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "ls-box ls-lg-space" },
-	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "ls-title-3 ls-sm-margin-bottom" },
-	                        "Importe seus itens rapidamente"
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "ls-md-margin-bottom" },
-	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "ls-sm-margin-top" },
-	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", className: "ls-btn-primary" },
-	                            "Opção 1"
-	                        ),
-	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", className: "ls-btn-primary" },
-	                            "Opção 2"
-	                        ),
-	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", className: "ls-btn-primary" },
-	                            "Opção 3"
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return ItemsEmpty;
-	}(_react2.default.Component);
-
-	exports.default = ItemsEmpty;
-
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.FilterableItemsTable = undefined;
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ItemsEmpty = __webpack_require__(245);
+	var _ItemsEmpty = __webpack_require__(246);
 
 	var _ItemsEmpty2 = _interopRequireDefault(_ItemsEmpty);
 
-	var _ItemsFilterFields = __webpack_require__(247);
+	var _ItemsTable = __webpack_require__(247);
+
+	var _ItemsTable2 = _interopRequireDefault(_ItemsTable);
+
+	var _ItemsFilterFields = __webpack_require__(251);
 
 	var _ItemsFilterFields2 = _interopRequireDefault(_ItemsFilterFields);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ItemsTable = _react2.default.createClass({
-	    displayName: 'ItemsTable',
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	                'table',
-	                { className: 'ls-table ls-no-hover' },
-	                _react2.default.createElement(ItemsTableHead, null),
-	                _react2.default.createElement(ItemsTableBody, { items: this.props.items })
-	            )
-	        );
-	    }
-	});
-
-	var ItemsTableHead = function (_React$Component) {
-	    _inherits(ItemsTableHead, _React$Component);
-
-	    function ItemsTableHead() {
-	        _classCallCheck(this, ItemsTableHead);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableHead).apply(this, arguments));
-	    }
-
-	    _createClass(ItemsTableHead, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'thead',
-	                null,
-	                _react2.default.createElement(
-	                    'tr',
-	                    null,
-	                    _react2.default.createElement(
-	                        'th',
-	                        { className: 'ls-width-50' },
-	                        _react2.default.createElement('input', { type: 'checkbox', 'data-ls-module': 'checkboxToggle', 'data-checkbox-target': 'items-table' })
-	                    ),
-	                    _react2.default.createElement(
-	                        'th',
-	                        null,
-	                        'Código'
-	                    ),
-	                    _react2.default.createElement(
-	                        'th',
-	                        null,
-	                        'Status'
-	                    ),
-	                    _react2.default.createElement(
-	                        'th',
-	                        null,
-	                        'Nome'
-	                    ),
-	                    _react2.default.createElement(
-	                        'th',
-	                        null,
-	                        'Categoria'
-	                    ),
-	                    _react2.default.createElement(
-	                        'th',
-	                        null,
-	                        'Preço'
-	                    ),
-	                    _react2.default.createElement(
-	                        'th',
-	                        null,
-	                        'Estoque'
-	                    ),
-	                    _react2.default.createElement('th', null)
-	                )
-	            );
-	        }
-	    }]);
-
-	    return ItemsTableHead;
-	}(_react2.default.Component);
-
-	var ItemsTableBody = function (_React$Component2) {
-	    _inherits(ItemsTableBody, _React$Component2);
-
-	    function ItemsTableBody() {
-	        _classCallCheck(this, ItemsTableBody);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableBody).apply(this, arguments));
-	    }
-
-	    _createClass(ItemsTableBody, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            locastyle.init();
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            if (!this.props.items || !this.props.items.length) {
-	                return _react2.default.createElement(
-	                    'tbody',
-	                    null,
-	                    _react2.default.createElement(
-	                        'tr',
-	                        null,
-	                        _react2.default.createElement(
-	                            'td',
-	                            { className: 'ls-txt-center', colSpan: '8' },
-	                            'Nenhum item encontrado.'
-	                        )
-	                    )
-	                );
-	            }
-
-	            var itemsNodes = this.props.items.map(function (item) {
-	                return _react2.default.createElement(ItemsTableItem, { item: item, key: item.id });
-	            });
-
-	            return _react2.default.createElement(
-	                'tbody',
-	                null,
-	                itemsNodes
-	            );
-	        }
-	    }]);
-
-	    return ItemsTableBody;
-	}(_react2.default.Component);
-
-	;
-
-	var ItemsTableItem = function (_React$Component3) {
-	    _inherits(ItemsTableItem, _React$Component3);
-
-	    function ItemsTableItem() {
-	        _classCallCheck(this, ItemsTableItem);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableItem).apply(this, arguments));
-	    }
-
-	    _createClass(ItemsTableItem, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'tr',
-	                null,
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    _react2.default.createElement('input', { type: 'checkbox', 'data-checkbox-toggle': 'items-table' })
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    this.props.item.id
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    this.props.item.status ? 'Ativo' : 'Inativo'
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    _react2.default.createElement(
-	                        'a',
-	                        { className: 'ls-ico-external', href: this.props.item.url },
-	                        this.props.item.name
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    this.props.item.category
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    this.props.item.price
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    null,
-	                    this.props.item.stock
-	                ),
-	                _react2.default.createElement(
-	                    'td',
-	                    { className: 'ls-txt-right' },
-	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '#', className: 'ls-btn-default ls-display-none' },
-	                        'Detalhes'
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { 'data-ls-module': 'dropdown', className: 'ls-dropdown' },
-	                        _react2.default.createElement('button', { className: 'ls-btn' }),
-	                        _react2.default.createElement(
-	                            'ul',
-	                            { className: 'ls-dropdown-nav' },
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#' },
-	                                    'Editar'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#' },
-	                                    'Duplicar'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { className: 'ls-text-danger', href: '#' },
-	                                    'Excluir'
-	                                )
-	                            )
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return ItemsTableItem;
-	}(_react2.default.Component);
-
-	;
 
 	var FilterableItemsTable = _react2.default.createClass({
 	    displayName: 'FilterableItemsTable',
@@ -28211,10 +27845,10 @@
 	     * Load items from backend
 	     */
 	    addItems: function addItems() {
-	        var _this4 = this;
+	        var _this = this;
 
 	        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', function (response) {
-	            _this4.setState({ items: response.items });
+	            _this.setState({ items: response.items });
 	        });
 	    },
 
@@ -28337,15 +27971,465 @@
 	            'div',
 	            null,
 	            _react2.default.createElement(_ItemsFilterFields2.default, { filters: this.state.filters, resetFilters: this.resetFilters, onFilterInput: this.onFilterInput }),
-	            _react2.default.createElement(ItemsTable, { items: items })
+	            _react2.default.createElement(_ItemsTable2.default, { items: items })
 	        );
 	    }
 	});
 
-	exports.FilterableItemsTable = FilterableItemsTable;
+	exports.default = FilterableItemsTable;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsEmpty = function (_React$Component) {
+	    _inherits(ItemsEmpty, _React$Component);
+
+	    function ItemsEmpty() {
+	        _classCallCheck(this, ItemsEmpty);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsEmpty).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsEmpty, [{
+	        key: "componentDidMount",
+	        value: function componentDidMount() {
+	            locastyle.init();
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                null,
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "ls-lg-margin-bottom" },
+	                    _react2.default.createElement(
+	                        "h2",
+	                        { className: "ls-title-5" },
+	                        "Você ainda não possui itens cadastrados."
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "ls-box ls-lg-space" },
+	                    _react2.default.createElement(
+	                        "h2",
+	                        { className: "ls-title-3 ls-sm-margin-bottom" },
+	                        "Inclua seu primeiro item"
+	                    ),
+	                    _react2.default.createElement(
+	                        "p",
+	                        { className: "ls-md-margin-bottom" },
+	                        "Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga."
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { id: "btn-action", className: "ls-btn-primary ls-sm-margin-top", onClick: this.props.addItems, "data-toggle-class": "ls-display-none", "data-target": "#btn-action, #btn-action-disabled" },
+	                        "Incluir item"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        null,
+	                        _react2.default.createElement(
+	                            "button",
+	                            { id: "btn-action-disabled", className: "ls-btn-primary ls-sm-margin-top ls-disabled ls-display-none" },
+	                            "Incluindo itens..."
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsEmpty;
+	}(_react2.default.Component);
+
+	exports.default = ItemsEmpty;
 
 /***/ },
 /* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ItemsTableHead = __webpack_require__(248);
+
+	var _ItemsTableHead2 = _interopRequireDefault(_ItemsTableHead);
+
+	var _ItemsTableBody = __webpack_require__(249);
+
+	var _ItemsTableBody2 = _interopRequireDefault(_ItemsTableBody);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsTable = function (_React$Component) {
+	    _inherits(ItemsTable, _React$Component);
+
+	    function ItemsTable() {
+	        _classCallCheck(this, ItemsTable);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTable).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTable, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'table',
+	                { className: 'ls-table ls-no-hover' },
+	                _react2.default.createElement(_ItemsTableHead2.default, null),
+	                _react2.default.createElement(_ItemsTableBody2.default, { items: this.props.items })
+	            );
+	        }
+	    }]);
+
+	    return ItemsTable;
+	}(_react2.default.Component);
+
+	exports.default = ItemsTable;
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsTableHead = function (_React$Component) {
+	    _inherits(ItemsTableHead, _React$Component);
+
+	    function ItemsTableHead() {
+	        _classCallCheck(this, ItemsTableHead);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableHead).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTableHead, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "thead",
+	                null,
+	                _react2.default.createElement(
+	                    "tr",
+	                    null,
+	                    _react2.default.createElement(
+	                        "th",
+	                        { className: "ls-width-50" },
+	                        _react2.default.createElement("input", { type: "checkbox", "data-ls-module": "checkboxToggle", "data-checkbox-target": "items-table" })
+	                    ),
+	                    _react2.default.createElement(
+	                        "th",
+	                        null,
+	                        "Código"
+	                    ),
+	                    _react2.default.createElement(
+	                        "th",
+	                        null,
+	                        "Status"
+	                    ),
+	                    _react2.default.createElement(
+	                        "th",
+	                        null,
+	                        "Nome"
+	                    ),
+	                    _react2.default.createElement(
+	                        "th",
+	                        null,
+	                        "Categoria"
+	                    ),
+	                    _react2.default.createElement(
+	                        "th",
+	                        null,
+	                        "Preço"
+	                    ),
+	                    _react2.default.createElement(
+	                        "th",
+	                        null,
+	                        "Estoque"
+	                    ),
+	                    _react2.default.createElement("th", null)
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsTableHead;
+	}(_react2.default.Component);
+
+	exports.default = ItemsTableHead;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ItemsTableItem = __webpack_require__(250);
+
+	var _ItemsTableItem2 = _interopRequireDefault(_ItemsTableItem);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsTableBody = function (_React$Component) {
+	    _inherits(ItemsTableBody, _React$Component);
+
+	    function ItemsTableBody() {
+	        _classCallCheck(this, ItemsTableBody);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableBody).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTableBody, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            locastyle.init();
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            if (!this.props.items || !this.props.items.length) {
+	                return _react2.default.createElement(
+	                    'tbody',
+	                    null,
+	                    _react2.default.createElement(
+	                        'tr',
+	                        null,
+	                        _react2.default.createElement(
+	                            'td',
+	                            { className: 'ls-txt-center', colSpan: '8' },
+	                            'Nenhum item encontrado.'
+	                        )
+	                    )
+	                );
+	            }
+
+	            var itemsNodes = this.props.items.map(function (item) {
+	                return _react2.default.createElement(_ItemsTableItem2.default, { item: item, key: item.id });
+	            });
+
+	            return _react2.default.createElement(
+	                'tbody',
+	                null,
+	                itemsNodes
+	            );
+	        }
+	    }]);
+
+	    return ItemsTableBody;
+	}(_react2.default.Component);
+
+	;
+
+	exports.default = ItemsTableBody;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsTableItem = function (_React$Component) {
+	    _inherits(ItemsTableItem, _React$Component);
+
+	    function ItemsTableItem() {
+	        _classCallCheck(this, ItemsTableItem);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsTableItem).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsTableItem, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "tr",
+	                null,
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    _react2.default.createElement("input", { type: "checkbox", "data-checkbox-toggle": "items-table" })
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    this.props.item.id
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    this.props.item.status ? 'Ativo' : 'Inativo'
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    _react2.default.createElement(
+	                        "a",
+	                        { className: "ls-ico-external", href: this.props.item.url },
+	                        this.props.item.name
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    this.props.item.category
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    this.props.item.price
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    null,
+	                    this.props.item.stock
+	                ),
+	                _react2.default.createElement(
+	                    "td",
+	                    { className: "ls-txt-right" },
+	                    _react2.default.createElement(
+	                        "a",
+	                        { href: "#", className: "ls-btn-default ls-display-none" },
+	                        "Detalhes"
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { "data-ls-module": "dropdown", className: "ls-dropdown" },
+	                        _react2.default.createElement("button", { className: "ls-btn" }),
+	                        _react2.default.createElement(
+	                            "ul",
+	                            { className: "ls-dropdown-nav" },
+	                            _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#" },
+	                                    "Editar"
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { href: "#" },
+	                                    "Duplicar"
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                "li",
+	                                null,
+	                                _react2.default.createElement(
+	                                    "a",
+	                                    { className: "ls-text-danger", href: "#" },
+	                                    "Excluir"
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsTableItem;
+	}(_react2.default.Component);
+
+	;
+
+	exports.default = ItemsTableItem;
+
+/***/ },
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28628,7 +28712,7 @@
 	exports.default = ItemsFilterFields;
 
 /***/ },
-/* 248 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28645,7 +28729,7 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _Modal = __webpack_require__(249);
+	var _Modal = __webpack_require__(253);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -28791,7 +28875,7 @@
 	exports.default = AppsPage;
 
 /***/ },
-/* 249 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
