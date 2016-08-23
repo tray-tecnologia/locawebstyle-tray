@@ -102,30 +102,137 @@ class ItemsTableItem extends React.Component {
 
 const FilterableItemsTable = React.createClass({
 
+    /**
+     * Get initial state of component
+     */
     getInitialState() {
         return {
             filters: {
-                code: '',
-                status: '',
+                id: '',
                 name: '',
-                price_start: '',
-                price_end: '',
+                status: '',
             },
             items: [],
             filteredItems: [],
         };
     },
 
+    /**
+     * When user filter some data
+     */
+    onFilterInput(filters, isFiltering = false) {
+        this.setState({
+            filters: filters,
+        }, function() {
+            this.filterItems();
+        }.bind(this));
+    },
+
+    /**
+     * Load items from backend
+     */
     addItems() {
         $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', (response) => {
             this.setState({ items: response.items });
         });
     },
 
+    /**
+     * Reset filters
+     */
+    resetFilters() {
+        this.setState({ filters: this.getInitialState().filters }, function() {
+            this.filterItems();
+        }.bind(this));
+    },
+
+    /**
+     * Reset items
+     */
     removeItems() {
         this.setState({ items: [] });
     },
 
+    /**
+     * Filter items
+     */
+    filterItems() {
+        let filters = this.state.filters;
+        let items = this.state.items;
+
+        var filteredItems = items.filter(function(item) {
+            item = this.filterItemById(filters.id, item);
+            item = this.filterItemByName(filters.name, item);
+            item = this.filterItemByStatus(filters.status, item);
+
+            if (item) {
+                return item;
+            }
+        }.bind(this));
+
+        this.setState({ filteredItems: filteredItems });
+    },
+
+    /**
+     * Filter items by id
+     * @param {integer} id - Id of the item
+     * @param {object}  item - Item
+     * @return {object|undefined}  Returns the item if pass in the filter or undefined if fail
+     */
+    filterItemById(id, item) {
+        if (!item) {
+            return;
+        }
+
+        if (!id || id == item.id) {
+            return item;
+        }
+    },
+
+    /**
+     * Filter items by name
+     * @param {string} name - Name of the item
+     * @param {object} item - Item
+     * @return {object|undefined}  Returns the item if pass in the filter or undefined if fail
+     */
+    filterItemByName(name, item) {
+        if (!item) {
+            return;
+        }
+
+        if (!name || item.name.indexOf(name) !== -1) {
+            return item;
+        }
+    },
+
+    /**
+     * Filter items by status
+     * @param {string} status - Status of the item
+     * @param {object} item - Item
+     * @return {object|undefined}  Returns the item if pass in the filter or undefined if fail
+     */
+    filterItemByStatus(status, item) {
+        if (!item) {
+            return;
+        }
+
+        var strStatus = item.status ? 'active' : 'inactive';
+        if (!status || strStatus === status) {
+            return item;
+        }
+    },
+
+    /**
+     * Check if user is filtering
+     * @return {boolean}
+     */
+    isFiltering() {
+        return JSON.stringify(this.state.filters) !== JSON.stringify(this.getInitialState().filters);
+    },
+
+    /**
+     * Render the component
+     */
     render() {
         if (!this.state.items || !this.state.items.length) {
             return (
@@ -135,10 +242,12 @@ const FilterableItemsTable = React.createClass({
             );
         }
 
+        var items = this.isFiltering() ? this.state.filteredItems : this.state.items;
+
         return (
             <div>
-                <ItemsFilterFields />
-                <ItemsTable items={this.state.filteredItems.length ? this.state.filteredItems : this.state.items} />
+                <ItemsFilterFields filters={this.state.filters} resetFilters={this.resetFilters} onFilterInput={this.onFilterInput} />
+                <ItemsTable items={items} />
             </div>
         );
     }

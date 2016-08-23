@@ -28175,19 +28175,41 @@
 
 	var FilterableItemsTable = _react2.default.createClass({
 	    displayName: 'FilterableItemsTable',
+
+
+	    /**
+	     * Get initial state of component
+	     */
 	    getInitialState: function getInitialState() {
 	        return {
 	            filters: {
-	                code: '',
-	                status: '',
+	                id: '',
 	                name: '',
-	                price_start: '',
-	                price_end: ''
+	                status: ''
 	            },
 	            items: [],
 	            filteredItems: []
 	        };
 	    },
+
+
+	    /**
+	     * When user filter some data
+	     */
+	    onFilterInput: function onFilterInput(filters) {
+	        var isFiltering = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+
+	        this.setState({
+	            filters: filters
+	        }, function () {
+	            this.filterItems();
+	        }.bind(this));
+	    },
+
+
+	    /**
+	     * Load items from backend
+	     */
 	    addItems: function addItems() {
 	        var _this4 = this;
 
@@ -28195,9 +28217,111 @@
 	            _this4.setState({ items: response.items });
 	        });
 	    },
+
+
+	    /**
+	     * Reset filters
+	     */
+	    resetFilters: function resetFilters() {
+	        this.setState({ filters: this.getInitialState().filters }, function () {
+	            this.filterItems();
+	        }.bind(this));
+	    },
+
+
+	    /**
+	     * Reset items
+	     */
 	    removeItems: function removeItems() {
 	        this.setState({ items: [] });
 	    },
+
+
+	    /**
+	     * Filter items
+	     */
+	    filterItems: function filterItems() {
+	        var filters = this.state.filters;
+	        var items = this.state.items;
+
+	        var filteredItems = items.filter(function (item) {
+	            item = this.filterItemById(filters.id, item);
+	            item = this.filterItemByName(filters.name, item);
+	            item = this.filterItemByStatus(filters.status, item);
+
+	            if (item) {
+	                return item;
+	            }
+	        }.bind(this));
+
+	        this.setState({ filteredItems: filteredItems });
+	    },
+
+
+	    /**
+	     * Filter items by id
+	     * @param {integer} id - Id of the item
+	     * @param {object}  item - Item
+	     * @return {object|undefined}  Returns the item if pass in the filter or undefined if fail
+	     */
+	    filterItemById: function filterItemById(id, item) {
+	        if (!item) {
+	            return;
+	        }
+
+	        if (!id || id == item.id) {
+	            return item;
+	        }
+	    },
+
+
+	    /**
+	     * Filter items by name
+	     * @param {string} name - Name of the item
+	     * @param {object} item - Item
+	     * @return {object|undefined}  Returns the item if pass in the filter or undefined if fail
+	     */
+	    filterItemByName: function filterItemByName(name, item) {
+	        if (!item) {
+	            return;
+	        }
+
+	        if (!name || item.name.indexOf(name) !== -1) {
+	            return item;
+	        }
+	    },
+
+
+	    /**
+	     * Filter items by status
+	     * @param {string} status - Status of the item
+	     * @param {object} item - Item
+	     * @return {object|undefined}  Returns the item if pass in the filter or undefined if fail
+	     */
+	    filterItemByStatus: function filterItemByStatus(status, item) {
+	        if (!item) {
+	            return;
+	        }
+
+	        var strStatus = item.status ? 'active' : 'inactive';
+	        if (!status || strStatus === status) {
+	            return item;
+	        }
+	    },
+
+
+	    /**
+	     * Check if user is filtering
+	     * @return {boolean}
+	     */
+	    isFiltering: function isFiltering() {
+	        return JSON.stringify(this.state.filters) !== JSON.stringify(this.getInitialState().filters);
+	    },
+
+
+	    /**
+	     * Render the component
+	     */
 	    render: function render() {
 	        if (!this.state.items || !this.state.items.length) {
 	            return _react2.default.createElement(
@@ -28207,11 +28331,13 @@
 	            );
 	        }
 
+	        var items = this.isFiltering() ? this.state.filteredItems : this.state.items;
+
 	        return _react2.default.createElement(
 	            'div',
 	            null,
-	            _react2.default.createElement(_ItemsFilterFields2.default, null),
-	            _react2.default.createElement(ItemsTable, { items: this.state.filteredItems.length ? this.state.filteredItems : this.state.items })
+	            _react2.default.createElement(_ItemsFilterFields2.default, { filters: this.state.filters, resetFilters: this.resetFilters, onFilterInput: this.onFilterInput }),
+	            _react2.default.createElement(ItemsTable, { items: items })
 	        );
 	    }
 	});
@@ -28228,234 +28354,276 @@
 	    value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var ItemsFilterFields = _react2.default.createClass({
+	    displayName: "ItemsFilterFields",
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	    /**
+	     * When the user change some filter
+	     */
+	    handleChange: function handleChange(event) {
+	        event.nativeEvent.preventDefault();
 
-	var ItemsFilterFields = function (_React$Component) {
-	    _inherits(ItemsFilterFields, _React$Component);
+	        this.props.onFilterInput({
+	            id: this.refs.filtersId.value,
+	            name: this.refs.filtersName.value,
+	            status: this.refs.filtersStatus.value
+	        });
+	    },
 
-	    function ItemsFilterFields() {
-	        _classCallCheck(this, ItemsFilterFields);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ItemsFilterFields).apply(this, arguments));
-	    }
-
-	    _createClass(ItemsFilterFields, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "ls-box-filter" },
+	    /**
+	     * Renders the component
+	     */
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "ls-box-filter" },
+	            _react2.default.createElement(
+	                "form",
+	                { className: "ls-form ls-form-horizontal", "data-ls-module": "form", onSubmit: this.handleChange },
 	                _react2.default.createElement(
-	                    "form",
-	                    { className: "ls-form ls-form-horizontal", "data-ls-module": "form" },
+	                    "fieldset",
+	                    null,
 	                    _react2.default.createElement(
-	                        "fieldset",
-	                        null,
+	                        "div",
+	                        { className: "row ls-sm-margin-bottom" },
 	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "row ls-sm-margin-bottom" },
+	                            "label",
+	                            { className: "ls-label col-md-3 col-xs-12" },
 	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-3 col-xs-12" },
-	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Código ou referência"
-	                                ),
-	                                _react2.default.createElement("input", { className: "ls-field", type: "text", name: "name", placeholder: "Ex: 1234", required: true })
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Código ou referência"
 	                            ),
+	                            _react2.default.createElement("input", {
+	                                className: "ls-field",
+	                                ref: "filtersId",
+	                                type: "text",
+	                                name: "id",
+	                                placeholder: "Ex: 1234"
+	                            })
+	                        ),
+	                        _react2.default.createElement(
+	                            "label",
+	                            { className: "ls-label col-md-3 col-xs-12" },
 	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-3 col-xs-12" },
-	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Status"
-	                                ),
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "ls-custom-select" },
-	                                    _react2.default.createElement(
-	                                        "select",
-	                                        { className: "ls-select", name: "", id: "" },
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "" },
-	                                            "Todos"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "true" },
-	                                            "Ativo"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "false" },
-	                                            "Inativo"
-	                                        )
-	                                    )
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-4 col-xs-12" },
-	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Nome do item"
-	                                ),
-	                                _react2.default.createElement("input", { type: "text", name: "nome", placeholder: "Ex: Camiseta", className: "ls-field", required: true })
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Status"
 	                            ),
 	                            _react2.default.createElement(
 	                                "div",
-	                                { className: "col-md-2 col-xs-12 ls-md-margin-bottom" },
+	                                { className: "ls-custom-select" },
 	                                _react2.default.createElement(
-	                                    "button",
-	                                    { className: "ls-btn" },
-	                                    "Filtrar"
-	                                ),
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { "data-ls-module": "dropdown", className: "ls-dropdown ls-no-margin-top" },
-	                                    _react2.default.createElement("button", { className: "ls-btn" }),
+	                                    "select",
+	                                    {
+	                                        className: "ls-select",
+	                                        name: "status",
+	                                        ref: "filtersStatus"
+	                                    },
 	                                    _react2.default.createElement(
-	                                        "ul",
-	                                        { className: "ls-dropdown-nav" },
-	                                        _react2.default.createElement(
-	                                            "li",
-	                                            null,
-	                                            _react2.default.createElement(
-	                                                "a",
-	                                                { href: "#", className: "ls-color-danger" },
-	                                                "Limpar filtro"
-	                                            )
-	                                        )
-	                                    )
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-3 col-xs-12" },
-	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Categoria"
-	                                ),
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "ls-custom-select" },
-	                                    _react2.default.createElement(
-	                                        "select",
-	                                        { className: "ls-select", name: "", id: "" },
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "" },
-	                                            "Todas"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "Principal" },
-	                                            "Principal"
-	                                        )
-	                                    )
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-3 col-xs-12" },
-	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Estoque"
-	                                ),
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "ls-custom-select" },
-	                                    _react2.default.createElement(
-	                                        "select",
-	                                        { className: "ls-select", name: "", id: "" },
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "0" },
-	                                            "Todos"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "1" },
-	                                            "Maior que 0"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "2" },
-	                                            "Igual a 0"
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            "option",
-	                                            { value: "3" },
-	                                            "Menor que 0"
-	                                        )
-	                                    )
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-2 col-xs-12" },
-	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Preço inicial"
-	                                ),
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "ls-prefix-group" },
-	                                    _react2.default.createElement(
-	                                        "span",
-	                                        { className: "ls-label-text-prefix" },
-	                                        "R$"
+	                                        "option",
+	                                        { value: "" },
+	                                        "Todos"
 	                                    ),
-	                                    _react2.default.createElement("input", { className: "ls-mask-money", type: "text", name: "price_start", required: true })
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "active" },
+	                                        "Ativo"
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "inactive" },
+	                                        "Inativo"
+	                                    )
 	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "label",
+	                            { className: "ls-label col-md-4 col-xs-12" },
+	                            _react2.default.createElement(
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Nome do item"
+	                            ),
+	                            _react2.default.createElement("input", {
+	                                className: "ls-field",
+	                                name: "name",
+	                                placeholder: "Ex: Camiseta",
+	                                type: "text",
+	                                ref: "filtersName"
+	                            })
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-md-2 visible-md visible-lg ls-md-margin-bottom" },
+	                            _react2.default.createElement(
+	                                "button",
+	                                { className: "ls-btn", type: "submit" },
+	                                "Filtrar"
 	                            ),
 	                            _react2.default.createElement(
-	                                "label",
-	                                { className: "ls-label col-md-2 col-xs-12" },
+	                                "div",
+	                                { "data-ls-module": "dropdown", className: "ls-dropdown ls-no-margin-top" },
+	                                _react2.default.createElement("button", { className: "ls-btn" }),
 	                                _react2.default.createElement(
-	                                    "b",
-	                                    { className: "ls-label-text" },
-	                                    "Preço final"
-	                                ),
-	                                _react2.default.createElement(
-	                                    "div",
-	                                    { className: "ls-prefix-group" },
+	                                    "ul",
+	                                    { className: "ls-dropdown-nav" },
 	                                    _react2.default.createElement(
-	                                        "span",
-	                                        { className: "ls-label-text-prefix" },
-	                                        "R$"
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { className: "ls-color-danger", onClick: this.props.resetFilters },
+	                                            "Limpar filtro"
+	                                        )
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "label",
+	                            { className: "ls-label col-md-3 col-xs-12" },
+	                            _react2.default.createElement(
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Categoria"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "ls-custom-select" },
+	                                _react2.default.createElement(
+	                                    "select",
+	                                    { className: "ls-select", name: "", id: "" },
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "" },
+	                                        "Todas"
 	                                    ),
-	                                    _react2.default.createElement("input", { className: "ls-mask-money", type: "text", name: "price_end", required: true })
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "Principal" },
+	                                        "Principal"
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "label",
+	                            { className: "ls-label col-md-3 col-xs-12" },
+	                            _react2.default.createElement(
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Estoque"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "ls-custom-select" },
+	                                _react2.default.createElement(
+	                                    "select",
+	                                    { className: "ls-select", name: "", id: "" },
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "0" },
+	                                        "Todos"
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "1" },
+	                                        "Maior que 0"
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "2" },
+	                                        "Igual a 0"
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        "option",
+	                                        { value: "3" },
+	                                        "Menor que 0"
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "label",
+	                            { className: "ls-label col-md-2 col-xs-12" },
+	                            _react2.default.createElement(
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Preço inicial"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "ls-prefix-group" },
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    { className: "ls-label-text-prefix" },
+	                                    "R$"
+	                                ),
+	                                _react2.default.createElement("input", { className: "ls-mask-money", type: "text", name: "price_start" })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "label",
+	                            { className: "ls-label col-md-2 col-xs-12" },
+	                            _react2.default.createElement(
+	                                "b",
+	                                { className: "ls-label-text" },
+	                                "Preço final"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { className: "ls-prefix-group" },
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    { className: "ls-label-text-prefix" },
+	                                    "R$"
+	                                ),
+	                                _react2.default.createElement("input", { className: "ls-mask-money", type: "text", name: "price_end" })
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "col-md-2 hidden-md hidden-lg ls-md-margin-bottom ls-txt-right" },
+	                            _react2.default.createElement(
+	                                "button",
+	                                { className: "ls-btn", type: "submit" },
+	                                "Filtrar"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                { "data-ls-module": "dropdown", className: "ls-dropdown ls-no-margin-top" },
+	                                _react2.default.createElement("button", { className: "ls-btn" }),
+	                                _react2.default.createElement(
+	                                    "ul",
+	                                    { className: "ls-dropdown-nav" },
+	                                    _react2.default.createElement(
+	                                        "li",
+	                                        null,
+	                                        _react2.default.createElement(
+	                                            "a",
+	                                            { className: "ls-color-danger", onClick: this.props.resetFilters },
+	                                            "Limpar filtro"
+	                                        )
+	                                    )
 	                                )
 	                            )
 	                        )
 	                    )
 	                )
-	            );
-	        }
-	    }]);
-
-	    return ItemsFilterFields;
-	}(_react2.default.Component);
+	            )
+	        );
+	    }
+	});
 
 	exports.default = ItemsFilterFields;
 
