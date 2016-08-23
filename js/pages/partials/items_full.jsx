@@ -2,25 +2,11 @@ import React from 'react';
 
 import ItemsEmpty from './items_empty.jsx';
 
+import ItemsFilterFields from './ItemsFilterFields.jsx';
+
 const ItemsTable = React.createClass({
-    getInitialState() {
-        return {
-            items: [],
-        };
-    },
-
-    addItems() {
-        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', (response) => {
-            this.setState({ items: response.items });
-        });
-    },
-
-    removeItems() {
-        this.setState({ items: [] });
-    },
-
     render() {
-        if (!this.state.items.length) {
+        if (!this.props.items || !this.props.items.length) {
             return (
                 <div>
                     <ItemsEmpty addItems={this.addItems} />
@@ -29,10 +15,12 @@ const ItemsTable = React.createClass({
         }
 
         return (
-            <table className="ls-table ls-no-hover">
-                <ItemsTableHead />
-                <ItemsTableBody items={this.state.items} />
-            </table>
+            <div>
+                <table className="ls-table ls-no-hover">
+                    <ItemsTableHead />
+                    <ItemsTableBody items={this.props.items} />
+                </table>
+            </div>
         );
     }
 })
@@ -114,46 +102,52 @@ class ItemsTableItem extends React.Component {
     }
 };
 
-class ItemsFilter extends React.Component {
+const FilterableItemsTable = React.createClass({
+
+    getInitialState() {
+        return {
+            filters: {
+                code: '',
+                status: '',
+                name: '',
+                price_start: '',
+                price_end: '',
+            },
+            items: [],
+        };
+    },
+
+    addItems() {
+        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', (response) => {
+            this.setState({ items: response.items });
+        });
+    },
+
+    removeItems() {
+        this.setState({ items: [] });
+    },
+
+
+    setFilter(e, b, c) {
+        console.log(e, b, c);
+    },
+
     render() {
-        return null;
-    }
-    /*
-    render() {
+        if (!this.state.items || !this.state.items.length) {
+            return (
+                <div>
+                    <ItemsEmpty addItems={this.addItems} />
+                </div>
+            );
+        }
+
         return (
-            <fieldset>
-                <label className="ls-label col-md-4 col-xs-12">
-                    <b className="ls-label-text">Código ou referência</b>
-                    <input type="text" name="nome" placeholder="Ex: 1234" className="ls-field" required />
-                </label>
-                <label className="ls-label col-md-3 col-xs-12">
-                    <b className="ls-label-text">Status</b>
-                    <div className="ls-custom-select">
-                        <select className="ls-select" name="" id="">
-                            <option value="">Todos</option>
-                            <option value="">Ativo</option>
-                            <option value="">Inativo</option>
-                        </select>
-                    </div>
-                </label>
-                <label className="ls-label col-md-4 col-xs-12">
-                    <b className="ls-label-text">Nome do produto</b>
-                    <input type="text" name="nome" placeholder="Ex: Smartphone novo" className="ls-field" required />
-                </label>
-                <label className="ls-label col-md-3 col-xs-12">
-                    <b className="ls-label-text">Categoria</b>
-                    <div className="ls-custom-select">
-                        <select className="ls-select" name="" id="">
-                            <option value="">Todas</option>
-                            <option value="">Acessórios</option>
-                            <option value="">Calçados</option>
-                        </select>
-                    </div>
-                </label>
-            </fieldset>
+            <div>
+                <ItemsFilterFields />
+                <ItemsTable items={this.state.items} />
+            </div>
         );
     }
-    */
-};
+});
 
-export { ItemsTable, ItemsTableHead, ItemsTableBody, ItemsTableItem };
+export { FilterableItemsTable };
