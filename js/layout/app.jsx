@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from '../components/header.jsx';
-import Sidebar from '../components/sidebar.jsx';
+import Header from '../components/Header.jsx';
+import Sidebar from '../components/Sidebar.jsx';
 
 class App extends React.Component {
   render () {

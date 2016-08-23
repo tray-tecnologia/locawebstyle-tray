@@ -1,19 +1,11 @@
 import React from 'react';
 
-import ItemsEmpty from './items_empty.jsx';
+import ItemsEmpty from './ItemsEmpty.jsx';
 
 import ItemsFilterFields from './ItemsFilterFields.jsx';
 
 const ItemsTable = React.createClass({
     render() {
-        if (!this.props.items || !this.props.items.length) {
-            return (
-                <div>
-                    <ItemsEmpty addItems={this.addItems} />
-                </div>
-            );
-        }
-
         return (
             <div>
                 <table className="ls-table ls-no-hover">
@@ -54,7 +46,13 @@ class ItemsTableBody extends React.Component {
 
     render() {
         if (!this.props.items || !this.props.items.length) {
-            return null;
+            return (
+                <tbody>
+                    <tr>
+                        <td className="ls-txt-center" colSpan="8">Nenhum item encontrado.</td>
+                    </tr>
+                </tbody>
+            );
         }
 
         var itemsNodes = this.props.items.map((item) => {
@@ -76,12 +74,12 @@ class ItemsTableItem extends React.Component {
         return (
             <tr>
                 <td>
-                    <input type="checkbox" data-checkbox-toggle="items-table" onChange={this.handleChange} />
+                    <input type="checkbox" data-checkbox-toggle="items-table" />
                 </td>
                 <td>{this.props.item.id}</td>
                 <td>{this.props.item.status ? 'Ativo' : 'Inativo'}</td>
                 <td>
-                    <a className="ls-ico-external" href="{this.props.item.url}">{this.props.item.name}</a>
+                    <a className="ls-ico-external" href={this.props.item.url}>{this.props.item.name}</a>
                 </td>
                 <td>{this.props.item.category}</td>
                 <td>{this.props.item.price}</td>
@@ -114,6 +112,7 @@ const FilterableItemsTable = React.createClass({
                 price_end: '',
             },
             items: [],
+            filteredItems: [],
         };
     },
 
@@ -125,11 +124,6 @@ const FilterableItemsTable = React.createClass({
 
     removeItems() {
         this.setState({ items: [] });
-    },
-
-
-    setFilter(e, b, c) {
-        console.log(e, b, c);
     },
 
     render() {
@@ -144,7 +138,7 @@ const FilterableItemsTable = React.createClass({
         return (
             <div>
                 <ItemsFilterFields />
-                <ItemsTable items={this.state.items} />
+                <ItemsTable items={this.state.filteredItems.length ? this.state.filteredItems : this.state.items} />
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Breadcrumb from '../components/breadcrumb.jsx';
+import Breadcrumb from '../components/Breadcrumb.jsx';
 
 class HomePage extends React.Component {
   render () {
