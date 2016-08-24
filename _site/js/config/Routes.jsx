@@ -15,9 +15,9 @@ import AppsPage from '../pages/Apps.jsx';
 render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={HomePage} />
-      <Route path="items" component={ItemsPage} />
-      <Route path="apps" component={AppsPage} />
+      <IndexRoute name="home" component={HomePage} />
+      <Route path="items" name="items" component={ItemsPage} />
+      <Route path="apps" name="apps" component={AppsPage} />
     </Route>
   </Router>
-), document.getElementById('app'))
+), document.getElementById('app'));

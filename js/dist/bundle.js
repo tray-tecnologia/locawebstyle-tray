@@ -21506,9 +21506,9 @@
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _App2.default },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'items', component: _Items2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'apps', component: _Apps2.default })
+	    _react2.default.createElement(_reactRouter.IndexRoute, { name: 'home', component: _Home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'items', name: 'items', component: _Items2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'apps', name: 'apps', component: _Apps2.default })
 	  )
 	), document.getElementById('app'));
 
@@ -27139,7 +27139,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27147,6 +27147,8 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(176);
 
 	var _Header = __webpack_require__(240);
 
@@ -27165,39 +27167,39 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var App = function (_React$Component) {
-	  _inherits(App, _React$Component);
+	    _inherits(App, _React$Component);
 
-	  function App() {
-	    _classCallCheck(this, App);
+	    function App() {
+	        _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
-	  }
-
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_Header2.default, null),
-	        _react2.default.createElement(_Sidebar2.default, null),
-	        _react2.default.createElement(
-	          'main',
-	          { className: 'ls-main' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'container-fluid' },
-	            this.props.children
-	          )
-	        )
-	      );
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
 	    }
-	  }]);
 
-	  return App;
+	    _createClass(App, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_Header2.default, null),
+	                _react2.default.createElement(_Sidebar2.default, { router: this.props.router }),
+	                _react2.default.createElement(
+	                    'main',
+	                    { className: 'ls-main' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'container-fluid' },
+	                        this.props.children
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return App;
 	}(_react2.default.Component);
 
-	exports.default = App;
+	exports.default = (0, _reactRouter.withRouter)(App);
 
 /***/ },
 /* 240 */
@@ -27543,6 +27545,15 @@
 	    }
 
 	    _createClass(Sidebar, [{
+	        key: 'getActiveRoute',
+	        value: function getActiveRoute(routePath) {
+	            if (!routePath) {
+	                return false;
+	            }
+
+	            return this.props.router.isActive(routePath);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -27562,22 +27573,22 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
-	                                    { className: 'ls-ico-home', to: '/' },
+	                                    { className: 'ls-ico-home', activeClassName: 'ls-active', to: '/' },
 	                                    'Início'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
 	                                'li',
-	                                null,
+	                                { className: this.getActiveRoute('items') ? 'ls-active' : '' },
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
-	                                    { className: 'ls-ico-users', to: '/items' },
+	                                    { className: 'ls-ico-users', activeClassName: 'ls-active', to: '/items' },
 	                                    'Lista de itens'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
 	                                'li',
-	                                null,
+	                                { className: this.getActiveRoute('apps') ? 'ls-active' : '' },
 	                                _react2.default.createElement(
 	                                    _reactRouter.Link,
 	                                    { className: 'ls-ico-table-alt', to: '/apps' },
