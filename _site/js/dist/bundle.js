@@ -28061,13 +28061,19 @@
 	                        "Incluir item"
 	                    ),
 	                    _react2.default.createElement(
-	                        "div",
-	                        null,
-	                        _react2.default.createElement(
-	                            "button",
-	                            { id: "btn-action-disabled", className: "ls-btn-primary ls-sm-margin-top ls-disabled ls-display-none" },
-	                            "Incluindo itens..."
-	                        )
+	                        "button",
+	                        { id: "btn-action-disabled", className: "ls-btn-primary ls-no-margin-left ls-sm-margin-top ls-disabled ls-display-none" },
+	                        "Aguarde, incluindo itens..."
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { id: "btn-default", className: "ls-btn ls-sm-margin-top", onClick: this.props.addItems, "data-toggle-class": "ls-display-none", "data-target": "#btn-default, #btn-default-disabled" },
+	                        "Carregar itens"
+	                    ),
+	                    _react2.default.createElement(
+	                        "button",
+	                        { id: "btn-default-disabled", className: "ls-btn ls-sm-margin-top ls-disabled ls-display-none" },
+	                        "Aguarde, carregando itens..."
 	                    )
 	                )
 	            );

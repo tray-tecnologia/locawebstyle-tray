@@ -25,12 +25,16 @@ class ItemsEmpty extends React.Component {
                     <button id="btn-action" className="ls-btn-primary ls-sm-margin-top" onClick={this.props.addItems} data-toggle-class="ls-display-none" data-target="#btn-action, #btn-action-disabled">
                         Incluir item
                     </button>
+                    <button id="btn-action-disabled" className="ls-btn-primary ls-no-margin-left ls-sm-margin-top ls-disabled ls-display-none">
+                        Aguarde, incluindo itens...
+                    </button>
 
-                    <div>
-                        <button id="btn-action-disabled" className="ls-btn-primary ls-sm-margin-top ls-disabled ls-display-none">
-                            Incluindo itens...
-                        </button>
-                    </div>
+                    <button id="btn-default" className="ls-btn ls-sm-margin-top" onClick={this.props.addItems} data-toggle-class="ls-display-none" data-target="#btn-default, #btn-default-disabled">
+                        Carregar itens
+                    </button>
+                    <button id="btn-default-disabled" className="ls-btn ls-sm-margin-top ls-disabled ls-display-none">
+                        Aguarde, carregando itens...
+                    </button>
                 </div>
             </div>
         );
