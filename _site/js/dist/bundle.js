@@ -28946,7 +28946,7 @@
 	                            _react2.default.createElement(
 	                                "h4",
 	                                { className: "ls-modal-title" },
-	                                "Desativar aplicativo"
+	                                "Desabilitar aplicativo"
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -28955,7 +28955,7 @@
 	                            _react2.default.createElement(
 	                                "p",
 	                                null,
-	                                "Deseja desativar o aplicativo?"
+	                                "Deseja desabilitar o aplicativo?"
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -28968,8 +28968,17 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                "button",
-	                                { type: "submit", className: "ls-btn-danger" },
-	                                "Desativar"
+	                                { type: "submit", className: "ls-btn-danger", id: "btn-modal", "data-toggle-class": "ls-display-none", "data-target": "#btn-modal, #btn-modal-disabled" },
+	                                "Desabilitar"
+	                            ),
+	                            _react2.default.createElement(
+	                                "div",
+	                                null,
+	                                _react2.default.createElement(
+	                                    "button",
+	                                    { id: "btn-modal-disabled", className: "ls-btn-danger ls-disabled ls-display-none", "data-toggle-class": "ls-display-none", "data-target": "#btn-modal, #btn-modal-disabled" },
+	                                    "Aguarde, desabilitando aplicativo..."
+	                                )
 	                            )
 	                        )
 	                    )
