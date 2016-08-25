@@ -15,6 +15,14 @@ const FilterableItemsTable = React.createClass({
                 id: '',
                 name: '',
                 status: '',
+                category: '',
+                stock: '',
+                price_start: '0.00',
+                price_end: '0.00',
+                attribute: '',
+                brand: '',
+                has_variants: '',
+                has_images: '',
             },
             items: [],
             filteredItems: [],
@@ -24,7 +32,7 @@ const FilterableItemsTable = React.createClass({
     /**
      * When user filter some data
      */
-    onFilterInput(filters, isFiltering = false) {
+    onFilterInput(filters) {
         this.setState({
             filters: filters,
         }, function() {
@@ -45,9 +53,7 @@ const FilterableItemsTable = React.createClass({
      * Reset filters
      */
     resetFilters() {
-        this.setState({ filters: this.getInitialState().filters }, function() {
-            this.filterItems();
-        }.bind(this));
+        this.onFilterInput(this.getInitialState().filters);
     },
 
     /**
@@ -64,7 +70,7 @@ const FilterableItemsTable = React.createClass({
         let filters = this.state.filters;
         let items = this.state.items;
 
-        var filteredItems = items.filter(function(item) {
+        let filteredItems = items.filter(function(item) {
             item = this.filterItemById(filters.id, item);
             item = this.filterItemByName(filters.name, item);
             item = this.filterItemByStatus(filters.status, item);
@@ -120,7 +126,7 @@ const FilterableItemsTable = React.createClass({
             return;
         }
 
-        var strStatus = item.status ? 'active' : 'inactive';
+        let strStatus = item.status ? 'active' : 'inactive';
         if (!status || strStatus === status) {
             return item;
         }
@@ -146,7 +152,7 @@ const FilterableItemsTable = React.createClass({
             );
         }
 
-        var items = this.isFiltering() ? this.state.filteredItems : this.state.items;
+        let items = this.isFiltering() ? this.state.filteredItems : this.state.items;
 
         return (
             <div>

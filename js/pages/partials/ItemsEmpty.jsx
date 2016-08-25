@@ -2,10 +2,6 @@ import React from 'react';
 
 class ItemsEmpty extends React.Component {
 
-    componentDidMount() {
-        locastyle.init();
-    }
-
     render () {
         return (
             <div>
@@ -39,6 +35,7 @@ class ItemsEmpty extends React.Component {
             </div>
         );
     }
+
 }
 
 export default ItemsEmpty;
