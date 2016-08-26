@@ -38,7 +38,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 });
 
 gulp.task('webpack', function() {
-    return gulp.src('js/main.jsx')
+    return gulp.src('js/Main.jsx')
         .pipe(webpack(webpackConf))
         .pipe(gulp.dest('js/dist/'));
 });

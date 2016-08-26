@@ -3,7 +3,7 @@ import React from 'react';
 class ItemsEmpty extends React.Component {
 
     componentDidMount() {
-        locastyle.init();
+        locastyle.general.init();
     }
 
     render () {
@@ -39,6 +39,7 @@ class ItemsEmpty extends React.Component {
             </div>
         );
     }
+
 }
 
 export default ItemsEmpty;

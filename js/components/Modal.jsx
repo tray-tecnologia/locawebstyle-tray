@@ -4,6 +4,7 @@ class Modal extends React.Component {
 
     componentDidMount() {
         locastyle.modal.init();
+        locastyle.general.init();
     }
 
     render() {
