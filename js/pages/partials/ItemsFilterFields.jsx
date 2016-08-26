@@ -122,6 +122,7 @@ const ItemsFilterFields = React.createClass({
                                         className="ls-mask-money"
                                         type="text"
                                         name="price_start"
+                                        placeholder="0,00"
                                         ref="filtersPriceStart"
                                         value={this.props.filters.price_start}
                                         onChange={this.handleChange}
@@ -135,6 +136,7 @@ const ItemsFilterFields = React.createClass({
                                     <input
                                         className="ls-mask-money"
                                         type="text"
+                                        placeholder="0,00"
                                         name="price_end"
                                         ref="filtersPriceEnd"
                                         value={this.props.filters.price_end}
