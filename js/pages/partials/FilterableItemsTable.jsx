@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ItemsActions from './ItemsActions.jsx';
 import ItemsEmpty from './ItemsEmpty.jsx';
 import ItemsTable from './ItemsTable.jsx';
 import ItemsFilterFields from './ItemsFilterFields.jsx';
@@ -156,6 +157,7 @@ const FilterableItemsTable = React.createClass({
 
         return (
             <div>
+                <ItemsActions />
                 <ItemsFilterFields filters={this.state.filters} resetFilters={this.resetFilters} onFilterInput={this.onFilterInput} />
                 <ItemsTable items={items} />
             </div>
