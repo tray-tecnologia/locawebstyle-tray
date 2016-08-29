@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1472481231718" clover="3.2.0">
-	<project timestamp="1472481231718"  name="All Files" >
-		<metrics statements="42"  coveredstatements="42"  conditionals="202"  coveredconditionals="120"  methods="62"  coveredmethods="62"  elements="306"  coveredelements="224"  complexity="0"  packages="2"  files="6"  classes="6"  loc="273"  ncloc="273" />
+<coverage generated="1472495385185" clover="3.2.0">
+	<project timestamp="1472495385185"  name="All Files" >
+		<metrics statements="42"  coveredstatements="41"  conditionals="202"  coveredconditionals="119"  methods="62"  coveredmethods="62"  elements="306"  coveredelements="222"  complexity="0"  packages="2"  files="6"  classes="6"  loc="273"  ncloc="273" />
 		<package name="components" >
-			<metrics statements="30"  coveredstatements="30"  conditionals="136"  coveredconditionals="81"  methods="42"  coveredmethods="42" />
+			<metrics statements="30"  coveredstatements="29"  conditionals="136"  coveredconditionals="80"  methods="42"  coveredmethods="42" />
 			<file name="Alert.jsx"  path="/Users/rsantos/locawebstyle-tray/js/components/Alert.jsx" >
-				<metrics statements="13"  coveredstatements="13"  conditionals="39"  coveredconditionals="25"  methods="12"  coveredmethods="12" />
-				<line num="1"  count="6"  type="stmt" />
-				<line num="3"  count="6"  type="stmt" />
+				<metrics statements="13"  coveredstatements="12"  conditionals="39"  coveredconditionals="24"  methods="12"  coveredmethods="12" />
+				<line num="1"  count="3"  type="stmt" />
+				<line num="3"  count="3"  type="stmt" />
 				<line num="6"  count="3"  type="stmt" />
-				<line num="10"  count="6"  type="stmt" />
-				<line num="14"  count="6"  type="stmt" />
-				<line num="15"  count="3"  type="stmt" />
+				<line num="10"  count="3"  type="stmt" />
+				<line num="14"  count="3"  type="stmt" />
+				<line num="15"  count="0"  type="stmt" />
 				<line num="18"  count="3"  type="stmt" />
 				<line num="19"  count="3"  type="stmt" />
 				<line num="21"  count="3"  type="stmt" />

@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
 
 import Breadcrumb from '../components/Breadcrumb.jsx';
 import Alert from '../components/Alert.jsx';
+
+import ItemsForm from './partials/ItemsForm.jsx';
 
 class ItemsAdd extends React.Component {
 
@@ -12,7 +15,7 @@ class ItemsAdd extends React.Component {
                 message: '',
                 title: '',
                 type: '',
-            }
+            },
         }
     }
 
@@ -20,12 +23,30 @@ class ItemsAdd extends React.Component {
         this.setState({ alert: options });
     }
 
+    submitNewItem(event) {
+        event.nativeEvent.preventDefault();
+
+        this.showAlert({
+            message: 'Mensagem de sucesso aqui!',
+            title: 'Sucesso!',
+            type: 'success',
+        });
+
+        setTimeout(() => {
+            this.props.router.push('/items');
+        }, 1500);
+    }
+
+    componentDidMount() {
+        ls.collapse.init();
+    }
+
     render() {
         return (
             <div>
                 <Breadcrumb title="Incluir Item" />
 
-                <form action="">
+                <form className="ls-form" onSubmit={this.submitNewItem.bind(this)}>
                     <div data-ls-module="collapse" data-target="#30" className="ls-collapse ls-box ls-box-gray">
                         <a href="#" className="ls-collapse-header">
                             <h3 className="ls-collapse-title">
@@ -42,13 +63,21 @@ class ItemsAdd extends React.Component {
                                     <p>Configurações referentes a exibição do item.</p>
                                 </div>
                                 <div className="col-md-8">
-
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <Alert message={this.state.alert.message} title={this.state.alert.title} type={this.state.alert.type} dismissable="true" />
+
+                    <ItemsForm />
+
+                    <hr />
+
+                    <div className="ls-txt-right">
+                        <Link to="/items" className="ls-btn">Cancelar</Link>
+                        <button type="submit" className="ls-btn-primary">Salvar</button>
+                    </div>
                 </form>
 
             </div>
@@ -56,4 +85,4 @@ class ItemsAdd extends React.Component {
     }
 }
 
-export default ItemsAdd;
+export default withRouter(ItemsAdd);

@@ -11,7 +11,7 @@
   "jest": {
     "automock": false,
     "globals": {
-      "ls": { "alert": {}, "general": {}, "modal": {} },
+      "ls": { "alert": {}, "general": {}, "modal": {}, "dismiss": {} },
       "locastyle": { "alert": {}, "general": {}, "modal": {} }
     }
   },
