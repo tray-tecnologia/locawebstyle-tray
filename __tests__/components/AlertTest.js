@@ -1,10 +1,12 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
-import Alert from '../../js/components/Alert.jsx';
-
+ls.init = function() {};
 ls.alert.init = function() {};
-locastyle.alert.init = function() {};
+ls.dismiss.init = function() {};
+ls.dismiss.unbind = function() {};
+
+import Alert from '../../js/components/Alert.jsx';
 
 describe('Alert', () => {
     it('show an info message', () => {

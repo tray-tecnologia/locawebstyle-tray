@@ -3,7 +3,8 @@ import React from 'react';
 class Alert extends React.Component {
 
     componentDidMount() {
-        ls.alert.init();
+        ls.dismiss.unbind();
+        ls.init();
     }
 
     checkAlert() {
