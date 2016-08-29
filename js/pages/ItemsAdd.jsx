@@ -20,6 +20,10 @@ class ItemsAdd extends React.Component {
         this.setState({ alert: options });
     }
 
+    componentDidMount() {
+        ls.collapse.init();
+    }
+
     render() {
         return (
             <div>
