@@ -8,11 +8,10 @@ locastyle.general.init = function() {};
 
 describe('Modal', () => {
     it('show modal"', () => {
-        const modalComp = renderer.create(
+        let modalTree = renderer.create(
             <Modal />
-        );
+        ).toJSON();
 
-        let modalTree = modalComp.toJSON();
         expect(modalTree).toMatchSnapshot();
     });
 });
