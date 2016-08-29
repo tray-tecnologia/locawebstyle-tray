@@ -10,7 +10,11 @@
     "dev": "npm start"
   },
   "jest": {
-    "automock": false
+    "automock": false,
+    "globals": {
+      "ls": { "alert": {} },
+      "locastyle": { "alert": {} }
+    }
   },
   "repository": {
     "type": "git",
