@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp",
     "test": "jest",
-    "dev": "npm start"
+    "dev": "npm start",
+    "deploy": "NODE_ENV=production webpack -p && gulp deploy"
   },
   "jest": {
     "automock": false,
