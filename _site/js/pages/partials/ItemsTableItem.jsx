@@ -2,6 +2,10 @@ import React from 'react';
 
 class ItemsTableItem extends React.Component {
     render() {
+        if (!this.props.item) {
+            throw new Error('Prop "item" is missing!');
+        }
+
         return (
             <tr>
                 <td>

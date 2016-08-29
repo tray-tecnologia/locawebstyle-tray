@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "test": "jest --watch",
-    "test-single": "jest",
+    "test": "jest",
     "dev": "npm start"
   },
   "jest": {
-    "automock": false
+    "automock": false,
+    "globals": {
+      "ls": { "alert": {}, "general": {}, "modal": {} },
+      "locastyle": { "alert": {}, "general": {}, "modal": {} }
+    }
   },
   "repository": {
     "type": "git",

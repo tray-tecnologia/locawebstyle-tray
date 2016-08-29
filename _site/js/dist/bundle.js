@@ -27669,6 +27669,10 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	/**
+	 * Show a breadcrumb with page title
+	 * @example <Breacrumb title="Page Title" />
+	 */
 	var Breadcrumb = function (_React$Component) {
 	    _inherits(Breadcrumb, _React$Component);
 
@@ -27681,6 +27685,10 @@
 	    _createClass(Breadcrumb, [{
 	        key: 'render',
 	        value: function render() {
+	            if (!this.props.title) {
+	                throw new Error('Prop "title" is missing!');
+	            }
+
 	            return _react2.default.createElement(
 	                'div',
 	                null,
@@ -28100,7 +28108,7 @@
 	                    'div',
 	                    { className: 'ls-box ls-lg-space' },
 	                    _react2.default.createElement(
-	                        'h2',
+	                        'h3',
 	                        { className: 'ls-title-3 ls-sm-margin-bottom' },
 	                        'Inclua seu primeiro item'
 	                    ),
@@ -28358,7 +28366,7 @@
 /* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -28388,90 +28396,94 @@
 	    }
 
 	    _createClass(ItemsTableItem, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
+	            if (!this.props.item) {
+	                throw new Error('Prop "item" is missing!');
+	            }
+
 	            return _react2.default.createElement(
-	                "tr",
+	                'tr',
 	                null,
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
-	                    _react2.default.createElement("input", { type: "checkbox", "data-checkbox-toggle": "items-table" })
+	                    _react2.default.createElement('input', { type: 'checkbox', 'data-checkbox-toggle': 'items-table' })
 	                ),
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
 	                    this.props.item.id
 	                ),
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
 	                    this.props.item.status ? 'Ativo' : 'Inativo'
 	                ),
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
 	                    _react2.default.createElement(
-	                        "a",
-	                        { className: "ls-ico-external", href: this.props.item.url },
+	                        'a',
+	                        { className: 'ls-ico-external', href: this.props.item.url },
 	                        this.props.item.name
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
 	                    this.props.item.category
 	                ),
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
 	                    this.props.item.price
 	                ),
 	                _react2.default.createElement(
-	                    "td",
+	                    'td',
 	                    null,
 	                    this.props.item.stock
 	                ),
 	                _react2.default.createElement(
-	                    "td",
-	                    { className: "ls-txt-right" },
+	                    'td',
+	                    { className: 'ls-txt-right' },
 	                    _react2.default.createElement(
-	                        "a",
-	                        { href: "#", className: "ls-btn-default ls-display-none" },
-	                        "Detalhes"
+	                        'a',
+	                        { href: '#', className: 'ls-btn-default ls-display-none' },
+	                        'Detalhes'
 	                    ),
 	                    _react2.default.createElement(
-	                        "div",
-	                        { "data-ls-module": "dropdown", className: "ls-dropdown" },
-	                        _react2.default.createElement("button", { className: "ls-btn" }),
+	                        'div',
+	                        { 'data-ls-module': 'dropdown', className: 'ls-dropdown' },
+	                        _react2.default.createElement('button', { className: 'ls-btn' }),
 	                        _react2.default.createElement(
-	                            "ul",
-	                            { className: "ls-dropdown-nav" },
+	                            'ul',
+	                            { className: 'ls-dropdown-nav' },
 	                            _react2.default.createElement(
-	                                "li",
+	                                'li',
 	                                null,
 	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Editar"
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Editar'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                "li",
+	                                'li',
 	                                null,
 	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Duplicar"
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Duplicar'
 	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                "li",
+	                                'li',
 	                                null,
 	                                _react2.default.createElement(
-	                                    "a",
-	                                    { className: "ls-text-danger", href: "#" },
-	                                    "Excluir"
+	                                    'a',
+	                                    { className: 'ls-text-danger', href: '#' },
+	                                    'Excluir'
 	                                )
 	                            )
 	                        )
@@ -29173,7 +29185,7 @@
 	        key: 'render',
 	        value: function render() {
 	            if (!this.checkAlert()) {
-	                return null;
+	                throw new Error('Props "message" and "type" are missing!');;
 	            }
 
 	            var className = 'ls-alert ls-alert-' + this.props.type;

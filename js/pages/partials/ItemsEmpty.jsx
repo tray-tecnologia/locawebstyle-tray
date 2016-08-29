@@ -15,7 +15,7 @@ class ItemsEmpty extends React.Component {
                 </div>
 
                 <div className="ls-box ls-lg-space">
-                    <h2 className="ls-title-3 ls-sm-margin-bottom">Inclua seu primeiro item</h2>
+                    <h3 className="ls-title-3 ls-sm-margin-bottom">Inclua seu primeiro item</h3>
 
                     <p className="ls-md-margin-bottom">
                         Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis.
