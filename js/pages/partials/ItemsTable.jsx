@@ -20,6 +20,6 @@ class ItemsTable extends React.Component {
             </table>
         );
     }
-} 
+}
 
 export default ItemsTable;
