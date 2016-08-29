@@ -17,4 +17,23 @@ describe('Breadcrumb', () => {
 
         expect(pageTitle.textContent).toBe(expectedPageTitle);
     });
+
+    it('without page title', () => {
+        expect(() => {
+            TestUtils.renderIntoDocument(
+                <Breadcrumb />
+            )
+        }).toThrowError(/missing/);
+    });
+
+    it('home page link', () => {
+        const breadcrumbComponent = TestUtils.renderIntoDocument(
+            <Breadcrumb title="Page title!" />
+        );
+
+        let breadcrumbDOM = ReactDOM.findDOMNode(breadcrumbComponent);
+        let homePageLink = TestUtils.findRenderedDOMComponentWithTag(breadcrumbComponent, 'a');
+
+        expect(homePageLink.textContent).toBe('Início');
+    });
 });
