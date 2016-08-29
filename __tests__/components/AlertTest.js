@@ -7,26 +7,6 @@ ls.alert.init = function() {};
 locastyle.alert.init = function() {};
 
 describe('Alert', () => {
-    it('show nothing without props "message" and "type"', () => {
-        expect(() => {
-            TestUtils.renderIntoDocument(
-                <Alert />
-            );
-        }).toThrowError(/missing/);
-
-        expect(() => {
-            TestUtils.renderIntoDocument(
-                <Alert message="Has message" />
-            );
-        }).toThrowError(/missing/);
-
-        expect(() => {
-            TestUtils.renderIntoDocument(
-                <Alert type="danger" />
-            );
-        }).toThrowError(/missing/);
-    });
-
     it('show an info message', () => {
         let message = 'An info message!';
 

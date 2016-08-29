@@ -12,7 +12,7 @@ class Alert extends React.Component {
 
     render () {
         if (!this.checkAlert()) {
-            throw new Error('Props "message" and "type" are missing!');;
+            return null;
         }
 
         let className = 'ls-alert ls-alert-' + this.props.type;
