@@ -15,7 +15,7 @@ class Alert extends React.Component {
             return null;
         }
 
-        let className = 'container ls-float-left ls-lg-margin-top ls-alert-' + this.props.type;
+        let className = 'ls-float-left ls-width-500 ls-lg-margin-top ls-alert-' + this.props.type;
         let dismissable = '';
 
         if (this.props.dismissable) {

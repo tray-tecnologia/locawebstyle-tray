@@ -4,7 +4,7 @@ class ItemsForm extends React.Component {
 
     render() {
         return (
-            <fieldset>
+            <fieldset className={this.props.className}>
                 <div className="row ls-lg-margin-bottom">
                     <div className="col-md-4">
                         <h3 className="ls-title-4 ls-md-margin-bottom">Título lateral 1</h3>
