@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
 
@@ -27,10 +28,10 @@ class Header extends React.Component {
                     <span className="ls-show-sidebar ls-ico-menu"></span>
 
                     <h1 className="ls-brand-name">
-                        <a href="home" className="ls-ico-earth">
+                        <Link className="ls-ico-earth" to="/">
                             <small>Light</small>
                             Tray E-commerce Store
-                        </a>
+                        </Link>
                     </h1>
                 </div>
             </header>
