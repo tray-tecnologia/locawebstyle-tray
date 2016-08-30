@@ -9,4 +9,4 @@ markdown: kramdown
 incremental: true
 
 # Exclude
-exclude: ['node_modules']
+exclude: ['node_modules', 'coverage']
