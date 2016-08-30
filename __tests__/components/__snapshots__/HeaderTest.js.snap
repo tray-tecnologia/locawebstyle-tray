@@ -5,37 +5,6 @@ exports[`Header show header information" 1`] = `
     <div
       className="ls-notification-topbar">
       <div
-        className="ls-alerts-list">
-        <a
-          className="ls-ico-bell-o"
-          data-counter="8"
-          data-ls-module="topbarCurtain"
-          data-target="#ls-notification-curtain"
-          href="#">
-          <span>
-            Notificações
-          </span>
-        </a>
-        <a
-          className="ls-ico-bullhorn"
-          data-ls-module="topbarCurtain"
-          data-target="#ls-help-curtain"
-          href="#">
-          <span>
-            Ajuda
-          </span>
-        </a>
-        <a
-          className="ls-ico-question"
-          data-ls-module="topbarCurtain"
-          data-target="#ls-feedback-curtain"
-          href="#">
-          <span>
-            Sugestões
-          </span>
-        </a>
-      </div>
-      <div
         className="ls-dropdown ls-user-account"
         data-ls-module="dropdown">
         <a
@@ -83,14 +52,6 @@ exports[`Header show header information" 1`] = `
     </div>
     <span
       className="ls-show-sidebar ls-ico-menu" />
-    <a
-      className="ls-go-next"
-      href="#">
-      <span
-        className="ls-text">
-        Voltar à lista de serviços
-      </span>
-    </a>
     <h1
       className="ls-brand-name">
       <a
@@ -103,125 +64,5 @@ exports[`Header show header information" 1`] = `
       </a>
     </h1>
   </div>
-  <aside
-    className="ls-notification">
-    <nav
-      className="ls-notification-list"
-      id="ls-notification-curtain">
-      <h3
-        className="ls-title-2">
-        Notificações
-      </h3>
-      <ul>
-        <li
-          className="ls-dismissable">
-          <a
-            href="#">
-            Blanditiis est est dolorem iure voluptatem eos deleniti repellat et laborum consequatur
-          </a>
-          <a
-            className="ls-ico-close ls-close-notification"
-            data-ls-module="dismiss"
-            href="#" />
-        </li>
-        <li
-          className="ls-dismissable">
-          <a
-            href="#">
-            Similique eos rerum perferendis voluptatibus
-          </a>
-          <a
-            className="ls-ico-close ls-close-notification"
-            data-ls-module="dismiss"
-            href="#" />
-        </li>
-        <li
-          className="ls-dismissable">
-          <a
-            href="#">
-            Qui numquam iusto suscipit nisi qui unde
-          </a>
-          <a
-            className="ls-ico-close ls-close-notification"
-            data-ls-module="dismiss"
-            href="#" />
-        </li>
-        <li
-          className="ls-dismissable">
-          <a
-            href="#">
-            Nisi aut assumenda dignissimos qui ea in deserunt quo deleniti dolorum quo et consequatur
-          </a>
-          <a
-            className="ls-ico-close ls-close-notification"
-            data-ls-module="dismiss"
-            href="#" />
-        </li>
-        <li
-          className="ls-dismissable">
-          <a
-            href="#">
-            Sunt consequuntur aut aut a molestiae veritatis assumenda voluptas nam placeat eius ad
-          </a>
-          <a
-            className="ls-ico-close ls-close-notification"
-            data-ls-module="dismiss"
-            href="#" />
-        </li>
-      </ul>
-    </nav>
-    <nav
-      className="ls-notification-list"
-      id="ls-help-curtain">
-      <h3
-        className="ls-title-2">
-        Feedback
-      </h3>
-      <ul>
-        <li>
-          <a
-            href="#">
-            > quo fugiat facilis nulla perspiciatis consequatur
-          </a>
-        </li>
-        <li>
-          <a
-            href="#">
-            > enim et labore repellat enim debitis
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <nav
-      className="ls-notification-list"
-      id="ls-feedback-curtain">
-      <h3
-        className="ls-title-2">
-        Ajuda
-      </h3>
-      <ul>
-        <li
-          className="ls-txt-center hidden-xs">
-          <a
-            className="ls-btn-dark ls-btn-tour"
-            href="#">
-            Fazer um Tour
-          </a>
-        </li>
-        <li>
-          <a
-            href="#">
-            > Guia
-          </a>
-        </li>
-        <li>
-          <a
-            href="#">
-            > Wiki
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
 </header>
 `;

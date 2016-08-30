@@ -6,13 +6,23 @@
   "scripts": {
     "start": "gulp",
     "test": "jest",
-    "dev": "npm start"
+    "dev": "npm start",
+    "deploy": "NODE_ENV=production webpack -p && gulp deploy"
   },
   "jest": {
     "automock": false,
     "globals": {
-      "ls": { "alert": {}, "general": {}, "modal": {}, "dismiss": {} },
-      "locastyle": { "alert": {}, "general": {}, "modal": {} }
+      "ls": {
+        "alert": {},
+        "general": {},
+        "modal": {},
+        "dismiss": {}
+      },
+      "locastyle": {
+        "alert": {},
+        "general": {},
+        "modal": {}
+      }
     }
   },
   "repository": {

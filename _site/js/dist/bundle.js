@@ -27231,37 +27231,6 @@
 	                        { className: "ls-notification-topbar" },
 	                        _react2.default.createElement(
 	                            "div",
-	                            { className: "ls-alerts-list" },
-	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "#", className: "ls-ico-bell-o", "data-counter": "8", "data-ls-module": "topbarCurtain", "data-target": "#ls-notification-curtain" },
-	                                _react2.default.createElement(
-	                                    "span",
-	                                    null,
-	                                    "Notificações"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "#", className: "ls-ico-bullhorn", "data-ls-module": "topbarCurtain", "data-target": "#ls-help-curtain" },
-	                                _react2.default.createElement(
-	                                    "span",
-	                                    null,
-	                                    "Ajuda"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "a",
-	                                { href: "#", className: "ls-ico-question", "data-ls-module": "topbarCurtain", "data-target": "#ls-feedback-curtain" },
-	                                _react2.default.createElement(
-	                                    "span",
-	                                    null,
-	                                    "Sugestões"
-	                                )
-	                            )
-	                        ),
-	                        _react2.default.createElement(
-	                            "div",
 	                            { "data-ls-module": "dropdown", className: "ls-dropdown ls-user-account" },
 	                            _react2.default.createElement(
 	                                "a",
@@ -27322,15 +27291,6 @@
 	                    ),
 	                    _react2.default.createElement("span", { className: "ls-show-sidebar ls-ico-menu" }),
 	                    _react2.default.createElement(
-	                        "a",
-	                        { href: "#", className: "ls-go-next" },
-	                        _react2.default.createElement(
-	                            "span",
-	                            { className: "ls-text" },
-	                            "Voltar à lista de serviços"
-	                        )
-	                    ),
-	                    _react2.default.createElement(
 	                        "h1",
 	                        { className: "ls-brand-name" },
 	                        _react2.default.createElement(
@@ -27342,144 +27302,6 @@
 	                                "Light"
 	                            ),
 	                            "Tray E-commerce Store"
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "aside",
-	                    { className: "ls-notification" },
-	                    _react2.default.createElement(
-	                        "nav",
-	                        { className: "ls-notification-list", id: "ls-notification-curtain" },
-	                        _react2.default.createElement(
-	                            "h3",
-	                            { className: "ls-title-2" },
-	                            "Notificações"
-	                        ),
-	                        _react2.default.createElement(
-	                            "ul",
-	                            null,
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "ls-dismissable" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Blanditiis est est dolorem iure voluptatem eos deleniti repellat et laborum consequatur"
-	                                ),
-	                                _react2.default.createElement("a", { href: "#", "data-ls-module": "dismiss", className: "ls-ico-close ls-close-notification" })
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "ls-dismissable" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Similique eos rerum perferendis voluptatibus"
-	                                ),
-	                                _react2.default.createElement("a", { href: "#", "data-ls-module": "dismiss", className: "ls-ico-close ls-close-notification" })
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "ls-dismissable" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Qui numquam iusto suscipit nisi qui unde"
-	                                ),
-	                                _react2.default.createElement("a", { href: "#", "data-ls-module": "dismiss", className: "ls-ico-close ls-close-notification" })
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "ls-dismissable" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Nisi aut assumenda dignissimos qui ea in deserunt quo deleniti dolorum quo et consequatur"
-	                                ),
-	                                _react2.default.createElement("a", { href: "#", "data-ls-module": "dismiss", className: "ls-ico-close ls-close-notification" })
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "ls-dismissable" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "Sunt consequuntur aut aut a molestiae veritatis assumenda voluptas nam placeat eius ad"
-	                                ),
-	                                _react2.default.createElement("a", { href: "#", "data-ls-module": "dismiss", className: "ls-ico-close ls-close-notification" })
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "nav",
-	                        { className: "ls-notification-list", id: "ls-help-curtain" },
-	                        _react2.default.createElement(
-	                            "h3",
-	                            { className: "ls-title-2" },
-	                            "Feedback"
-	                        ),
-	                        _react2.default.createElement(
-	                            "ul",
-	                            null,
-	                            _react2.default.createElement(
-	                                "li",
-	                                null,
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "> quo fugiat facilis nulla perspiciatis consequatur"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                null,
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "> enim et labore repellat enim debitis"
-	                                )
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "nav",
-	                        { className: "ls-notification-list", id: "ls-feedback-curtain" },
-	                        _react2.default.createElement(
-	                            "h3",
-	                            { className: "ls-title-2" },
-	                            "Ajuda"
-	                        ),
-	                        _react2.default.createElement(
-	                            "ul",
-	                            null,
-	                            _react2.default.createElement(
-	                                "li",
-	                                { className: "ls-txt-center hidden-xs" },
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#", className: "ls-btn-dark ls-btn-tour" },
-	                                    "Fazer um Tour"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                null,
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "> Guia"
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                "li",
-	                                null,
-	                                _react2.default.createElement(
-	                                    "a",
-	                                    { href: "#" },
-	                                    "> Wiki"
-	                                )
-	                            )
 	                        )
 	                    )
 	                )

@@ -22,7 +22,6 @@ class Sidebar extends React.Component {
                             <li className={this.getActiveRoute('apps') ? 'ls-active' : ''}><Link className="ls-ico-table-alt" to="/apps">Página de aplicativo</Link></li>
                         </ul>
                     </nav>
-
                 </div>
             </aside>
         );
