@@ -6,7 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 # Build settings
 markdown: kramdown
-incremental: true
+incremental: false
 
 # Exclude
-exclude: ['node_modules']
+exclude: ['node_modules', 'coverage']

@@ -21,14 +21,9 @@ class ItemsTableItem extends React.Component {
                 <td>{this.props.item.stock}</td>
                 <td className="ls-txt-right">
                     <a href="#" className="ls-btn-default ls-display-none">Detalhes</a>
-                    <div data-ls-module="dropdown" className="ls-dropdown">
-                        <button className="ls-btn"></button>
-                        <ul className="ls-dropdown-nav">
-                            <li><a href="#">Editar</a></li>
-                            <li><a href="#">Duplicar</a></li>
-                            <li><a className="ls-text-danger" href="#">Excluir</a></li>
-                        </ul>
-                    </div>
+                    <button className="ls-btn">
+                        <span className="ls-ico-list"></span>
+                    </button>
                 </td>
             </tr>
         );

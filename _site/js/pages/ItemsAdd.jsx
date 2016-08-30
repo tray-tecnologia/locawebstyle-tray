@@ -70,11 +70,9 @@ class ItemsAdd extends React.Component {
 
                     <Alert message={this.state.alert.message} title={this.state.alert.title} type={this.state.alert.type} dismissable="true" />
 
-                    <ItemsForm />
+                    <ItemsForm className="ls-lg-margin-bottom" />
 
-                    <hr />
-
-                    <div className="ls-txt-right">
+                    <div className="ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right">
                         <Link to="/items" className="ls-btn">Cancelar</Link>
                         <button type="submit" className="ls-btn-primary">Salvar</button>
                     </div>

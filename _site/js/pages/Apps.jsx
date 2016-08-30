@@ -22,8 +22,8 @@ const AppsPage = React.createClass({
                             <div className="ls-box-head">
                                 <h6 className="ls-title-6 ls-sm-margin-bottom">Titulo da caixa</h6>
                                 <p className="ls-md-margin-bottom">
-                                    Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros.
-                                    Vivamus sit amet nibh non tellus tristique interdum.
+                                    Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.
+                                    Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.
                                 </p>
                             </div>
                             <div className="ls-box-body">
@@ -37,8 +37,8 @@ const AppsPage = React.createClass({
                             <div className="ls-box-head">
                                 <h6 className="ls-title-6 ls-sm-margin-bottom">Titulo da caixa</h6>
                                 <p className="ls-md-margin-bottom">
-                                    Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros.
-                                    Vivamus sit amet nibh non tellus tristique interdum.
+                                    Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.
+                                    Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.
                                 </p>
                             </div>
                             <div className="ls-box-body">
@@ -51,8 +51,8 @@ const AppsPage = React.createClass({
                             <div className="ls-box-head">
                                 <h6 className="ls-title-6 ls-sm-margin-bottom">Titulo da caixa</h6>
                                 <p className="ls-md-margin-bottom">
-                                    Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros.
-                                    Vivamus sit amet nibh non tellus tristique interdum.
+                                    Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.
+                                    Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.
                                 </p>
                             </div>
                             <div className="ls-box-body">

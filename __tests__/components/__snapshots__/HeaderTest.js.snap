@@ -1,0 +1,69 @@
+exports[`Header show header information" 1`] = `
+<header>
+  <div
+    className="ls-topbar">
+    <div
+      className="ls-notification-topbar">
+      <div
+        className="ls-dropdown ls-user-account"
+        data-ls-module="dropdown">
+        <a
+          className="ls-ico-user"
+          href="#">
+          <img
+            alt=""
+            src="http://fakeimg.pl/50/" />
+          <span
+            className="ls-name">
+            Tray E-commerce
+          </span>
+           (trayuser)
+        </a>
+        <nav
+          className="ls-dropdown-nav ls-user-menu">
+          <ul>
+            <li>
+              <a
+                href="#">
+                Meus dados
+              </a>
+            </li>
+            <li>
+              <a
+                href="#">
+                Faturas
+              </a>
+            </li>
+            <li>
+              <a
+                href="#">
+                Planos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#">
+                Sair
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <span
+      className="ls-show-sidebar ls-ico-menu" />
+    <h1
+      className="ls-brand-name">
+      <a
+        className="ls-ico-earth"
+        onClick={[Function bound handleClick]}
+        style={Object {}}>
+        <small>
+          Light
+        </small>
+        Tray E-commerce Store
+      </a>
+    </h1>
+  </div>
+</header>
+`;

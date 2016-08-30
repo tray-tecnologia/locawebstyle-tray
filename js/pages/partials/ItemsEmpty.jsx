@@ -18,9 +18,7 @@ class ItemsEmpty extends React.Component {
                     <h3 className="ls-title-3 ls-sm-margin-bottom">Inclua seu primeiro item</h3>
 
                     <p className="ls-md-margin-bottom">
-                        Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis.
-                        Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo.
-                        Manduma pindureta quium dia nois paga.
+                        Eiusmod elit magna irure laborum culpa culpa anim tempor velit. Tempor aliqua incididunt in est ex qui. Laboris commodo magna duis id dolor ea. Elit id officia ipsum qui anim veniam officia esse cupidatat veniam qui irure eiusmod aute. Proident ea culpa qui tempor consectetur. Tempor sint incididunt non officia voluptate qui enim duis excepteur est adipisicing voluptate.
                     </p>
 
                     <Link
