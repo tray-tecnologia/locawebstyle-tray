@@ -16,13 +16,18 @@ describe('Alert', () => {
             <Alert message={message} type="info" />
         );
 
-        let alertDOM = TestUtils.findRenderedDOMComponentWithTag(
+        let alertContainer = TestUtils.findRenderedDOMComponentWithClass(
             alertComp,
-            'div'
+            'ls-alert-fixed-top'
         );
 
-        expect(alertDOM.textContent.trim()).toBe(message);
-        expect(alertDOM.className).toBe('ls-alert ls-alert-info');
+        let alertDOM = TestUtils.findRenderedDOMComponentWithClass(
+            alertComp,
+            'ls-alert-info'
+        );
+
+        expect(alertContainer.textContent.trim()).toBe(message);
+        expect(alertDOM.className).toContain('ls-alert-info');
     });
 
     it('show error message with title', () => {
@@ -33,17 +38,17 @@ describe('Alert', () => {
             <Alert title={title} message={message} type="danger" />
         );
 
-        let alertDOM = TestUtils.findRenderedDOMComponentWithTag(
+        let alertDOM = TestUtils.findRenderedDOMComponentWithClass(
             alertComp,
-            'div'
+            'ls-alert-fixed-top'
         );
 
         let alertTitleDOM = TestUtils.findRenderedDOMComponentWithTag(
             alertComp,
             'strong'
-        ); 
+        );
 
-        expect(alertDOM.className).toBe('ls-alert ls-alert-danger');
+        expect(alertDOM.className).toContain('ls-alert-fixed-top');
         expect(alertTitleDOM.textContent).toBe(title);
         expect(alertDOM.textContent).toBe(title + ' ' + message);
     });
@@ -55,16 +60,16 @@ describe('Alert', () => {
 
         const alertComp = TestUtils.renderIntoDocument(
             <Alert
-                dismissable="true" 
-                title={title} 
-                message={message} 
-                type="warning" 
+                dismissable="true"
+                title={title}
+                message={message}
+                type="warning"
             />
         );
 
-        let alertDOM = TestUtils.findRenderedDOMComponentWithTag(
+        let alertDOM = TestUtils.findRenderedDOMComponentWithClass(
             alertComp,
-            'div'
+            'ls-alert-warning'
         );
 
         let alertDismissableDOM = TestUtils.findRenderedDOMComponentWithTag(
@@ -72,7 +77,8 @@ describe('Alert', () => {
             'span'
         );
 
-        expect(alertDOM.className).toBe('ls-alert ls-alert-warning ls-dismissable');
+        expect(alertDOM.className).toContain('ls-alert-warning');
+        expect(alertDOM.className).toContain('ls-dismissable');
         expect(alertDOM.textContent).toBe(dismissable + title + ' ' + message);
         expect(alertDismissableDOM.textContent).toBe(dismissable);
     });

@@ -2,9 +2,8 @@ import React from 'react';
 
 class Alert extends React.Component {
 
-    componentDidMount() {
-        ls.dismiss.unbind();
-        ls.init();
+    componentDidUpdate() {
+        ls.dismiss.init();
     }
 
     checkAlert() {
@@ -16,7 +15,7 @@ class Alert extends React.Component {
             return null;
         }
 
-        let className = 'ls-alert ls-alert-' + this.props.type;
+        let className = 'container ls-float-left ls-lg-margin-top ls-alert-' + this.props.type;
         let dismissable = '';
 
         if (this.props.dismissable) {
@@ -28,9 +27,15 @@ class Alert extends React.Component {
         }
 
         return (
-            <div className={className}>
-                {dismissable}
-                <strong>{this.props.title}</strong> {this.props.message}
+            <div className="ls-alert-fixed-top ls-lg-space ls-no-padding-left ls-no-padding-right">
+                <div className={className}>
+                    <div className="row">
+                        <div className="col-xs-12">
+                            {dismissable}
+                            <strong>{this.props.title}</strong> {this.props.message}
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

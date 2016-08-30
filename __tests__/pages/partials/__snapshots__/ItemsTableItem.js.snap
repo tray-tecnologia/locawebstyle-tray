@@ -34,34 +34,11 @@ exports[`TableItem show a row with active item 1`] = `
       href="#">
       Detalhes
     </a>
-    <div
-      className="ls-dropdown"
-      data-ls-module="dropdown">
-      <button
-        className="ls-btn" />
-      <ul
-        className="ls-dropdown-nav">
-        <li>
-          <a
-            href="#">
-            Editar
-          </a>
-        </li>
-        <li>
-          <a
-            href="#">
-            Duplicar
-          </a>
-        </li>
-        <li>
-          <a
-            className="ls-text-danger"
-            href="#">
-            Excluir
-          </a>
-        </li>
-      </ul>
-    </div>
+    <button
+      className="ls-btn">
+      <span
+        className="ls-ico-list" />
+    </button>
   </td>
 </tr>
 `;
@@ -102,34 +79,11 @@ exports[`TableItem show a row with inactive item 1`] = `
       href="#">
       Detalhes
     </a>
-    <div
-      className="ls-dropdown"
-      data-ls-module="dropdown">
-      <button
-        className="ls-btn" />
-      <ul
-        className="ls-dropdown-nav">
-        <li>
-          <a
-            href="#">
-            Editar
-          </a>
-        </li>
-        <li>
-          <a
-            href="#">
-            Duplicar
-          </a>
-        </li>
-        <li>
-          <a
-            className="ls-text-danger"
-            href="#">
-            Excluir
-          </a>
-        </li>
-      </ul>
-    </div>
+    <button
+      className="ls-btn">
+      <span
+        className="ls-ico-list" />
+    </button>
   </td>
 </tr>
 `;

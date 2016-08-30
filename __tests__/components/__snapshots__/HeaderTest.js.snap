@@ -56,7 +56,8 @@ exports[`Header show header information" 1`] = `
       className="ls-brand-name">
       <a
         className="ls-ico-earth"
-        href="home">
+        onClick={[Function bound handleClick]}
+        style={Object {}}>
         <small>
           Light
         </small>
