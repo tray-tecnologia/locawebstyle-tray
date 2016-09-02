@@ -34,7 +34,7 @@ class ItemsAdd extends React.Component {
 
         setTimeout(() => {
             this.props.router.push('/items');
-        }, 1500);
+        }, 4000);
     }
 
     componentDidMount() {
@@ -63,6 +63,7 @@ class ItemsAdd extends React.Component {
                                     <p>Configurações referentes a exibição do item.</p>
                                 </div>
                                 <div className="col-md-8">
+
                                 </div>
                             </div>
                         </div>
