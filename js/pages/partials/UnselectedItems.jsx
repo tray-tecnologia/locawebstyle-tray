@@ -24,12 +24,19 @@ export default class UnselectedItems extends React.Component {
             );
         });
 
+        let style = {
+            height: '280px',
+            overflow: 'scroll'
+        };
+
         return (
-            <table className="ls-table ls-table-striped ls-table-bordered ls-lg-margin-bottom">
-                <tbody>
-                    {items}
-                </tbody>
-            </table>
+            <div style={items.length > 5 ? style : {}}>
+                <table className="ls-table ls-table-striped ls-table-bordered ls-lg-margin-bottom">
+                    <tbody>
+                        {items}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

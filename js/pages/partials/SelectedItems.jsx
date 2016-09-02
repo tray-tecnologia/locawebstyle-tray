@@ -24,14 +24,21 @@ export default class SelectedItems extends React.Component {
             return null;
         }
 
+        let style = {
+            height: '280px',
+            overflow: 'scroll'
+        };
+
         return (
             <div>
                 <h5>Produtos selecionados</h5>
-                <table className="ls-table ls-table-striped ls-table-bordered ls-no-margin-bottom">
-                    <tbody>
-                        {items}
-                    </tbody>
-                </table>
+                <div style={items.length > 5 ? style : {}}>
+                    <table className="ls-table ls-table-striped ls-table-bordered ls-no-margin-bottom">
+                        <tbody>
+                            {items}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         );
     }
