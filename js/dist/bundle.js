@@ -29599,12 +29599,12 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        "td",
-	                        { className: "ls-text-sm ls-txt-right" },
+	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
 	                        "R$ 99,00"
 	                    ),
 	                    _react2.default.createElement(
 	                        "td",
-	                        { className: "ls-text-sm ls-txt-right" },
+	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
 	                        _react2.default.createElement(
 	                            "a",
 	                            { href: "#", "aria-label": "Ver imagem do produto", className: "ls-text-xl ls-sm-margin-right ls-tooltip-left" },
@@ -29626,10 +29626,10 @@
 
 	            return _react2.default.createElement(
 	                "div",
-	                { style: items.length > 5 ? style : {} },
+	                { className: "ls-lg-margin-bottom", style: items.length > 5 ? style : {} },
 	                _react2.default.createElement(
 	                    "table",
-	                    { className: "ls-table ls-table-striped ls-table-bordered ls-lg-margin-bottom" },
+	                    { className: "ls-table ls-table-striped ls-table-bordered" },
 	                    _react2.default.createElement(
 	                        "tbody",
 	                        null,
@@ -29698,12 +29698,12 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        "td",
-	                        { className: "ls-text-sm ls-txt-right" },
+	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
 	                        "R$ 99,00"
 	                    ),
 	                    _react2.default.createElement(
 	                        "td",
-	                        { className: "ls-text-sm ls-txt-right" },
+	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
 	                        _react2.default.createElement(
 	                            "a",
 	                            { href: "#", "aria-label": "Ver imagem do produto", className: "ls-text-xl ls-sm-margin-right ls-tooltip-left" },

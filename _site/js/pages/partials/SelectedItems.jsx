@@ -9,8 +9,8 @@ export default class SelectedItems extends React.Component {
             return (
                 <tr key={index}>
                     <td className="ls-text-sm">{element.id} - {element.name}</td>
-                    <td className="ls-text-sm ls-txt-right">R$ 99,00</td>
-                    <td className="ls-text-sm ls-txt-right">
+                    <td className="ls-text-sm ls-txt-right ls-width-150">R$ 99,00</td>
+                    <td className="ls-text-sm ls-txt-right ls-width-150">
                         <a href="#" aria-label="Ver imagem do produto" className="ls-text-xl ls-sm-margin-right ls-tooltip-left">
                             <span className="ls-ico-images"></span>
                         </a>
