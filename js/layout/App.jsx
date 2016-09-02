@@ -26,7 +26,7 @@ class App extends React.Component {
                 <Header />
                 <Sidebar router={this.props.router} />
                 <main className="ls-main">
-                    <div className="container-fluid" contentEditable={contentEditable}>
+                    <div className="container-fluid ls-lg-margin-bottom" contentEditable={contentEditable}>
                         {this.props.children}
                     </div>
                     <div className="container-fluid">
