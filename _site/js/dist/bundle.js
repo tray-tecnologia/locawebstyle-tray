@@ -21439,7 +21439,7 @@
 
 	var _ItemsAdd2 = _interopRequireDefault(_ItemsAdd);
 
-	var _Apps = __webpack_require__(254);
+	var _Apps = __webpack_require__(256);
 
 	var _Apps2 = _interopRequireDefault(_Apps);
 
@@ -29352,6 +29352,14 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _UnselectedItems = __webpack_require__(254);
+
+	var _UnselectedItems2 = _interopRequireDefault(_UnselectedItems);
+
+	var _SelectedItems = __webpack_require__(255);
+
+	var _SelectedItems2 = _interopRequireDefault(_SelectedItems);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29523,8 +29531,8 @@
 	                        )
 	                    )
 	                ),
-	                unselectedItemsTable,
-	                selectedItemsTable
+	                _react2.default.createElement(_UnselectedItems2.default, { items: this.props.items, onSelect: this.onSelect.bind(this) }),
+	                _react2.default.createElement(_SelectedItems2.default, { items: this.props.items, onRemove: this.onRemove.bind(this) })
 	            );
 	        }
 	    }]);
@@ -29536,6 +29544,221 @@
 
 /***/ },
 /* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UnselectedItems = function (_React$Component) {
+	    _inherits(UnselectedItems, _React$Component);
+
+	    function UnselectedItems() {
+	        _classCallCheck(this, UnselectedItems);
+
+	        return _possibleConstructorReturn(this, (UnselectedItems.__proto__ || Object.getPrototypeOf(UnselectedItems)).apply(this, arguments));
+	    }
+
+	    _createClass(UnselectedItems, [{
+	        key: "render",
+	        value: function render() {
+	            var _this2 = this;
+
+	            var items = this.props.items.filter(function (element) {
+	                return !element.selected;
+	            }).map(function (element, index) {
+	                if (element.selected) {
+	                    return null;
+	                }
+
+	                return _react2.default.createElement(
+	                    "tr",
+	                    { key: index },
+	                    _react2.default.createElement(
+	                        "td",
+	                        { className: "ls-text-sm" },
+	                        element.id,
+	                        " - ",
+	                        element.name
+	                    ),
+	                    _react2.default.createElement(
+	                        "td",
+	                        { className: "ls-text-sm ls-txt-right" },
+	                        "R$ 99,00"
+	                    ),
+	                    _react2.default.createElement(
+	                        "td",
+	                        { className: "ls-text-sm ls-txt-right" },
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#", "aria-label": "Ver imagem do produto", className: "ls-text-xl ls-sm-margin-right ls-tooltip-left" },
+	                            _react2.default.createElement("span", { className: "ls-ico-images" })
+	                        ),
+	                        _react2.default.createElement(
+	                            "button",
+	                            { className: "ls-btn-xs ls-btn-primary", onClick: _this2.props.onSelect, "data-item-id": element.id },
+	                            "Selecionar"
+	                        )
+	                    )
+	                );
+	            });
+
+	            var style = {
+	                height: '280px',
+	                overflow: 'scroll'
+	            };
+
+	            return _react2.default.createElement(
+	                "div",
+	                { style: items.length > 5 ? style : {} },
+	                _react2.default.createElement(
+	                    "table",
+	                    { className: "ls-table ls-table-striped ls-table-bordered ls-lg-margin-bottom" },
+	                    _react2.default.createElement(
+	                        "tbody",
+	                        null,
+	                        items
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return UnselectedItems;
+	}(_react2.default.Component);
+
+	exports.default = UnselectedItems;
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SelectedItems = function (_React$Component) {
+	    _inherits(SelectedItems, _React$Component);
+
+	    function SelectedItems() {
+	        _classCallCheck(this, SelectedItems);
+
+	        return _possibleConstructorReturn(this, (SelectedItems.__proto__ || Object.getPrototypeOf(SelectedItems)).apply(this, arguments));
+	    }
+
+	    _createClass(SelectedItems, [{
+	        key: "render",
+	        value: function render() {
+	            var _this2 = this;
+
+	            var items = this.props.items.filter(function (element) {
+	                return element.selected;
+	            }).map(function (element, index) {
+	                return _react2.default.createElement(
+	                    "tr",
+	                    { key: index },
+	                    _react2.default.createElement(
+	                        "td",
+	                        { className: "ls-text-sm" },
+	                        element.id,
+	                        " - ",
+	                        element.name
+	                    ),
+	                    _react2.default.createElement(
+	                        "td",
+	                        { className: "ls-text-sm ls-txt-right" },
+	                        "R$ 99,00"
+	                    ),
+	                    _react2.default.createElement(
+	                        "td",
+	                        { className: "ls-text-sm ls-txt-right" },
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "#", "aria-label": "Ver imagem do produto", className: "ls-text-xl ls-sm-margin-right ls-tooltip-left" },
+	                            _react2.default.createElement("span", { className: "ls-ico-images" })
+	                        ),
+	                        _react2.default.createElement(
+	                            "button",
+	                            { className: "ls-btn-xs ls-btn-danger", onClick: _this2.props.onRemove, "data-item-id": element.id },
+	                            "Remover"
+	                        )
+	                    )
+	                );
+	            });
+
+	            if (!items.length) {
+	                return null;
+	            }
+
+	            var style = {
+	                height: '280px',
+	                overflow: 'scroll'
+	            };
+
+	            return _react2.default.createElement(
+	                "div",
+	                null,
+	                _react2.default.createElement(
+	                    "h5",
+	                    null,
+	                    "Produtos selecionados"
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { style: items.length > 5 ? style : {} },
+	                    _react2.default.createElement(
+	                        "table",
+	                        { className: "ls-table ls-table-striped ls-table-bordered ls-no-margin-bottom" },
+	                        _react2.default.createElement(
+	                            "tbody",
+	                            null,
+	                            items
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SelectedItems;
+	}(_react2.default.Component);
+
+	exports.default = SelectedItems;
+
+/***/ },
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29552,7 +29775,7 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _Modal = __webpack_require__(255);
+	var _Modal = __webpack_require__(257);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -29698,7 +29921,7 @@
 	exports.default = AppsPage;
 
 /***/ },
-/* 255 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

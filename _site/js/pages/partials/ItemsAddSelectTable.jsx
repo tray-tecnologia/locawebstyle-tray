@@ -1,5 +1,8 @@
 import React from 'react';
 
+import UnselectedItems from './UnselectedItems.jsx';
+import SelectedItems from './SelectedItems.jsx';
+
 export default class ItemsAddSelectTable extends React.Component {
 
     onSelect(event) {
@@ -100,9 +103,9 @@ export default class ItemsAddSelectTable extends React.Component {
                     </fieldset>
                 </div>
 
-                {unselectedItemsTable}
+                <UnselectedItems items={this.props.items} onSelect={this.onSelect.bind(this)} />
 
-                {selectedItemsTable}
+                <SelectedItems items={this.props.items} onRemove={this.onRemove.bind(this)} />
             </div>
         );
     }
