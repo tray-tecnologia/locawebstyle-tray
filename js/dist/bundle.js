@@ -28921,6 +28921,10 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var fixedBarStyle = {
+	                width: 'calc(100% - 325px)'
+	            };
+
 	            return _react2.default.createElement(
 	                'div',
 	                null,
@@ -28973,16 +28977,20 @@
 	                    _react2.default.createElement(_ItemsForm2.default, { className: 'ls-lg-margin-bottom' }),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right' },
+	                        { className: 'ls-bg-white ls-alert-fixed-bottom ls-no-padding', style: fixedBarStyle },
 	                        _react2.default.createElement(
-	                            _reactRouter.Link,
-	                            { to: '/items', className: 'ls-btn' },
-	                            'Cancelar'
-	                        ),
-	                        _react2.default.createElement(
-	                            'button',
-	                            { type: 'submit', className: 'ls-btn-primary' },
-	                            'Salvar'
+	                            'div',
+	                            { className: 'ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right' },
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/items', className: 'ls-btn' },
+	                                'Cancelar'
+	                            ),
+	                            _react2.default.createElement(
+	                                'button',
+	                                { type: 'submit', className: 'ls-btn-primary' },
+	                                'Salvar'
+	                            )
 	                        )
 	                    )
 	                )

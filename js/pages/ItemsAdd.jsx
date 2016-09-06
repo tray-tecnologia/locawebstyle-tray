@@ -42,6 +42,10 @@ class ItemsAdd extends React.Component {
     }
 
     render() {
+        let fixedBarStyle = {
+            width: 'calc(100% - 325px)'
+        };
+
         return (
             <div>
                 <Breadcrumb title="Incluir Item" />
@@ -73,9 +77,11 @@ class ItemsAdd extends React.Component {
 
                     <ItemsForm className="ls-lg-margin-bottom" />
 
-                    <div className="ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right">
-                        <Link to="/items" className="ls-btn">Cancelar</Link>
-                        <button type="submit" className="ls-btn-primary">Salvar</button>
+                    <div className="ls-bg-white ls-alert-fixed-bottom ls-no-padding" style={fixedBarStyle}>
+                        <div className="ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right">
+                            <Link to="/items" className="ls-btn">Cancelar</Link>
+                            <button type="submit" className="ls-btn-primary">Salvar</button>
+                        </div>
                     </div>
                 </form>
 

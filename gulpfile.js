@@ -14,11 +14,11 @@ gulp.task('dependencies', () => {
         'node_modules/locawebstyle/dist/stylesheets/locastyle.css',
         'node_modules/locawebstyle/dist/javascripts/libs/jquery-2.1.0.min.js',
         'node_modules/locawebstyle/dist/javascripts/locastyle.js',
-    ]).pipe(gulp.dest('./assets'));
+    ], { read: false }).pipe(gulp.dest('./assets'));
 
     gulp.src([
         'node_modules/locawebstyle/dist/stylesheets/fonts/**',
-    ]).pipe(gulp.dest('./assets/fonts'));
+    ], { read: false }).pipe(gulp.dest('./assets/fonts'));
 });
 
 /**
@@ -68,7 +68,7 @@ gulp.task('watch', function () {
  * Push build to gh-pages
  */
 gulp.task('deploy', function () {
-  return gulp.src("./_site")
+  return gulp.src('./_site/**/*')
     .pipe(deploy())
 });
 
