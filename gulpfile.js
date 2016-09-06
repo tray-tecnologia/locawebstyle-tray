@@ -15,6 +15,10 @@ gulp.task('dependencies', () => {
         'node_modules/locawebstyle/dist/javascripts/libs/jquery-2.1.0.min.js',
         'node_modules/locawebstyle/dist/javascripts/locastyle.js',
     ]).pipe(gulp.dest('./assets'));
+
+    gulp.src([
+        'node_modules/locawebstyle/dist/stylesheets/fonts/**',
+    ]).pipe(gulp.dest('./assets/fonts'));
 });
 
 /**
