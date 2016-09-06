@@ -2,7 +2,7 @@
   "name": "locawebstyle-tray",
   "version": "0.0.1",
   "description": "Padrão de utilização do LS na Tray",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "test": "jest",

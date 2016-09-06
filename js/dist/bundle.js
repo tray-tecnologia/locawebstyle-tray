@@ -27870,11 +27870,6 @@
 	    }
 
 	    _createClass(ItemsActions, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            // locastyle.general.init();
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -28886,8 +28881,11 @@
 	                message: '',
 	                title: '',
 	                type: ''
-	            }
+	            },
+	            valid: false
 	        };
+
+	        _this.timeout = null;
 	        return _this;
 	    }
 
@@ -28914,6 +28912,18 @@
 	            }, 4000);
 	        }
 	    }, {
+	        key: 'change',
+	        value: function change(event) {
+	            var _this3 = this;
+
+	            var valid = event.currentTarget.checkValidity();
+
+	            clearTimeout(this.timeout);
+	            this.timeout = setTimeout(function () {
+	                _this3.setState({ valid: valid });
+	            }, 1000);
+	        }
+	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            ls.collapse.init();
@@ -28925,13 +28935,19 @@
 	                width: 'calc(100% - 325px)'
 	            };
 
+	            var fixedBarClasses = 'ls-alert-fixed-bottom ls-no-padding';
+
+	            if (!this.state.valid) {
+	                fixedBarClasses += ' ls-display-none';
+	            }
+
 	            return _react2.default.createElement(
 	                'div',
 	                null,
 	                _react2.default.createElement(_Breadcrumb2.default, { title: 'Incluir Item' }),
 	                _react2.default.createElement(
 	                    'form',
-	                    { className: 'ls-form', onSubmit: this.submitNewItem.bind(this) },
+	                    { className: 'ls-form', onChange: this.change.bind(this), onSubmit: this.submitNewItem.bind(this) },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { 'data-ls-module': 'collapse', 'data-target': '#30', className: 'ls-collapse ls-box ls-box-gray' },
@@ -28977,10 +28993,10 @@
 	                    _react2.default.createElement(_ItemsForm2.default, { className: 'ls-lg-margin-bottom' }),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'ls-bg-white ls-alert-fixed-bottom ls-no-padding', style: fixedBarStyle },
+	                        { className: fixedBarClasses, style: fixedBarStyle },
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: 'ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right' },
+	                            { className: 'ls-box ls-box-gray ls-txt-right ls-no-margin-left ls-no-margin-right ls-float-right' },
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
 	                                { to: '/items', className: 'ls-btn' },
