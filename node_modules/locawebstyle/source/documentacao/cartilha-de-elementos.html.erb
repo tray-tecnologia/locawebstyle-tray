@@ -1,0 +1,254 @@
+---
+title: Cartilha de elementos
+description:
+layout: false
+---
+
+<%= partial 'partials/doc-header' %>
+
+<header class="doc-header container">
+  <%= partial 'partials/doc-menu'%>
+  <h1 class="doc-logo"><a href="/"><strong>Locaweb</strong> Style</a></h1>
+</header>
+
+<div class="doc-title-intro">
+  <div class="container">
+    <h1>Documentação</h1>
+    <p>Saiba todas as features que te ajudarão a produzir sistemas mais rapidamente.</p>
+  </div>
+</div>
+
+<%= partial 'partials/doc-menu-top' %>
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Abas <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes", :class => 'ls-tag-info ls-float-right' %></h2>
+
+  <hr>
+  <%= partial 'documentacao/shared/abas' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Alertas <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/alertas", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/alerts/alerts' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Tabelas <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/tabelas", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/table/table' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Barra de progresso <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/barra-de-progresso", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/progress-bar/progress' %>
+  <br>
+  <div data-ls-module="progressBar" role="progressbar" aria-valuenow="100" class="ls-left-percentage"></div>
+  <br>
+  <div data-ls-module="progressBar" role="progressbar" aria-valuenow="80" class="ls-animated"></div>
+
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Botão Switch <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/botao-switch", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/switch/switch' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Botões <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/botoes", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/botoes/buttons' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Box <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/box-generico/", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+
+  <%= partial 'documentacao/shared/box/box-big-small' %>
+</div>
+
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Box de filtro e busca<%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/box-de-filtro", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+
+
+  <%= partial 'documentacao/shared/box-de-filtro/filter-time' %>
+
+  <%= partial 'documentacao/shared/box-de-filtro/filter-time-advanced' %>
+
+  <%= partial 'documentacao/shared/box-de-filtro/filter-status' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Breadcrumb <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/breadcrumb", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/breadcrumb/breadcrumb-more' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Formulários <%= link_to 'ver documentação', "#{base_url}/documentacao/formularios/", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="doc-title-5">Formulários na horizontal</h3>
+      <%= partial 'documentacao/shared/form/form-horizontal.erb' %>
+      <br><br>
+      <h3 class="doc-title-5">Formulários na vertical</h3>
+      <%= partial 'documentacao/shared/form/form-vertical.erb' %>
+      <br><br>
+      <h3 class="doc-title-5">Formulários inline</h3>
+      <%= partial 'documentacao/shared/form/form-horizontal-inline.erb' %>
+    </div>
+  </div>
+</div>
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Contador de Caracteres <%= link_to 'ver documentação', "#{base_url}/documentacao/formularios/contador", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/contador.erb' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Select personalizado <%= link_to 'ver documentação', "#{base_url}/documentacao/formularios/select-customizado/", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-5">
+      <%= partial 'documentacao/shared/custom-fields', locals: {field: 'select'} %>
+    </div>
+  </div>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Prefixos e sufixos de campos de formulário <%= link_to 'ver documentação', "#{base_url}/documentacao/formularios/prefixos-sufixos", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <%= partial 'documentacao/shared/form/fields-prefix-sufix.erb' %>
+    </div>
+  </div>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Collapses <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/collapse", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr >
+  <%= partial('documentacao/shared/collapse/collapse', :locals => { :id => 1, :quant => 2, :header => "Título", content: (lorem.paragraphs 1)  }) %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Dropdown <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/dropdown", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/dropdown' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Filtro de exibição e Paginação <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/paginacao", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/pagination/pagination' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Footer</h2>
+  <hr>
+  <%= partial 'documentacao/shared/footer' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Ícones <%= link_to 'ver documentação', "#{base_url}/documentacao/css/icones", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/icons' %>
+</div>
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Ícones de Painel<%= link_to 'ver documentação', "#{base_url}/documentacao/css/icones-panel", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/locastyle-panel-icons' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Listas <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/listas", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/lists/lists' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Modal <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/modal", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/modal' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Popover <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/popover", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/popover' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Tags <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/tags", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/tags-links' %>
+  <br><br>
+  <br><br>
+  <%= partial 'documentacao/shared/tags' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Tooltip <%= link_to 'ver documentação', "#{base_url}/documentacao/componentes/tooltip", :class => 'ls-tag-info ls-float-right' %></h2>
+  <hr>
+  <%= partial 'documentacao/shared/tooltip' %>
+</div>
+
+<hr class="doc-hr">
+
+<div class="doc-section container">
+  <h2 class="doc-title-2">Separador com texto</h2>
+  <hr>
+  <%= partial 'documentacao/shared/separator' %>
+</div>
+
+<%= partial 'partials/doc-footer' %>

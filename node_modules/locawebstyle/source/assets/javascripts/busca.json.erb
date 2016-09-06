@@ -1,0 +1,11 @@
+{
+  <% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
+  <% pages.each do |p, index| %>
+  "<%=p.destination_path.gsub('/index.html','')%>" :   {
+      "title": "<%= p.data.title %>",
+      "description": "<%= p.data.description %>",
+      "path": "<%=p.destination_path.gsub('/index.html','')%>"
+  }<% if pages.last != p %>,<% end %>
+  <% end %>
+}
+

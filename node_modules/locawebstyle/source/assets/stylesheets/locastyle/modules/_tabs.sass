@@ -1,0 +1,96 @@
+.ls-tabs-nav:not(.in-dropdown)
+  position: relative
+  z-index: 2
+  margin: 0
+
+  li
+    position: relative
+    list-style: none
+    display: inline-block
+    border: 1px solid transparent
+    border-bottom: none
+    border-radius: $default-radius $default-radius 0 0
+    line-height: 1
+    font-size: remtopx(.875)
+    margin-right: -3px
+
+    a
+      color: #fff
+      display: inline-block
+      padding: 11px
+
+    &.ls-active
+      border-color: $gray1
+      top: 0px
+
+      a
+        margin-top: 0px
+        color: #333
+        padding: 15px 16px 12px
+
+.ls-tabs-nav
+  .ls-dropdown-tabs
+    [class*="ls-btn"]
+      background-color: transparent
+      vertical-align: initial
+
+  li:not(.ls-active)
+    [class*="ls-dropdown"].ls-dropdown-tabs [class*="ls-btn"]
+      padding: 11px 12px 11px
+
+      &:after
+        border-top-color: #fff
+
+  li
+    [class*="ls-dropdown"].ls-dropdown-tabs [class*="ls-btn"]
+      border: 0
+      -webkit-transition: none
+      -moz-transition: none
+      -o-transition: none
+      transition: none
+
+      & + .in-dropdown
+        margin-left: -1px
+
+        li
+          width: 100%
+          background-color: transparent
+          border: none
+
+          a
+            width: 100%
+            color: #333
+            display: block
+            padding: 8px 20px
+
+.ls-tabs-container
+  clear: both
+  position: relative
+  z-index: 1
+  top: -1px
+
+  .ls-tab-content
+    +border-radius(0 $default-radius $default-radius $default-radius)
+    display: none
+    padding: 20px 15px
+    margin-bottom: 20px
+    border: 1px solid $gray1
+    border-bottom-width: 3px
+    background-color: #fff
+    @extend .ls-clearfix
+
+    &.ls-active
+      display: block
+
+    p
+      padding: 0
+      font-size: remtopx(.875)
+
+      &:last-child
+        margin-bottom: 0
+
+    .ls-tab-content
+      padding: 0
+      border: none
+      background: none
+      margin: 0

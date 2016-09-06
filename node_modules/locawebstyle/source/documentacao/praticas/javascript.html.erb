@@ -1,0 +1,458 @@
+---
+title: Práticas de JavaScript
+description: Se quiser contribuir com JavaScript, siga essas práticas
+---
+
+<%= partial 'partials/doc-menu-intro'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <h2 class="doc-title-3">Pattern JavaScript</h2>
+  <p>O pattern utilizado por nós é o <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">Revealing Module Pattern</a>.</p>
+  <p>As principais vantagens de manter este padrão são:</p>
+
+  <ol>
+    <li>Consistência de código;</li>
+    <li>Melhores práticas;</li>
+    <li>Escalabilidade;</li>
+    <li>Fácil manutenção;</li>
+    <li>Uniformidade entre projetos.</li>
+  </ol>
+
+  <p>A ideia é que o código mantenha unidade, seja ele escrito por uma ou várias pessoas, dentro de um projeto e entre projetos diferentes, diminuindo o tempo de aprendizado.</p>
+
+  <p>As regras a seguir propoem um padrão mínimo para desenvolvimento. O mais importante é manter a consistência de estilo de código. O que for escolhido como estilo para o seu projeto deverá ser seguido em todos os arquivos.</p>
+
+  <h2 class="doc-title-4">Padrões de escrita</h2>
+  <p><strong>Identação:</strong> utilizamos 2 espaços, mas o mais importante é seguir um estilo único. Nunca misture espaços e tabs em único arquivo. Para facilitar incluímos no projeto um arquivo de configuraçao de editores, o ".editorconfig", saiba mais sobre ele em <a href="http://editorconfig.org/" target="_blank">editorconfig.org</a> </p>
+  <p>Existem plugins para vários editores, no nosso time usamos:</p>
+  <ul>
+    <li><a href="https://github.com/sindresorhus/editorconfig-sublime#readme" target="_blank" class="ls-color-theme">Plugin para Sublime Text</a></li>
+    <li><a href="https://github.com/editorconfig/editorconfig-vim#readme" target="_blank" class="ls-color-theme">Plugin para Vim</a></li>
+  </ul>
+
+  <p><strong>Sintaxe:</strong> para separaçao dos blocos de código, utilizamos o estilo1TBS, por exemplo:</p>
+
+  <% code("javascript") do %>
+if ( x < 0 ) {
+  console.log( x )
+} else {
+  console.log( y )
+}
+  <% end %>
+  <p>Observe os alinhamentos, quebras de linhas, posição das chaves e espaços entre variáveis e operadores.</p>
+
+  <h2 class="doc-title-4">Revealing Module Pattern</h2>
+  <p>Para melhorar a organização dos arquivos, funções, performance e diminuir a chance de erros e conflitos, adotamos o <em>Revealing Module Pattern</em> do <a target="_blank" href="http://christianheilmann.com/">Christian Heilmann</a> .</p>
+  <p><strong>As vantagens desse pattern são:</strong> organização, clareza, performance, expõe publicamente apenas as funções e variáveis que se deseja e namespace único evitando sobrescrever métodos facilmente.</p>
+  <p>Leia mais sobre ele no livro do <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript" target="_blank">Addy Osmani</a>.</p>
+  <p>Um exemplo:</p>
+
+  <% code("javascript") do %>
+// Define o objeto global do projeto, igual a um já existente ou cria um novo objeto.
+var projeto = projeto || {};
+
+// Define o módulo no objeto global.
+projeto.moduloUm = (function() {
+  'use strict';
+
+  function iniciar() {
+    interno();
+    // ...
+  }
+
+  function atualizar() {
+    // ...
+  }
+
+  function interno() {
+    // ...
+  }
+
+  return {
+    iniciar:iniciar,
+    atualizar: atualizar
+  };
+
+}());
+  <% end %>
+
+  <h2 class="doc-title-4">Módulos</h2>
+  <p>Todos os scripts do Locaweb Style são modularizados ao máximo. Só iniciamos um comportamento se ele precisar ser usado. Todos os módulos ou os triggers destes módulos, terão um atributo <code>data-ls-module="#"</code> que avisará o Locaweb Style para iniciar o módulo determinado. Para citar alguns exemplos: <code>data-ls-module="modal"</code>, <code>data-ls-module="collapse"</code> e <code>data-ls-module="tabs"</code></p>
+
+  <p>O ideal é ter um módulo por arquivo, e que eles não se iniciem sozinhos.</p>
+  <p>Um módulo central que funcione como controlador de quais serão executados é uma boa prática.</p>
+  <p>Abaixo, colocamos três exemplos de módulos e como eles são carregados:</p>
+
+  <h3 class="doc-title-6">Módulo de gráficos no arquivo charts.js</h3>
+  <% code("javascript") do %>
+var projeto = projeto || {};
+projeto.Grafico = (function() {
+  'use strict';
+
+  function iniciar() {
+    inserirGrafico();
+  }
+
+  function inserirGrafico() {
+    // ...
+  }
+
+  return {
+    iniciar:iniciar
+  };
+
+}());
+  <% end %>
+
+  <h3 class="doc-title-6">Módulo servidores no arquivo servers.js</h3>
+  <% code("javascript") do %>
+var projeto = projeto || {};
+projeto.Servidores = (function() {
+  'use strict';
+
+  function iniciar() {
+    buscaServidores();
+  }
+
+  function buscaServidores() {
+    insereListaServidores()
+    // ...
+  }
+
+  return {
+    iniciar:iniciar
+  };
+
+}());
+  <% end %>
+
+
+  <h3 class="doc-title-6">carregaModulos.js</h3>
+  <p>Finalmente o arquivo que controla quando cada módulo será executado, da maneira que preferir</p>
+
+  <% code("javascript") do %>
+var projeto = projeto || {};
+projeto.carregaModulos = (function($) {
+  'use strict';
+
+  function inicio() {
+    if ( $('.grafico').size() ) {
+      projeto.graficos.inicio();
+    }
+
+    if ( window.location.pathname === '/servidores' ) {
+      projeto.servidores.inicio();
+    }
+  }
+
+  return {
+    inicio:inicio
+  };
+
+}(jQuery));
+
+projeto.carregaModulos.inicio();
+  <% end %>
+
+  <h2 class="doc-title-4">Código em apenas um idioma</h2>
+  <p>Para facilitar a manutençao e a legibilidade do código, procure usar apenas um idioma, em nomes de funções, variáveis e comentários.</p>
+
+  <p>O mais importante é seguir um padrão, mantendo ele do início ao fim do projeto. Exceções, claro, são libraries e plugins que utilizados.</p>
+
+  <p>Seja qual for a língua utilizada é importante ser claro, utilizando nomes descritivos, evitando ser prolixo nos nomes, funções e comentários, como abordado no tópico Seja compreensível abaixo.</p>
+
+
+  <h2 class="doc-title-4">'use strict';</h2>
+  <p>Ao utilizar "use strict"; no início de códigos ou funções, declara-se uma mudança na sintaxe do Javascript, que lança mais exceções mostrando problemas no código. Os erros mais comuns são uso de palavras reservadas do javascript (ECMAScript 5 e 6), uso de variáveis não declaradas e uso de funções descontinuadas.</p>
+
+  <p>Para utilizar, basta inserir a string 'use strict'; antes do bloco de código a ser avaliado ou função. Exemplos:</p>
+  <% code("javascript") do %>
+"use strict";
+idade = 17; // lança um erro de referência
+
+function soma(a, b, c) { // erro de sintaxe
+  "use strict";
+  return a + b + c; // exibe o erro se a função é chamada
+}
+  <% end %>
+
+  <p>Leia mais em <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode" target="_blank">MDN - Strict mode</a></p>
+
+  <h2 class="doc-title-4">Nomenclatura de pastas, arquivos, módulos e plugins</h2>
+  <p>Um projeto pode ter muitos arquivos javascript, então é importante que estejam bem organizados desde o início, separados e bem nomeados.</p>
+
+  <p>A estrutura pode variar muito de projeto para projeto, mas as recomendações mínimas são:</p>
+
+  <ul>
+    <li>Nomes dos arquivos na mesma língua em que são escritos;</li>
+    <li>Nomes sem camelCase;</li>
+    <li>Pastas separadas por tipos (bibliotecas/frameworks/plugins);</li>
+    <li>Plugins identificados por versão.</li>
+  </ul>
+
+  <% code("javascript") do %>
+── javascripts
+     ├── libs
+     │   ├── jquery.min.js
+     │   └── underscore.min.js
+     │   └── highcharts.min.js
+     ├── plugins
+     │   ├── jquery.validate-1.2.js
+     │   ├── jquery.slider-3.1.js
+     │   └── jquery.validate.addicional-methods-0.8.js
+     ├── modules
+     │   ├── charts
+     │   |   ├── servers.js
+     │   |   └── transfer.js
+     │   ├── servers.js
+     │   └── servers.forms.js
+     ├── utils.js
+     └── main.js
+  <% end %>
+
+  <h2 class="doc-title-4">Seja compreensível</h2>
+  <p>Use nomes de variáveis e funções auto explicativos e simples. Crie algum padrão e mantenha em todo o projeto.</p>
+  <p>No Locastyle utilizamos variáveis e funções camelCase, pela facilidade de leitura, escrita e praticidade ao se trabalhar.</p>
+  <p>Exemplos:</p>
+  <h3 class="doc-title-6">Variáveis com nomes ruins:</h3>
+  <% code("javascript") do %>
+// Curtos, posicionamento no código e abreviações
+var x1;
+var campo1;
+var latXY;
+
+// Longos demais
+var valorEixoXGraficoConsumo;
+var campoTextoPrimeiroNome;
+  <% end %>
+
+  <h3 class="doc-title-6">Funções com nomes ruins:</h3>
+  <% code("javascript") do %>
+// Nomes que descrevem o código, nao o objetivo da função
+function maiorDeDezoitoAnos(idade){
+  return idade >= 18;
+}
+// É melhor descrever o objetivo
+function possuiMaioridade(idade){
+  return idade >= 18;
+}
+  <% end %>
+
+  <h3 class="doc-title-6">É uma boa ideia criar um padrão para suas variáveis e funções, como por exemplo:</h3>
+  <% code("javascript") do %>
+// Variáveis com $ no início são elementos/objetos jQuery
+var $header    = $('#header');
+var $menuItens = $('#menu a');
+
+// Maiúsculas para constantes
+var PASTA_IMAGENS = '/assets/images/';
+var NOME_CLIENTE = 'Fulano de Tal';
+
+// _ no início para variáveis e funções privadas
+var _contador = 0;
+  <% end %>
+  <p>Confira o padrão de nomenclatura do <a href="http://javascript.crockford.com/code.html#names" target="_blank"></a> Douglas Crockford</p>
+
+  <h3 class="doc-title-5">Evite globais</h3>
+  <p>No geral é uma péssima idéia, porque aumenta a chance de ter algo sobrescrito. Uma opção é utilizar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures" target="_blank"></a> closures e <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript" target="_blank"></a> module pattern.</p>
+
+
+  <h3 class="doc-title-5">Seja consistente no estilo de código</h3>
+  <p>É possível escrever seu código de muitas maneiras, mas procure manter o mesmo estilo em todo seu projeto. Mantendo um padrão nos nomes, identacões, patterns, etc.</p>
+  <p>Uma dica, utilize o <a href="http://www.jslint.com/" target="_blank">jslint</a> para validar seu código.</p>
+
+  <h3 class="doc-title-5">Escreva os comentários necessários</h3>
+  <p>É comum ouvir "Um bom código não precisa de explicação", mas na prática em projetos maiores, procure explicar a finalidade do seu código. Muitas pessoas, de diferentes níveis, podem ter que trabalhar no seu código e nem sempre elas tem experiência, tempo ou conhecimento do negócio para entender tudo. Facilite o desenvolvimento e manutenção comentando, mas não explicando o que ele faz, mas qual a regra de negócio.</p>
+  <p>Exemplo:</p>
+  <% code("javascript") do %>
+// Ruim: verifica se é maior de 18
+// Bom: menores de idade são redirecionados
+if( idade >= 18 ){ ... }
+  <% end %>
+  <p>Lembrando que comentários devem existir apenas na versão de desenvolvimento, devendo ser removidos no arquivo minificado que é entregue em produção.</p>
+
+  <h3 class="doc-title-5">Use testes automatizados</h3>
+  <p>Utilizamos <a href="http://pivotal.github.io/jasmine/" target="_blank">Jasmine</a> para testar o Locaweb Style, assim como os comentários, é uma ótima forma de explicar o que seu código faz ou deveria fazer. Além de ter o dispositivo de alerta quando algum teste quebra, dá mais segurança para manutenções e inclusão de novas funcionalidades.</p>
+
+
+  <h3 class="doc-title-5">Evite misturar tecnologias</h3>
+  <p>Na prática do dia a dia, algo bem simples: estilize seu HTML com CSS, não com JS.</p>
+  <% code("javascript") do %>
+// Errado
+$('#nome-usuario').css({
+  'border': '1px solid red',
+  'color': 'red'
+});
+// Certo
+$('#nome-usuario').addClass('erro');
+  <% end %>
+  <p>Crie os estilos que precisar (e animações, quando possível) no CSS, e no javascript controle quando os estilos são aplicados, em vez de aplicar propriedades.</p>
+
+  <p>Outro ponto importante é seguir a jQuery. Eu sei que você vai querer escrever JavaScript puro em alguns momentos. Mas isso complica a leitura do código e sai totalmente do padrão inicial definido que é usar a abstração da jQuery. Por isso, use sempre os comandos da jQuery.</p>
+
+  <h3 class="doc-title-5">Use sintaxe abreviada</h3>
+  <p>Conheça as notações de variáveis e funções abreviadas e procure usá-las.</p>
+  <p>Exemplo:</p>
+  <% code("javascript") do %>
+// Use
+var cores = ['rosa', 'azul', 'verde'];
+
+// Em vez de
+var cores = new Array();
+cores[0]='rosa';
+cores[1]='azul';
+cores[2]='verde';
+
+// Use
+var margem = altura || 10;
+
+// Em vez de
+if(altura === undefined){
+  var margem = altura;
+} else {
+  var margem = 10;
+}
+
+// Use
+var direcao = (x > 100) ? 1 : -1;
+
+// Em vez de
+var direcao;
+if(x > 100){
+  direcao = 1;
+} else {
+  direcao = -1;
+}
+  <% end %>
+
+
+  <h3 class="doc-title-5">Modularize seu código</h3>
+  <p>Evite escrever funções, trechos de código muito longos, ou aninhados. Procure separar regras e evite códigos repetidos.</p>
+  <p>Exemplo:</p>
+  <% code("javascript") do %>
+// Em vez de
+$('#botao1').on('click', function(){
+  $('#resultado').load('ajax/lista-pessoas.html', function() {
+    $('#formulario').slideUp()
+  });
+})
+$('#botao2').on('click', function(){
+  $('#resultado').load('ajax/lista-empresas.html', function() {
+    $('#formulario').slideUp()
+  });
+})
+//...
+
+// Faça
+function ocultaFormulario(){
+  $('#formulario').slideUp();
+}
+$('#botao1').on('click', function(){
+  $('#resultado').load('ajax/lista-pessoas.html', function() {
+    ocultaFormulario();
+  });
+})
+$('#botao2').on('click', function(){
+  $('#resultado').load('ajax/lista-empresas.html', function() {
+    ocultaFormulario();
+  });
+})
+
+// Ou melhor
+function ocultaFormulario(){
+  $('#formulario').slideUp();
+}
+function carregaDados( elemento, url){
+  $(elemento).on('click', function(){
+    $('#resultado').load(url, function() {
+      ocultaFormulario();
+    });
+  })
+}
+carregaDados('#botao1', 'ajax/lista-pessoas.html');
+carregaDados('#botao2', 'ajax/lista-empresas.html');
+  <% end %>
+
+  <h3 class="doc-title-5">Evite muitos aninhamentos</h3>
+  <p>Facilite o entendimento e manutençao dos seus códigos. Utilize as práticas anteriores e evite um código do tipo:</p>
+  <% code("javascript") do %>
+$('#botao').on('click', function(){
+  $.ajax({
+    type: "POST",
+    url: 'usuarios',
+    success: function(data){
+      $('resultado').fadeIn('fast', function(){
+        $('#formulario').animate({
+          heigth : 0,
+          opacity: 0
+        }, 300, function(){
+            $('#mensagem').animate({
+              heigth : 200,
+              opacity: 1
+            }, 300, function(){
+              // ...
+            })
+          }
+        )
+      })
+    },
+    error: function(){
+      $('#mensagem').text(mensageErro);
+    }
+  });
+});
+  <% end %>
+
+
+  <h3 class="doc-title-5">Otimize loops</h3>
+  <p>Existem várias maneiras de fazer loops, uma melhores que outras. Hoje, comum encontrar códigos usando loops do jquery ($.each) onde loops nativos poderiam resolver. Uma técnica simples para melhorar ainda mais os loops for() nativos é fazer cache de variáveis de comparação, evitando executar o .length a cada iteração.</p>
+  <p>Exemplo:</p>
+  <% code("javascript") do %>
+// Use
+var cores = ['Azul', 'verde', 'rosa', 'vermelho'];
+for(var indice = 0, quantCores = cores.length; indice < quantCores; indice++){ //
+  console.log( cores[indice] );
+}
+
+// em vez de
+var cores = ['Azul', 'verde', 'rosa', 'vermelho'];
+for(var indice = 0; indice < cores.length; indice++){
+  console.log( cores[indice]) ;
+}
+  <% end %>
+  <p>Para comparação, um teste de performance no <a href="http://jsperf.com/loops/111" target="_blank">jsperf</a> analisando diversos tipos de loop. O loop otimizado, como acima, executou 159k vezes, contra 113k vezes do tradicional.</p>
+
+  <h3 class="doc-title-5">Minimize acessos ao DOM</h3>
+  <p>Evite ao máximo acessar o DOM para buscar ou inserir informações. É lento e não se pode confiar no que está no DOM. Coisas simples podem minimizar o acesso, por exemplo, se alguma função precisa atualizar uma tabela no seu HTML, em vez de percorrer <td> por <td> alterando os valores, pode ser mais eficiente criar uma função que reescreva toda a tabela, e depois simplesmente troque a antiga pela nova. Outra simples é fazer cache de objetos jQuery, por exemplo:</p>
+  <% code("javascript") do %>
+// Em vez de
+$('#botaoEnviar').on( 'click', function(){
+  $(this).prop( 'disabled', true );
+  $('$formulario').addClass( 'enviando' );
+  $.post( 'ajax/contato', function( dados ) {
+    $('#mensagem').html( dados );
+    $('$formulario').removeClass( 'enviando' );
+    $('#botaoEnviar').prop( 'disabled', false );
+  });
+});
+
+// Faça
+var $botaoEnviar = $('#botaoEnviar');
+var $formulario  = $('#formulario');
+var $mensagem    = $('#mensagem');
+
+$botaoEnviar.on( 'click', function(){
+  $botaoEnviar.prop( 'disabled', true );
+  $formulario.addClass( 'enviando' );
+  $.post('ajax/contato', function( dados ) {
+    $mensagem.html( dados );
+    $formulario.removeClass( 'enviando' );
+    $botaoEnviar.prop( 'disabled', false );
+  });
+});
+  <% end %>
+
+</section>

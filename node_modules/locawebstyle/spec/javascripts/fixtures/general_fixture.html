@@ -1,0 +1,88 @@
+<div class="ls-group-btn ls-group-active">
+  <button id="activation_toggle_button_1" type="button" class="ls-btn active">Botão 1</button>
+  <button id="activation_toggle_button_2" type="button" class="ls-btn">Botão 2</button>
+  <button id="activation_toggle_button_3" type="button" class="ls-btn">Botão 3</button>
+</div>
+
+<button data-toggle-class="class">
+
+<input data-ls-fields-enable>
+
+<input class="ls-disabled">
+
+
+<a href="#" data-toggle-class="ls-display-none" data-target="#target1" id="toggleTextWithTarget">teste</a>
+<div id="target1" class="ls-display-none">teste</div>
+
+<a href="#" data-toggle-class="any-class" class="any-class" id="toggleTextWithoutTarget">teste</a>
+
+<label><input id="toggleClassCheckbox" type="checkbox" name="teste" value ="1" data-toggle-class="ls-display-none" data-target="#configs"> Configurações personalizadas</label>
+<div id="configs" class="ls-box ls-display-none">
+  teste
+</div>
+
+<label><input id="radio1" type="radio" name="teste2" value ="0" data-toggle-class="ls-display-none" data-target="#opt1"> Opção 1</label>
+<div id="opt1" class="ls-box ls-display-none"> <%= lorem.words 3 %> </div>
+<br>
+<label><input id="radio2" type="radio" name="teste2" value ="0" data-toggle-class="ls-display-none" data-target="#opt2"> Opção 2</label>
+<div id="opt2" class="ls-box ls-display-none"> <%= lorem.words 3 %> </div>
+<br>
+<label><input id="radio3" type="radio" name="teste2" value ="0" data-toggle-class="ls-display-none" data-target="#opt3"> Opção 3</label>
+<div id="opt3" class="ls-box ls-display-none"> <%= lorem.words 3 %> </div>
+<br>
+
+
+
+<form action="#" class="ls-form" data-ls-module="form">
+  <div id="domain-form" class="row ls-form-disable ls-form-text">
+    <label class="ls-label col-md-8">
+      <span class="ls-label-text ls-hidden-accessible">Domínio</span>
+      <div class="ls-prefix-group">
+        <span class="ls-label-text-prefix">http://</span>
+        <input name="dominio" placeholder="dominio" required type="text" value="opa.entregaemails.com">
+      </div>
+      <p><small>Status do DNS: Configurado corretamente</small></p>
+    </label>
+  </div>
+  <div class="domain-actions ls-display-none">
+    <button type="submit" class="ls-btn-primary">Salvar</button>
+    <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" >Cancelar</button>
+  </div>
+  <button id="editForm" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" class="ls-btn-primary domain-actions">Editar</button>
+</form>
+
+<form action="#" class="ls-form" data-ls-module="form">
+  <div id="domain-form2" class="row ls-form-disable">
+    <label class="ls-label col-md-8">
+      <span class="ls-label-text ls-hidden-accessible">Domínio</span>
+      <div class="ls-prefix-group">
+        <span class="ls-label-text-prefix">http://</span>
+        <input name="dominio" placeholder="dominio" required type="text" value="opa.entregaemails.com">
+      </div>
+      <p><small>Status do DNS: Configurado corretamente</small></p>
+    </label>
+  </div>
+  <div class="domain-actions ls-display-none">
+    <button type="submit" class="ls-btn-primary">Salvar</button>
+    <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" >Cancelar</button>
+  </div>
+  <button id="editForm" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" class="ls-btn-primary domain-actions">Editar</button>
+</form>
+
+<form action="#" class="ls-form" data-ls-module="form">
+  <div id="domain-form3" class="row ls-form-text">
+    <label class="ls-label col-md-8">
+      <span class="ls-label-text ls-hidden-accessible">Domínio</span>
+      <div class="ls-prefix-group">
+        <span class="ls-label-text-prefix">http://</span>
+        <input name="dominio" placeholder="dominio" required type="text" value="opa.entregaemails.com">
+      </div>
+      <p><small>Status do DNS: Configurado corretamente</small></p>
+    </label>
+  </div>
+  <div class="domain-actions ls-display-none">
+    <button type="submit" class="ls-btn-primary">Salvar</button>
+    <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" >Cancelar</button>
+  </div>
+  <button id="editForm" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" class="ls-btn-primary domain-actions">Editar</button>
+</form>

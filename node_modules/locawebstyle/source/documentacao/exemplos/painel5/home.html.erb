@@ -1,0 +1,103 @@
+---
+title: Entradas de DNS
+layout: panel
+theme_name: ls-theme-wine
+title_product: Zona de DNS
+html_class: ls-html-nobg ls-main-full
+panel: painel5
+---
+
+<h1 class="ls-title-intro ls-ico-pencil2">Zona de DNS</h1>
+<div class="ls-box ls-board-box">
+  <header class="ls-info-header">
+    <h2 class="ls-title-3">Informações gerais</h2>
+  </header>
+
+  <div id="sending-stats" class="row ls-clearfix">
+    <div class="col-sm-6 col-md-4">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4">Domínio</h6>
+        </div>
+        <div class="ls-box-body">
+          <span class="ls-board-data">
+            <strong>
+              REGISTRADO
+              <small>NA LOCAWEB</small>
+            </strong>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4">Servidores Dns</h6>
+        </div>
+        <div class="ls-box-body">
+          <p class="ls-board-data">
+            Primário (master): <b>ns1.locaweb.com.br</b><br>
+            Secundário (slave1): <b>ns2.locaweb.com.br</b><br>
+            Terciário (slave2): <b>ns3.locaweb.com.br</b>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4 color-default">Zona de Dns</h6>
+        </div>
+        <div class="ls-box-body">
+          <span class="ls-board-data">
+            <strong class="ls-color-theme">COM AUTORIDADE<small>NA LOCAWEB</small></strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ls-box">
+  <header class="ls-info-header">
+    <h2 class="ls-title-3">Adicionando entradas de DNS</h2>
+  </header><!-- /header -->
+  form
+</div>
+<div class="ls-box">
+  <header class="ls-info-header">
+    <h2 class="ls-title-3">Entradas de DNS</h2>
+  </header><!-- /header -->
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th class="ls-data-descending"><a href="#">Entrada</a></th>
+        <th class="hidden-xs">Tipo</th>
+        <th class="hidden-xs">Prioridade</th>
+        <th>Conteúdo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%- 10.times do |i| %>
+        <tr>
+          <td>www</td>
+          <td class="hidden-xs">CNAME</td>
+          <td class="hidden-xs">0</td>
+          <td>
+            dominio.com.br
+          </td>
+          <td class="ls-txt-right ls-regroup">
+            <a href="#" class="ls-btn-primary ls-btn-sm" data-ls-module="modal" data-action="http://locaweb.com.br/" data-content="" data-title="Editar entrada de DNS" data-class="ls-btn-primary" data-save="Salvar" data-close="Fechar">Editar</a>
+            <a href="#" class="ls-btn ls-btn-sm ls-btn-danger" >Excluir</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% content_for :sidebar_panel do %>
+  <%= partial 'documentacao/exemplos/painel5/sidebar' %>
+<% end %>

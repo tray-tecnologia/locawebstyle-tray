@@ -1,0 +1,136 @@
+.ls-pagination-filter
+  width: 100%
+  padding: 10px 0
+  font-size: remtopx(.8125)
+  color: $gray4
+  text-align: center
+
+.ls-filter-view
+
+  [class^="ls-custom-select"]
+    width: 90px
+
+[class*="ls-pagination"]
+  display: inline-block
+  list-style: none
+
+  li
+    @extend .ls-float-left
+    margin-left: -1px
+
+    &:first-child a
+      border-top-left-radius: 3px
+      border-bottom-left-radius: 3px
+
+      a
+        border-top-right-radius: $default-radius
+        border-bottom-right-radius: $default-radius
+
+    &:first-child.ls-active
+      border-top-left-radius: $default-radius
+      border-bottom-left-radius: $default-radius
+
+    &:last-child a
+      border-top-right-radius: 3px
+      border-bottom-right-radius: 3px
+
+    &:last-child.ls-active
+      border-top-right-radius: $default-radius
+      border-bottom-right-radius: $default-radius
+
+    &.ls-disabled a
+      color: $gray2
+      cursor: not-allowed
+
+      &:hover,
+      &:focus
+        background: none
+        color: $gray2
+
+    &.ls-active a,
+    &.ls-active a:hover,
+    &.ls-active .ls-gap
+      color: #fff
+
+    .ls-gap,
+    a
+      @extend .ls-float-left
+      padding: 9px 12px
+      position: relative
+      text-decoration: none
+      border: 1px solid $gray1
+      color: $gray4
+      line-height: 1
+      font-size: remtopx(.8125)
+
+      &:hover,
+      &:focus
+        color: $gray4
+        +rgba(background-color, $gray1,.2)
+
+  &.ls-pagination-sm
+    .ls-gap,
+    a
+      padding: 5px 10px
+      font-size: remtopx(.75)
+
+  &.ls-pagination-lg
+    .ls-gap,
+    a
+      padding: 14px 16px
+      font-size: remtopx(1)
+
+.ls-gap
+  cursor: pointer
+
+//
+// Next and previous buttons
+//
+.ls-pager
+  text-align: center
+  margin: 10px 0
+  overflow: hidden
+  font-size: remtopx(.75)
+  line-height: remtopx(.75)
+
+  li
+    display: inline
+
+    &.ls-previous a
+      @extend .ls-float-left
+
+    &.ls-next a
+      @extend .ls-float-right
+
+    &.ls-disabled a
+      color: $gray1
+      border-color: $gray1
+      cursor: not-allowed
+
+      &:hover,
+      &:focus
+        background: none
+        color: $gray1
+
+    a
+      display: inline-block
+      padding: 8px 15px
+      background-color: transparent
+      border-radius: $default-radius
+      border: solid 1px $gray1
+      color: $gray4
+      line-height: 1
+
+      &:hover,
+      &:focus
+        +rgba(background-color, $gray1,.2)
+
+@media screen and (min-width: $screen-sm)
+  .ls-pagination-filter
+    text-align: left
+
+  [class*="ls-pagination"]
+    float: right
+
+  .ls-filter-view
+    margin-top: 0

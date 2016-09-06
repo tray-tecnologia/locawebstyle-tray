@@ -1,0 +1,32 @@
+---
+title: Tela de Login
+layout: login
+---
+<div class="ls-login-box">
+  <h1 class="ls-login-logo"><%= image_tag "locastyle/logo-locaweb.jpg", title: "Logo login" %></h1>
+  <form role="form" class="ls-form ls-login-form" action="#">
+    <fieldset>
+
+      <label class="ls-label">
+        <b class="ls-label-text ls-hidden-accessible">Usuário</b>
+        <input class="ls-login-bg-user ls-field-lg" type="text" placeholder="Usuário" required autofocus>
+      </label>
+
+      <label class="ls-label">
+        <b class="ls-label-text ls-hidden-accessible">Senha</b>
+        <div class="ls-prefix-group">
+          <input id="password_field" class="ls-login-bg-password ls-field-lg" type="password" placeholder="Senha" required>
+          <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye" data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
+        </div>
+      </label>
+
+      <p><%= link_to "Esqueci minha senha", "forgot-password", class: "ls-login-forgot" %></p>
+
+      <input type="submit" value="Entrar" class="ls-btn-primary ls-btn-block ls-btn-lg">
+      <p class="ls-txt-center ls-login-signup">Não possui um usuário na Locaweb? <a href="#">Cadastre-se agora</a></p>
+
+    </fieldset>
+  </form>
+</div>
+
+<div class="ls-login-adv"><%= image_tag "banner-example.png", title: "Exemplo banner" %></div>

@@ -1,0 +1,31 @@
+---
+title: Select customizado
+description: Mudamos a aparência da select sem alterar o comportamento padrão do navegador
+---
+
+<%= partial 'partials/doc-menu-forms'%>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <p>Para estilizar uma <code>&lt;select&gt;</code>, é bem simples, basta envolvê-la em uma  <code>&lt;div&gt;</code>com a classe <code>ls-custom-select</code>e a mágica acontece.</p>
+
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/custom-fields', locals: {field: 'select'} %>
+  </div>
+  <% code("html") do %><%= partial 'documentacao/shared/custom-fields', locals: {field: 'select'} %><% end %>
+
+  <div class="ls-alert ls-alert-info">
+    <p>Foi usado apenas CSS, com suporte aos navegadores mais atuais, inclusive IE-8 ou superior.</p>
+  </div>
+
+  <h2 class="doc-title-3">Definindo largura da select através do Grid</h2>
+
+  <div class="ls-box-demo">
+    <%= partial 'documentacao/shared/custom-fields-grid' %>
+  </div>
+
+  <% code("html") do %> <%= partial 'documentacao/shared/custom-fields-grid' %><% end %>
+</section>

@@ -1,0 +1,100 @@
+.ls-list
+  border: 1px solid $gray1
+  border-left-width: 4px
+  color: $gray3
+  border-radius: $default-radius
+  margin-bottom: 10px
+  font-size: remtopx(.8125)
+
+  .ls-list-header
+    display: table
+    width: 100%
+
+    > div
+      padding: 15px
+      height: inherit
+
+    + .ls-list-content
+      border-top: 1px solid $gray1
+
+  .ls-list-label
+    +rgba(color, $gray3, .8)
+    display: block
+    font-size: remtopx(.8125)
+    padding-bottom: 2px
+
+    + strong
+      +rgba(color, $gray5, .8)
+
+  .ls-list-image
+    display: inline-block
+    margin-right: 10px
+    vertical-align: top
+
+  .ls-list-title
+
+    strong
+      color: $gray5
+
+    a,
+    strong
+      font-size: remtopx(1.125)
+      font-weight: 600
+
+    small
+      padding-top: 5px
+      display: block
+      font-size: remtopx(.8125)
+
+.ls-list-description
+
+  p
+    display: block
+    font-size: remtopx(.8125)
+
+  ul
+    margin-left: 20px
+    margin-bottom: 10px
+
+  li
+    font-size: remtopx(.8125)
+    line-height: 1.4
+
+  [class*="ls-btn"] + [class*="ls-btn"]
+    margin-right: 5px
+
+.ls-list-content
+  display: table
+  margin-left: 10px
+  width: calc(100% - 20px)
+  width: 98.5%\9
+
+  [class*="col-"]
+    border-left: 1px solid $gray1
+    padding-bottom: 12px
+    padding-top: 12px
+
+    &:first-child
+      border-color: transparent
+      padding-left: 5px
+
+  [class*="col-xs-12"]
+    border-left: none
+    border-top: 1px solid $gray1
+    text-align: center
+
+    &:first-child
+      border-top: none
+
+  + .ls-list-content
+    border-top: 1px solid $gray1
+
+
+@media screen and (min-width: 768px)
+
+  .ls-list-content
+
+    [class*="col-xs-12"]
+      border-left: 1px solid $gray1
+      border-top: none
+      text-align: left

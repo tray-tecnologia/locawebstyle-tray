@@ -1,0 +1,10 @@
+<div id="ls-popover-<%= @index %>" class="ls-popover ls-popover-<%= @placement || "top" %> <%= @customClasses %>">
+  <% if @title :%>
+  <div class="ls-popover-header">
+    <h3 class="title-3"> <%= @title %> </h3>
+  </div>
+  <% end %>
+  <% if @content :%>
+  <% end %>
+  <div class="ls-popover-content"> <%- @content %> </div>
+</div>

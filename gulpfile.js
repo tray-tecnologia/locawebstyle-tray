@@ -9,6 +9,18 @@ var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
+gulp.task('dependencies', () => {
+    gulp.src([
+        'node_modules/locawebstyle/dist/stylesheets/locastyle.css',
+        'node_modules/locawebstyle/dist/javascripts/libs/jquery-2.1.0.min.js',
+        'node_modules/locawebstyle/dist/javascripts/locastyle.js',
+    ]).pipe(gulp.dest('./assets'));
+
+    gulp.src([
+        'node_modules/locawebstyle/dist/stylesheets/fonts/**',
+    ]).pipe(gulp.dest('./assets/fonts'));
+});
+
 /**
  * Build the Jekyll Site
  */
@@ -64,4 +76,4 @@ gulp.task('deploy', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['webpack', 'browser-sync', 'watch']);
+gulp.task('default', ['dependencies', 'webpack', 'browser-sync', 'watch']);

@@ -1,0 +1,100 @@
+---
+title: Home
+description: Página inicial
+layout: introduction
+keywords: documentação, locastyle
+---
+
+<section class="doc-highlight">
+  <div class="container">
+
+    <%= partial 'partials/doc-menu'%>
+
+    <h1><strong>Locaweb</strong> Style</h1>
+    <p>Um framework front-end de comportamento e estilo, com uma interface usada por milhares de usuários.</p>
+    <a href="<%= base_url %>/documentacao/introducao/" class="doc-btn">Use o Locaweb Style</a>
+
+    <span class="doc-version">Versão <%= settings.stable %></span>
+
+  </div>
+</section>
+
+
+<section class="doc-section doc-info-intro container">
+
+  <h1>Conheça o Locaweb Style</h1>
+  <p>Entenda como ele funciona, leia nossa documentação e fique por dentro do Changelog.</p>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="<%= base_url %>/documentacao/introducao/" class="doc-icon-download doc-hexa">
+        <span class="hexa"></span>
+        <h2>Baixe ou use direto do server</h2>
+        <p>Use direto pelo nosso servidor de alta disponibilidade, baixe diretamente os assets ou use via Bower. Simples e Rápido.</p>
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <a href="<%= base_url %>/documentacao/componentes/" class="doc-icon-file doc-hexa">
+        <span class="hexa"></span>
+        <h2>Documentação completa</h2>
+        <p>Confira como funciona todos os elementos que disponibilizamos no Locaweb Style.</p>
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <a href="https://github.com/locaweb/locawebstyle/releases" class="doc-icon-numbered-list doc-hexa">
+        <span class="hexa"></span>
+        <h2>Changelog</h2>
+        <p>Acompanhe nosso changelog para saber sobre as mudanças e novidades, além de outros assuntos sobre desenvolvimento web.</p>
+      </a>
+    </div>
+  </div>
+  <hr class="doc-hr">
+  <p class="doc-msg-info">Locaweb Style é open source e está no <a href="https://github.com/locaweb/locawebstyle/">GitHub</a> pronto para receber qualquer colaboração.</p>
+  <a href="https://github.com/locaweb/locawebstyle" target="_blank" class="doc-btn">Ver projeto no github</a>
+
+</section>
+<section class="doc-section doc-section-gray doc-portfolio">
+<div class="container">
+  <h1>Telas de exemplo</h1>
+  <p>Tem Hover? Tem! Cadê a sidebar? Tá alí!<br>Veja algumas variações de páginas construídas com o Locaweb Style.</p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <a href="<%= base_url+"/documentacao/exemplos/painel1/stats/" %>" class="doc-portfolio-thumb">
+        <img src="<%= base_url %>/assets/images/docs/intro-1.png" alt="Print da página de exemplo de Dashboard">
+        <h3>Dashboard</h3>
+        <p>Exemplo da Dashboard do Locaweb Style.</p>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="<%= base_url+"/documentacao/exemplos/painel1/client/" %>" class="doc-portfolio-thumb">
+        <img src="<%= base_url %>/assets/images/docs/intro-2.png" alt="Print da página de exemplo de clientes">
+        <h3>Página de Cliente</h3>
+        <p>Exemplo da página de Cliente.</p>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="<%= base_url+"/documentacao/exemplos/painel2/home" %>" class="doc-portfolio-thumb">
+        <img src="<%= base_url %>/assets/images/docs/intro-3.png" alt="Print da pagina do Painel 2">
+        <h3>Painel Modelo 2</h3>
+        <p>Segundo exemplo de um painel navegável.</p>
+      </a>
+    </div>
+  </div>
+  <hr class="doc-hr doc-hr-naked">
+  <a href="<%= base_url+"/documentacao/exemplos/" %>" class="doc-btn">Veja mais exemplos</a>
+  <p class="doc-msg-info">
+    Você usou o Locaweb Style em seu projeto? Quer entrar em contato? <a href="https://docs.google.com/spreadsheet/viewform?formkey=dHhnUXdvVE9udEF3a1EyYVRuYXdZLWc6MA">Fale conosco</a>
+  </p>
+  </div>
+</section>
+
+<section class="doc-section doc-social">
+
+    <iframe class="githubbtn" src="http://ghbtns.com/github-btn.html?user=locaweb&amp;repo=locawebstyle&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+    <!-- <iframe class="githubbtn" src="http://ghbtns.com/github-btn.html?user=locaweb&repo=locawebstyle&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe> -->
+    <iframe class="githubbtn" src="http://ghbtns.com/github-btn.html?user=locaweb&amp;repo=locawebstyle&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
+
+  <div class="addthis_native_toolbox"></div>
+
+</section>

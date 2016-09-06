@@ -1,0 +1,84 @@
+---
+title: Iniciando as funções JS
+description: Inicie as funções JS do Locaweb Style quando necessário
+type: funcoesjs
+---
+
+<%= partial 'partials/doc-menu-funcoes-js' %>
+
+<section class="col-md-9">
+
+  <%= partial 'partials/doc-intro-content' %>
+
+  <p>Cada módulo JavaScript do Locaweb Style é iniciado individualmente caso nosso script detecte a presença do componente na página. Essa inicialização é feita automaticamente e você não precisa se preocupar com isso em ambientes normais.<br>
+  Mas há momentos que você precisa reiniciar esse os módulos em ocasiões quando o DOM é modificado ou você está fazendo uma requisição AJAX e precisa que o componente seja executado novamente. Para tanto, você poderá inicar os módulos manualmente quando necessário.</p>
+
+  <h2 class="doc-title-3">Iniciando os módulos</h2>
+  <p>Funciona assim: para iniciar um módulo use a seguinte chamada: <code>locastyle.nome_do_modulo.init()</code>.<br>
+  O exemplo abaixo inicia a nossa função de modal:</p>
+
+  <% code("javascript") do %>
+  (function() {
+    // Inicia a função de Modal manualmente
+    locastyle.modal.init();
+  })();
+  <% end %>
+
+  <p>Se você quiser iniciar todos os componentes do Locastyle, basta chamar a função: <code>locastyle.init();</code>. <br>
+  Isso vai iniciar todos os módulos que estão sendo utilizados na página em que foi executada.</p>
+
+  <p>Abaixo segue a listagem dos nomes dos nossos componentes. Você pode ver isso também <a href="https://github.com/locaweb/locawebstyle/tree/master/source/assets/javascripts/locastyle">em cada um dos arquivos JS listados aqui</a>.</p>
+  <table class="ls-table">
+    <thead>
+      <tr>
+        <th>Nome do Módulo</th>
+        <th>Função</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/alertas/">Alerts</a></td>
+        <td>locastyle.alert.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/">Abas</a></td>
+        <td>locastyle.tabs.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/barra-de-progresso/">Barra de Progresso</a></td>
+        <td>locastyle.progressBar.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/collapse/">Collapse e Accordeon</a></td>
+        <td>locastyle.collapse.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/dropdown/">Dropdown</a></td>
+        <td>locastyle.dropdown.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/modal/">Modal</a></td>
+        <td>locastyle.modal.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/popover/">Popover</a></td>
+        <td>locastyle.popover.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/formularios/contador/">Contador de Caractéres</a></td>
+        <td>locastyle.charCounter.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/componentes/tour-guiado/">Tour Guiado</a></td>
+        <td>locastyle.guidedTour.init()</td>
+      </tr>
+      <tr>
+        <td><a href="http://locaweb.github.io/locawebstyle/documentacao/funcoes-js/dismiss/">Dismiss</a></td>
+        <td>locastyle.dismiss.init()</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+</section>
