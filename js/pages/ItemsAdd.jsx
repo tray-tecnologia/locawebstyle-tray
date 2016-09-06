@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 import Breadcrumb from '../components/Breadcrumb.jsx';
 import Alert from '../components/Alert.jsx';
 
-import ItemsForm from './partials/ItemsForm.jsx';
+import ItemsForm from './partials/items_add/ItemsForm.jsx';
 
 class ItemsAdd extends React.Component {
 
@@ -16,7 +16,10 @@ class ItemsAdd extends React.Component {
                 title: '',
                 type: '',
             },
+            valid: false,
         }
+
+        this.timeout = null;
     }
 
     showAlert(options) {
@@ -37,6 +40,15 @@ class ItemsAdd extends React.Component {
         }, 4000);
     }
 
+    change(event) {
+        let valid = event.currentTarget.checkValidity();
+
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => {
+            this.setState({ valid: valid });
+        }, 1000);
+    }
+
     componentDidMount() {
         ls.collapse.init();
     }
@@ -46,11 +58,17 @@ class ItemsAdd extends React.Component {
             width: 'calc(100% - 325px)'
         };
 
+        let fixedBarClasses = 'ls-alert-fixed-bottom ls-no-padding';
+
+        if (!this.state.valid) {
+            fixedBarClasses += ' ls-display-none';
+        }
+
         return (
             <div>
                 <Breadcrumb title="Incluir Item" />
 
-                <form className="ls-form" onSubmit={this.submitNewItem.bind(this)}>
+                <form className="ls-form" onChange={this.change.bind(this)} onSubmit={this.submitNewItem.bind(this)}>
                     <div data-ls-module="collapse" data-target="#30" className="ls-collapse ls-box ls-box-gray">
                         <a href="#" className="ls-collapse-header">
                             <h3 className="ls-collapse-title">
@@ -77,8 +95,8 @@ class ItemsAdd extends React.Component {
 
                     <ItemsForm className="ls-lg-margin-bottom" />
 
-                    <div className="ls-bg-white ls-alert-fixed-bottom ls-no-padding" style={fixedBarStyle}>
-                        <div className="ls-actions-btn ls-txt-right ls-no-margin-left ls-no-margin-right">
+                    <div className={fixedBarClasses} style={fixedBarStyle}>
+                        <div className="ls-box ls-box-gray ls-txt-right ls-no-margin-left ls-no-margin-right ls-float-right">
                             <Link to="/items" className="ls-btn">Cancelar</Link>
                             <button type="submit" className="ls-btn-primary">Salvar</button>
                         </div>

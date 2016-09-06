@@ -3,10 +3,6 @@ import { Link } from 'react-router';
 
 class ItemsActions extends React.Component {
 
-    componentDidMount() {
-        // locastyle.general.init();
-    }
-
     render () {
         return (
             <div className="ls-txt-right">
