@@ -18,7 +18,7 @@ export default class UnselectedItems extends React.Component {
                         <a href="#" aria-label="Ver imagem do produto" className="ls-text-xl ls-sm-margin-right ls-tooltip-left">
                             <span className="ls-ico-images"></span>
                         </a>
-                        <button className="ls-btn-xs ls-btn-primary" onClick={this.props.onSelect} data-item-id={element.id}>Selecionar</button>
+                        <button className="ls-btn-xs ls-btn" onClick={this.props.onSelect} data-item-id={element.id}>Selecionar</button>
                     </td>
                 </tr>
             );
