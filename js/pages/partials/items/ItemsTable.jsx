@@ -24,8 +24,8 @@ class ItemsTable extends React.Component {
                 <ItemsSelectedActions items={this.props.items} />
 
                 <table className="ls-table ls-no-hover">
-                    <ItemsTableHead />
-                    <ItemsTableBody items={this.props.items} />
+                    <ItemsTableHead onSelectItem={this.props.onSelectItem} />
+                    <ItemsTableBody items={this.props.items} onSelectItem={this.props.onSelectItem} />
                 </table>
             </div>
         );

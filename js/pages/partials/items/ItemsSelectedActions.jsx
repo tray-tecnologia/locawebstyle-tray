@@ -4,7 +4,7 @@ export default class ItemsSelectedActions extends React.Component {
 
     getSelectedItems(items) {
         let selected = items.filter((item) => {
-            return item.selected;
+            return item.selected == true;
         });
 
         return selected;
@@ -21,7 +21,7 @@ export default class ItemsSelectedActions extends React.Component {
             <div className="ls-box-filter">
                 <div className="row">
                     <div className="col-sm-6">
-                        <p>{this.props.items.length > 1 ? this.props.items.length + ' itens selecionados' : ' item selecionado'}</p>
+                        <p className="ls-sm-margin-top">{items.length > 1 ? items.length + ' itens selecionados' : items.length + ' item selecionado'}</p>
                     </div>
                     <div className="col-sm-6 ls-txt-right">
                         <button className="ls-btn">Ação em massa</button>

@@ -141,6 +141,22 @@ const FilterableItemsTable = React.createClass({
         return JSON.stringify(this.state.filters) !== JSON.stringify(this.getInitialState().filters);
     },
 
+    onSelectItem(event) {
+        const ALL_ITEMS = 0;
+        let itemID = event.currentTarget.getAttribute('data-item-id');
+        let selected = event.currentTarget.checked;
+
+        let itemsUpdated = this.state.items.map((item) => {
+            if (item.id == itemID || itemID == ALL_ITEMS) {
+                item.selected = selected;
+            }
+
+            return item;
+        });
+
+        this.setState({ items: itemsUpdated });
+    },
+
     /**
      * Render the component
      */
@@ -159,7 +175,7 @@ const FilterableItemsTable = React.createClass({
             <div>
                 <ItemsActions />
                 <ItemsFilterFields filters={this.state.filters} resetFilters={this.resetFilters} onFilterInput={this.onFilterInput} />
-                <ItemsTable items={items} />
+                <ItemsTable items={items} onSelectItem={this.onSelectItem} />
             </div>
         );
     }

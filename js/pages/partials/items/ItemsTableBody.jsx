@@ -7,7 +7,7 @@ class ItemsTableBody extends React.Component {
     render() {
         let itemsNodes = this.props.items.map((item) => {
             return (
-                <ItemsTableItem item={item} key={item.id} />
+                <ItemsTableItem item={item} key={item.id} onSelectItem={this.props.onSelectItem} />
             );
         });
 
