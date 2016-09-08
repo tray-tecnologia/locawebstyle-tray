@@ -9,7 +9,7 @@ class ItemsTableItem extends React.Component {
         return (
             <tr>
                 <td>
-                    <input type="checkbox" data-checkbox-toggle="items-table" />
+                    <input type="checkbox" data-item-id={this.props.item.id} data-checkbox-toggle="items-table" onChange={this.props.onSelectItem} />
                 </td>
                 <td>{this.props.item.id}</td>
                 <td>{this.props.item.status ? 'Ativo' : 'Inativo'}</td>

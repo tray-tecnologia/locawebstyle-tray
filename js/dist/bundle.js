@@ -21435,11 +21435,11 @@
 
 	var _Items2 = _interopRequireDefault(_Items);
 
-	var _ItemsAdd = __webpack_require__(250);
+	var _ItemsAdd = __webpack_require__(251);
 
 	var _ItemsAdd2 = _interopRequireDefault(_ItemsAdd);
 
-	var _Apps = __webpack_require__(256);
+	var _Apps = __webpack_require__(257);
 
 	var _Apps2 = _interopRequireDefault(_Apps);
 
@@ -27652,7 +27652,7 @@
 
 	var _ItemsTable2 = _interopRequireDefault(_ItemsTable);
 
-	var _ItemsFilterFields = __webpack_require__(249);
+	var _ItemsFilterFields = __webpack_require__(250);
 
 	var _ItemsFilterFields2 = _interopRequireDefault(_ItemsFilterFields);
 
@@ -27806,6 +27806,21 @@
 	    isFiltering: function isFiltering() {
 	        return JSON.stringify(this.state.filters) !== JSON.stringify(this.getInitialState().filters);
 	    },
+	    onSelectItem: function onSelectItem(event) {
+	        var ALL_ITEMS = 0;
+	        var itemID = event.currentTarget.getAttribute('data-item-id');
+	        var selected = event.currentTarget.checked;
+
+	        var itemsUpdated = this.state.items.map(function (item) {
+	            if (item.id == itemID || itemID == ALL_ITEMS) {
+	                item.selected = selected;
+	            }
+
+	            return item;
+	        });
+
+	        this.setState({ items: itemsUpdated });
+	    },
 
 
 	    /**
@@ -27827,7 +27842,7 @@
 	            null,
 	            _react2.default.createElement(_ItemsActions2.default, null),
 	            _react2.default.createElement(_ItemsFilterFields2.default, { filters: this.state.filters, resetFilters: this.resetFilters, onFilterInput: this.onFilterInput }),
-	            _react2.default.createElement(_ItemsTable2.default, { items: items })
+	            _react2.default.createElement(_ItemsTable2.default, { items: items, onSelectItem: this.onSelectItem })
 	        );
 	    }
 	});
@@ -28001,11 +28016,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ItemsTableHead = __webpack_require__(246);
+	var _ItemsSelectedActions = __webpack_require__(246);
+
+	var _ItemsSelectedActions2 = _interopRequireDefault(_ItemsSelectedActions);
+
+	var _ItemsTableHead = __webpack_require__(247);
 
 	var _ItemsTableHead2 = _interopRequireDefault(_ItemsTableHead);
 
-	var _ItemsTableBody = __webpack_require__(247);
+	var _ItemsTableBody = __webpack_require__(248);
 
 	var _ItemsTableBody2 = _interopRequireDefault(_ItemsTableBody);
 
@@ -28027,6 +28046,11 @@
 	    }
 
 	    _createClass(ItemsTable, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            ls.checkboxToggle.init();
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            if (!this.props.items.length) {
@@ -28042,10 +28066,15 @@
 	            }
 
 	            return _react2.default.createElement(
-	                'table',
-	                { className: 'ls-table ls-no-hover' },
-	                _react2.default.createElement(_ItemsTableHead2.default, null),
-	                _react2.default.createElement(_ItemsTableBody2.default, { items: this.props.items })
+	                'div',
+	                null,
+	                _react2.default.createElement(_ItemsSelectedActions2.default, { items: this.props.items }),
+	                _react2.default.createElement(
+	                    'table',
+	                    { className: 'ls-table ls-no-hover' },
+	                    _react2.default.createElement(_ItemsTableHead2.default, { onSelectItem: this.props.onSelectItem }),
+	                    _react2.default.createElement(_ItemsTableBody2.default, { items: this.props.items, onSelectItem: this.props.onSelectItem })
+	                )
 	            );
 	        }
 	    }]);
@@ -28057,6 +28086,91 @@
 
 /***/ },
 /* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ItemsSelectedActions = function (_React$Component) {
+	    _inherits(ItemsSelectedActions, _React$Component);
+
+	    function ItemsSelectedActions() {
+	        _classCallCheck(this, ItemsSelectedActions);
+
+	        return _possibleConstructorReturn(this, (ItemsSelectedActions.__proto__ || Object.getPrototypeOf(ItemsSelectedActions)).apply(this, arguments));
+	    }
+
+	    _createClass(ItemsSelectedActions, [{
+	        key: "getSelectedItems",
+	        value: function getSelectedItems(items) {
+	            var selected = items.filter(function (item) {
+	                return item.selected == true;
+	            });
+
+	            return selected;
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            var items = this.getSelectedItems(this.props.items);
+
+	            if (!items || !items.length > 0) {
+	                return null;
+	            }
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "ls-box-filter" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "row" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "col-sm-6" },
+	                        _react2.default.createElement(
+	                            "p",
+	                            { className: "ls-sm-margin-top" },
+	                            items.length > 1 ? items.length + ' itens selecionados' : items.length + ' item selecionado'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "col-sm-6 ls-txt-right" },
+	                        _react2.default.createElement(
+	                            "button",
+	                            { className: "ls-btn" },
+	                            "Ação em massa"
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return ItemsSelectedActions;
+	}(_react2.default.Component);
+
+	exports.default = ItemsSelectedActions;
+
+/***/ },
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28100,7 +28214,7 @@
 	                    _react2.default.createElement(
 	                        "th",
 	                        { className: "ls-width-50" },
-	                        _react2.default.createElement("input", { type: "checkbox", "data-ls-module": "checkboxToggle", "data-checkbox-target": "items-table" })
+	                        _react2.default.createElement("input", { type: "checkbox", "data-item-id": "0", onChange: this.props.onSelectItem, "data-ls-module": "checkboxToggle", "data-checkbox-target": "items-table" })
 	                    ),
 	                    _react2.default.createElement(
 	                        "th",
@@ -28144,7 +28258,7 @@
 	exports.default = ItemsTableHead;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28159,7 +28273,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ItemsTableItem = __webpack_require__(248);
+	var _ItemsTableItem = __webpack_require__(249);
 
 	var _ItemsTableItem2 = _interopRequireDefault(_ItemsTableItem);
 
@@ -28183,8 +28297,10 @@
 	    _createClass(ItemsTableBody, [{
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+
 	            var itemsNodes = this.props.items.map(function (item) {
-	                return _react2.default.createElement(_ItemsTableItem2.default, { item: item, key: item.id });
+	                return _react2.default.createElement(_ItemsTableItem2.default, { item: item, key: item.id, onSelectItem: _this2.props.onSelectItem });
 	            });
 
 	            return _react2.default.createElement(
@@ -28203,7 +28319,7 @@
 	exports.default = ItemsTableBody;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28248,7 +28364,7 @@
 	                _react2.default.createElement(
 	                    'td',
 	                    null,
-	                    _react2.default.createElement('input', { type: 'checkbox', 'data-checkbox-toggle': 'items-table' })
+	                    _react2.default.createElement('input', { type: 'checkbox', 'data-item-id': this.props.item.id, 'data-checkbox-toggle': 'items-table', onChange: this.props.onSelectItem })
 	                ),
 	                _react2.default.createElement(
 	                    'td',
@@ -28310,7 +28426,7 @@
 	exports.default = ItemsTableItem;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28831,7 +28947,7 @@
 	exports.default = ItemsFilterFields;
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28852,11 +28968,11 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _Alert = __webpack_require__(251);
+	var _Alert = __webpack_require__(252);
 
 	var _Alert2 = _interopRequireDefault(_Alert);
 
-	var _ItemsForm = __webpack_require__(252);
+	var _ItemsForm = __webpack_require__(253);
 
 	var _ItemsForm2 = _interopRequireDefault(_ItemsForm);
 
@@ -29020,7 +29136,7 @@
 	exports.default = (0, _reactRouter.withRouter)(ItemsAdd);
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29115,7 +29231,7 @@
 	exports.default = Alert;
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29132,7 +29248,7 @@
 
 	var _reactRouter = __webpack_require__(173);
 
-	var _ItemsAddSelectTable = __webpack_require__(253);
+	var _ItemsAddSelectTable = __webpack_require__(254);
 
 	var _ItemsAddSelectTable2 = _interopRequireDefault(_ItemsAddSelectTable);
 
@@ -29361,7 +29477,7 @@
 	exports.default = ItemsForm;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29376,11 +29492,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _UnselectedItems = __webpack_require__(254);
+	var _UnselectedItems = __webpack_require__(255);
 
 	var _UnselectedItems2 = _interopRequireDefault(_UnselectedItems);
 
-	var _SelectedItems = __webpack_require__(255);
+	var _SelectedItems = __webpack_require__(256);
 
 	var _SelectedItems2 = _interopRequireDefault(_SelectedItems);
 
@@ -29567,7 +29683,7 @@
 	exports.default = ItemsAddSelectTable;
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29670,7 +29786,7 @@
 	exports.default = UnselectedItems;
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29782,7 +29898,7 @@
 	exports.default = SelectedItems;
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29799,7 +29915,7 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _Modal = __webpack_require__(257);
+	var _Modal = __webpack_require__(258);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -29945,7 +30061,7 @@
 	exports.default = AppsPage;
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30028,7 +30144,7 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                "button",
-	                                { type: "submit", className: "ls-btn-danger", id: "btn-modal", "data-toggle-class": "ls-display-none", "data-target": "#btn-modal, #btn-modal-disabled" },
+	                                { type: "submit", className: "ls-btn-primary-danger", id: "btn-modal", "data-toggle-class": "ls-display-none", "data-target": "#btn-modal, #btn-modal-disabled" },
 	                                "Desabilitar"
 	                            ),
 	                            _react2.default.createElement(
