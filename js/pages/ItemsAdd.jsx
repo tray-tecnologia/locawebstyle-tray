@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-import Breadcrumb from '../components/Breadcrumb.jsx';
 import Alert from '../components/Alert.jsx';
+import Breadcrumb from '../components/Breadcrumb.jsx';
+import FloatingActions from '../components/FloatingActions.jsx';
 
 import ItemsForm from './partials/items_add/ItemsForm.jsx';
 
@@ -54,16 +55,6 @@ class ItemsAdd extends React.Component {
     }
 
     render() {
-        let fixedBarStyle = {
-            width: 'calc(100% - 325px)'
-        };
-
-        let fixedBarClasses = 'ls-alert-fixed-bottom ls-no-padding';
-
-        if (!this.state.valid) {
-            fixedBarClasses += ' ls-display-none';
-        }
-
         return (
             <div>
                 <Breadcrumb title="Incluir Item" />
@@ -95,12 +86,10 @@ class ItemsAdd extends React.Component {
 
                     <ItemsForm className="ls-lg-margin-bottom" />
 
-                    <div className={fixedBarClasses} style={fixedBarStyle}>
-                        <div className="ls-box ls-box-gray ls-txt-right ls-no-margin-left ls-no-margin-right ls-float-right">
-                            <Link to="/items" className="ls-btn">Cancelar</Link>
-                            <button type="submit" className="ls-btn-primary">Salvar</button>
-                        </div>
-                    </div>
+                    <FloatingActions>
+                        <Link to="/items" className="ls-btn">Cancelar</Link>
+                        <button type="submit" className="ls-btn-primary">Salvar</button>
+                    </FloatingActions>
                 </form>
 
             </div>
