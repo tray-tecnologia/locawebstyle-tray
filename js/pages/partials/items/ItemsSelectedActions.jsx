@@ -18,7 +18,7 @@ export default class ItemsSelectedActions extends React.Component {
         }
 
         return(
-            <div className="ls-box-filter">
+            <div className="ls-box-filter ls-position-fixed ls-full-width">
                 <div className="row">
                     <div className="col-sm-6">
                         <p className="ls-sm-margin-top">{items.length > 1 ? items.length + ' itens selecionados' : items.length + ' item selecionado'}</p>

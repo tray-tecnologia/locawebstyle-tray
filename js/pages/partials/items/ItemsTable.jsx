@@ -20,7 +20,7 @@ class ItemsTable extends React.Component {
         }
 
         return (
-            <div>
+            <div className="ls-position-relative">
                 <ItemsSelectedActions items={this.props.items} />
 
                 <table className="ls-table ls-no-hover">
