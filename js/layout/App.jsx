@@ -1,25 +1,30 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
+
+import { addEditable } from '../store/Actions.jsx';
 
 import Header from '../components/Header.jsx';
 import Sidebar from '../components/Sidebar.jsx';
+import Alert from '../components/Alert.jsx';
 
+@connect((store) => {
+    return {
+        editable: true,
+    }
+})
 class App extends React.Component {
 
-    constructor() {
-        super();
-
-        this.state = {
-            contentEditable: false
-        }
+    constructor(props) {
+        super(props);
     }
 
     toggleEditable() {
-        this.setState({ contentEditable: !this.state.contentEditable });
+        // store.dispatch(addEditable());
     }
 
     render() {
-        let contentEditable = this.state.contentEditable ? true : false;
+        let contentEditable = this.props.editable;
 
         return (
             <div>
