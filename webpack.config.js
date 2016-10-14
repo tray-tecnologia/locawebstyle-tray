@@ -14,7 +14,10 @@ var config = {
             {
                 test: /\.jsx?/,
                 include: APP_DIR,
-                loader: 'babel'
+                loader: 'babel',
+                query: {
+                    plugins: ['transform-decorators-legacy']
+                }
             }
         ]
     }
