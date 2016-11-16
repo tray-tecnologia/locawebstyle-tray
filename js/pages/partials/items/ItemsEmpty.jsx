@@ -1,10 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import { connect } from 'react-redux';
+
+import store from '../../../store/Stores.jsx';
+import { addItems } from '../../../store/Actions.jsx';
+
 class ItemsEmpty extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
 
     componentDidMount() {
         locastyle.general.init();
+    }
+
+    onAddItems() {
+        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', (response) => {
+            store.dispatch(addItems(response.items));
+        });
     }
 
     render () {
@@ -28,7 +43,7 @@ class ItemsEmpty extends React.Component {
                         Incluir item
                     </Link>
 
-                    <button id="btn-default" className="ls-btn ls-sm-margin-top" onClick={this.props.addItems} data-toggle-class="ls-display-none" data-target="#btn-default, #btn-default-disabled">
+                    <button id="btn-default" className="ls-btn ls-sm-margin-top" onClick={this.onAddItems} data-toggle-class="ls-display-none" data-target="#btn-default, #btn-default-disabled">
                         Carregar itens
                     </button>
                     <button id="btn-default-disabled" className="ls-btn ls-sm-margin-top ls-disabled ls-display-none">

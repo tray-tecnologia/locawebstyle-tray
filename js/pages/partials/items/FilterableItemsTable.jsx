@@ -1,5 +1,7 @@
 import React from 'react';
 
+import store from '../../../store/Stores.jsx';
+
 import ItemsActions from './ItemsActions.jsx';
 import ItemsEmpty from './ItemsEmpty.jsx';
 import ItemsTable from './ItemsTable.jsx';
@@ -39,15 +41,6 @@ const FilterableItemsTable = React.createClass({
         }, function() {
             this.filterItems();
         }.bind(this));
-    },
-
-    /**
-     * Load items from backend
-     */
-    addItems() {
-        $.get('http://www.mocky.io/v2/57b6113a0f0000b515ae6fdd', (response) => {
-            this.setState({ items: response.items });
-        });
     },
 
     /**
@@ -161,15 +154,17 @@ const FilterableItemsTable = React.createClass({
      * Render the component
      */
     render() {
-        if (!this.state.items || !this.state.items.length) {
+        const state = store.getState();
+
+        if (!state.items || !state.items.length) {
             return (
                 <div>
-                    <ItemsEmpty addItems={this.addItems} />
+                    <ItemsEmpty addItems={this.onAddItems} />
                 </div>
             );
         }
 
-        let items = this.isFiltering() ? this.state.filteredItems : this.state.items;
+        let items = this.isFiltering() ? this.state.filteredItems : state.items;
 
         return (
             <div>
