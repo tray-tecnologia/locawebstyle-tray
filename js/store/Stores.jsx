@@ -1,4 +1,7 @@
 import { createStore } from 'redux';
-import reducer from './Reducers.jsx';
+import editableReducer from './Reducers.jsx';
+import { addEditable } from './Actions.jsx';
 
-export default createStore(reducer);
+const store = createStore(editableReducer);
+
+export default store;
