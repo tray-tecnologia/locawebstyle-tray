@@ -25,6 +25,7 @@ const ItemsFilterFields = React.createClass({
 
     componentDidMount() {
         locastyle.collapse.init();
+        locastyle.toggleText.init();
         locastyle.form.init();
     },
 
@@ -238,8 +239,8 @@ const ItemsFilterFields = React.createClass({
                             </div>
                             <div className="col-md-4 ls-txt-right">
                                 <button className="ls-btn ls-btn-danger" type="button" onClick={this.props.resetFilters}>Limpar filtro</button>
-                                <button className="ls-btn" type="button" data-ls-module="collapse" data-target="#products-filter-collapse">
-                                    Expandir/ocultar filtro
+                                <button className="ls-btn" data-ls-module="collapse" data-target="#products-filter-collapse">
+                                    <span data-ls-module="toggleText" data-toggle-text="Ocultar">Expandir</span> filtro
                                 </button>
                                 <button className="ls-btn" type="submit">Filtrar</button>
                             </div>
