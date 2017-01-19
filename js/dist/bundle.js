@@ -30464,6 +30464,7 @@
 	    },
 	    componentDidMount: function componentDidMount() {
 	        locastyle.collapse.init();
+	        locastyle.toggleText.init();
 	        locastyle.form.init();
 	    },
 
@@ -30925,8 +30926,13 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                "button",
-	                                { className: "ls-btn", type: "button", "data-ls-module": "collapse", "data-target": "#products-filter-collapse" },
-	                                "Expandir/ocultar filtro"
+	                                { className: "ls-btn", "data-ls-module": "collapse", "data-target": "#products-filter-collapse" },
+	                                _react2.default.createElement(
+	                                    "span",
+	                                    { "data-ls-module": "toggleText", "data-toggle-text": "Ocultar" },
+	                                    "Expandir"
+	                                ),
+	                                " filtro"
 	                            ),
 	                            _react2.default.createElement(
 	                                "button",
