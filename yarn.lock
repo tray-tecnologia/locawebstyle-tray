@@ -2690,9 +2690,9 @@ localtunnel@1.8.2:
     request "2.78.0"
     yargs "3.29.0"
 
-locawebstyle@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/locawebstyle/-/locawebstyle-3.9.0.tgz#ba4e5dc56944b704e06553a6aea5c926c8b620d2"
+locawebstyle@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/locawebstyle/-/locawebstyle-3.10.0.tgz#0fe57379cfc2f10718f2c9335e7f8dccdd19c213"
   dependencies:
     jquery ">= 2.1.1"
 

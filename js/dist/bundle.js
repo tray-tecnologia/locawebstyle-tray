@@ -32015,7 +32015,7 @@
 	                            ),
 	                            _react2.default.createElement(
 	                                "button",
-	                                { type: "submit", className: "ls-btn-primary-danger", id: "btn-modal", "data-toggle-class": "ls-display-none", "data-target": "#btn-modal, #btn-modal-disabled" },
+	                                { type: "submit", className: "ls-btn ls-btn-danger ls-btn-primary-danger", id: "btn-modal", "data-toggle-class": "ls-display-none", "data-target": "#btn-modal, #btn-modal-disabled" },
 	                                "Desabilitar"
 	                            ),
 	                            _react2.default.createElement(
