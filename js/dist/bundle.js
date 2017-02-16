@@ -21493,15 +21493,15 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Items = __webpack_require__(279);
+	var _Items = __webpack_require__(280);
 
 	var _Items2 = _interopRequireDefault(_Items);
 
-	var _ItemsAdd = __webpack_require__(289);
+	var _ItemsAdd = __webpack_require__(290);
 
 	var _ItemsAdd2 = _interopRequireDefault(_ItemsAdd);
 
-	var _Apps = __webpack_require__(295);
+	var _Apps = __webpack_require__(296);
 
 	var _Apps2 = _interopRequireDefault(_Apps);
 
@@ -29008,7 +29008,7 @@
 	        }
 
 	        /**
-	         * Turns off page into an editor of text
+	         * Turns off page into a text editor
 	         */
 
 	    }, {
@@ -29407,6 +29407,10 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
+	var _AnimatedContent = __webpack_require__(279);
+
+	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29432,29 +29436,33 @@
 	                null,
 	                _react2.default.createElement(_Breadcrumb2.default, { title: 'In\xEDcio' }),
 	                _react2.default.createElement(
-	                    'p',
-	                    { className: 'ls-md-margin-bottom' },
-	                    'A ideia desse projeto \xE9 padronizar o uso dos componentes do LS (LocawebStyle), dando exemplos reais de implementa\xE7\xF5es.',
-	                    _react2.default.createElement('br', null),
-	                    'Lembre-se de alguns detalhes quando estiver trabalhando com o LS:'
-	                ),
-	                _react2.default.createElement(
-	                    'ul',
-	                    { className: 'ls-md-margin-left' },
+	                    _AnimatedContent2.default,
+	                    null,
 	                    _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        'N\xE3o escreva nenhuma linha de CSS (o LS j\xE1 \xE9 sua implementa\xE7\xE3o de design)'
+	                        'p',
+	                        { className: 'ls-md-margin-bottom' },
+	                        'A ideia desse projeto \xE9 padronizar o uso dos componentes do LS (LocawebStyle), dando exemplos reais de implementa\xE7\xF5es.',
+	                        _react2.default.createElement('br', null),
+	                        'Lembre-se de alguns detalhes quando estiver trabalhando com o LS:'
 	                    ),
 	                    _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        'Utilize NPM (ou Yarn) ao inv\xE9s do Bower (NPM for all things)'
-	                    ),
-	                    _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        'Nem tudo \xE9 responsabilidade do LS, voc\xEA vai precisar de outras depend\xEAncias'
+	                        'ul',
+	                        { className: 'ls-md-margin-left' },
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'N\xE3o escreva nenhuma linha de CSS (o LS j\xE1 \xE9 sua implementa\xE7\xE3o de design)'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Utilize NPM (ou Yarn) ao inv\xE9s do Bower (NPM for all things)'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Nem tudo \xE9 responsabilidade do LS, voc\xEA vai precisar de outras depend\xEAncias'
+	                        )
 	                    )
 	                )
 	            );
@@ -29550,6 +29558,56 @@
 /* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AnimatedContent = function (_React$Component) {
+	    _inherits(AnimatedContent, _React$Component);
+
+	    function AnimatedContent() {
+	        _classCallCheck(this, AnimatedContent);
+
+	        return _possibleConstructorReturn(this, (AnimatedContent.__proto__ || Object.getPrototypeOf(AnimatedContent)).apply(this, arguments));
+	    }
+
+	    _createClass(AnimatedContent, [{
+	        key: "render",
+	        value: function render() {
+
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "animated fadeInRight" },
+	                this.props.children
+	            );
+	        }
+	    }]);
+
+	    return AnimatedContent;
+	}(_react2.default.Component);
+
+	exports.default = AnimatedContent;
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -29570,7 +29628,11 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _FilterableItemsTable = __webpack_require__(280);
+	var _AnimatedContent = __webpack_require__(279);
+
+	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
+
+	var _FilterableItemsTable = __webpack_require__(281);
 
 	var _FilterableItemsTable2 = _interopRequireDefault(_FilterableItemsTable);
 
@@ -29603,7 +29665,11 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Breadcrumb2.default, { title: 'Itens' }),
-	        _react2.default.createElement(_FilterableItemsTable2.default, null)
+	        _react2.default.createElement(
+	          _AnimatedContent2.default,
+	          null,
+	          _react2.default.createElement(_FilterableItemsTable2.default, null)
+	        )
 	      );
 	    }
 	  }]);
@@ -29614,7 +29680,7 @@
 	exports.default = ItemsPage;
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29631,19 +29697,19 @@
 
 	var _Stores2 = _interopRequireDefault(_Stores);
 
-	var _ItemsActions = __webpack_require__(281);
+	var _ItemsActions = __webpack_require__(282);
 
 	var _ItemsActions2 = _interopRequireDefault(_ItemsActions);
 
-	var _ItemsEmpty = __webpack_require__(282);
+	var _ItemsEmpty = __webpack_require__(283);
 
 	var _ItemsEmpty2 = _interopRequireDefault(_ItemsEmpty);
 
-	var _ItemsTable = __webpack_require__(283);
+	var _ItemsTable = __webpack_require__(284);
 
 	var _ItemsTable2 = _interopRequireDefault(_ItemsTable);
 
-	var _ItemsFilterFields = __webpack_require__(288);
+	var _ItemsFilterFields = __webpack_require__(289);
 
 	var _ItemsFilterFields2 = _interopRequireDefault(_ItemsFilterFields);
 
@@ -29831,7 +29897,7 @@
 	exports.default = FilterableItemsTable;
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29886,7 +29952,7 @@
 	exports.default = ItemsActions;
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29997,7 +30063,7 @@
 	exports.default = ItemsEmpty;
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30012,15 +30078,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ItemsSelectedActions = __webpack_require__(284);
+	var _ItemsSelectedActions = __webpack_require__(285);
 
 	var _ItemsSelectedActions2 = _interopRequireDefault(_ItemsSelectedActions);
 
-	var _ItemsTableHead = __webpack_require__(285);
+	var _ItemsTableHead = __webpack_require__(286);
 
 	var _ItemsTableHead2 = _interopRequireDefault(_ItemsTableHead);
 
-	var _ItemsTableBody = __webpack_require__(286);
+	var _ItemsTableBody = __webpack_require__(287);
 
 	var _ItemsTableBody2 = _interopRequireDefault(_ItemsTableBody);
 
@@ -30081,7 +30147,7 @@
 	exports.default = ItemsTable;
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30167,7 +30233,7 @@
 	exports.default = ItemsSelectedActions;
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30255,7 +30321,7 @@
 	exports.default = ItemsTableHead;
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30270,7 +30336,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ItemsTableItem = __webpack_require__(287);
+	var _ItemsTableItem = __webpack_require__(288);
 
 	var _ItemsTableItem2 = _interopRequireDefault(_ItemsTableItem);
 
@@ -30316,7 +30382,7 @@
 	exports.default = ItemsTableBody;
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30423,7 +30489,7 @@
 	exports.default = ItemsTableItem;
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -30950,7 +31016,7 @@
 	exports.default = ItemsFilterFields;
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30971,15 +31037,19 @@
 
 	var _Alert2 = _interopRequireDefault(_Alert);
 
+	var _AnimatedContent = __webpack_require__(279);
+
+	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
+
 	var _Breadcrumb = __webpack_require__(278);
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _FloatingActions = __webpack_require__(290);
+	var _FloatingActions = __webpack_require__(291);
 
 	var _FloatingActions2 = _interopRequireDefault(_FloatingActions);
 
-	var _ItemsForm = __webpack_require__(291);
+	var _ItemsForm = __webpack_require__(292);
 
 	var _ItemsForm2 = _interopRequireDefault(_ItemsForm);
 
@@ -31059,63 +31129,67 @@
 	                null,
 	                _react2.default.createElement(_Breadcrumb2.default, { title: 'Incluir Item' }),
 	                _react2.default.createElement(
-	                    'form',
-	                    { className: 'ls-form', onChange: this.change.bind(this), onSubmit: this.submitNewItem.bind(this) },
+	                    _AnimatedContent2.default,
+	                    null,
 	                    _react2.default.createElement(
-	                        'div',
-	                        { 'data-ls-module': 'collapse', 'data-target': '#30', className: 'ls-collapse ls-box ls-box-gray' },
-	                        _react2.default.createElement(
-	                            'a',
-	                            { href: '#', className: 'ls-collapse-header' },
-	                            _react2.default.createElement(
-	                                'h3',
-	                                { className: 'ls-collapse-title' },
-	                                'Exclusivo Tray'
-	                            ),
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                'Itens de acesso exclusivo para funcion\xE1rios Tray.'
-	                            )
-	                        ),
+	                        'form',
+	                        { className: 'ls-form', onChange: this.change.bind(this), onSubmit: this.submitNewItem.bind(this) },
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: 'ls-collapse-body', id: '30' },
+	                            { 'data-ls-module': 'collapse', 'data-target': '#30', className: 'ls-collapse ls-box ls-box-gray' },
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: '#', className: 'ls-collapse-header' },
+	                                _react2.default.createElement(
+	                                    'h3',
+	                                    { className: 'ls-collapse-title' },
+	                                    'Exclusivo Tray'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'p',
+	                                    null,
+	                                    'Itens de acesso exclusivo para funcion\xE1rios Tray.'
+	                                )
+	                            ),
 	                            _react2.default.createElement(
 	                                'div',
-	                                { className: 'row' },
+	                                { className: 'ls-collapse-body', id: '30' },
 	                                _react2.default.createElement(
 	                                    'div',
-	                                    { className: 'col-md-4' },
+	                                    { className: 'row' },
 	                                    _react2.default.createElement(
-	                                        'h3',
-	                                        null,
-	                                        'Configura\xE7\xF5es'
+	                                        'div',
+	                                        { className: 'col-md-4' },
+	                                        _react2.default.createElement(
+	                                            'h3',
+	                                            null,
+	                                            'Configura\xE7\xF5es'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            'p',
+	                                            null,
+	                                            'Configura\xE7\xF5es referentes a exibi\xE7\xE3o do item.'
+	                                        )
 	                                    ),
-	                                    _react2.default.createElement(
-	                                        'p',
-	                                        null,
-	                                        'Configura\xE7\xF5es referentes a exibi\xE7\xE3o do item.'
-	                                    )
-	                                ),
-	                                _react2.default.createElement('div', { className: 'col-md-8' })
+	                                    _react2.default.createElement('div', { className: 'col-md-8' })
+	                                )
 	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(_Alert2.default, { message: this.state.alert.message, title: this.state.alert.title, type: this.state.alert.type, dismissable: 'true' }),
-	                    _react2.default.createElement(_ItemsForm2.default, { className: 'ls-lg-margin-bottom' }),
-	                    _react2.default.createElement(
-	                        _FloatingActions2.default,
-	                        null,
-	                        _react2.default.createElement(
-	                            _reactRouter.Link,
-	                            { to: '/items', className: 'ls-btn' },
-	                            'Cancelar'
 	                        ),
+	                        _react2.default.createElement(_Alert2.default, { message: this.state.alert.message, title: this.state.alert.title, type: this.state.alert.type, dismissable: 'true' }),
+	                        _react2.default.createElement(_ItemsForm2.default, { className: 'ls-lg-margin-bottom' }),
 	                        _react2.default.createElement(
-	                            'button',
-	                            { type: 'submit', className: 'ls-btn-primary' },
-	                            'Salvar'
+	                            _FloatingActions2.default,
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/items', className: 'ls-btn' },
+	                                'Cancelar'
+	                            ),
+	                            _react2.default.createElement(
+	                                'button',
+	                                { type: 'submit', className: 'ls-btn-primary' },
+	                                'Salvar'
+	                            )
 	                        )
 	                    )
 	                )
@@ -31129,7 +31203,7 @@
 	exports.default = (0, _reactRouter.withRouter)(ItemsAdd);
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31212,7 +31286,7 @@
 	exports.default = FloatingActions;
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31229,7 +31303,7 @@
 
 	var _reactRouter = __webpack_require__(209);
 
-	var _ItemsAddSelectTable = __webpack_require__(292);
+	var _ItemsAddSelectTable = __webpack_require__(293);
 
 	var _ItemsAddSelectTable2 = _interopRequireDefault(_ItemsAddSelectTable);
 
@@ -31458,7 +31532,7 @@
 	exports.default = ItemsForm;
 
 /***/ },
-/* 292 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31474,11 +31548,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _UnselectedItems = __webpack_require__(293);
+	var _UnselectedItems = __webpack_require__(294);
 
 	var _UnselectedItems2 = _interopRequireDefault(_UnselectedItems);
 
-	var _SelectedItems = __webpack_require__(294);
+	var _SelectedItems = __webpack_require__(295);
 
 	var _SelectedItems2 = _interopRequireDefault(_SelectedItems);
 
@@ -31552,7 +31626,7 @@
 	exports.default = ItemsAddSelectTable;
 
 /***/ },
-/* 293 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31656,7 +31730,7 @@
 	exports.default = UnselectedItems;
 
 /***/ },
-/* 294 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31769,7 +31843,7 @@
 	exports.default = SelectedItems;
 
 /***/ },
-/* 295 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31786,7 +31860,11 @@
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _Modal = __webpack_require__(296);
+	var _AnimatedContent = __webpack_require__(279);
+
+	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
+
+	var _Modal = __webpack_require__(297);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -31800,124 +31878,128 @@
 	            null,
 	            _react2.default.createElement(_Breadcrumb2.default, { title: 'P\xE1gina de aplicativo' }),
 	            _react2.default.createElement(
-	                'div',
-	                { className: 'ls-lg-margin-bottom ls-txt-right' },
-	                _react2.default.createElement(
-	                    'button',
-	                    { className: 'ls-btn-danger', 'data-ls-module': 'modal', 'data-target': '#modal' },
-	                    'Desabilitar aplicativo'
-	                )
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'ls-box-group ls-overflow-hidden' },
+	                _AnimatedContent2.default,
+	                null,
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'row' },
+	                    { className: 'ls-lg-margin-bottom ls-txt-right' },
+	                    _react2.default.createElement(
+	                        'button',
+	                        { className: 'ls-btn-danger', 'data-ls-module': 'modal', 'data-target': '#modal' },
+	                        'Desabilitar aplicativo'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'ls-box-group ls-overflow-hidden' },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'col-md-4' },
+	                        { className: 'row' },
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: 'ls-box ls-md-space ls-no-bg' },
+	                            { className: 'col-md-4' },
 	                            _react2.default.createElement(
 	                                'div',
-	                                { className: 'ls-box-head' },
+	                                { className: 'ls-box ls-md-space ls-no-bg' },
 	                                _react2.default.createElement(
-	                                    'h6',
-	                                    { className: 'ls-title-6 ls-sm-margin-bottom' },
-	                                    'Titulo da caixa'
+	                                    'div',
+	                                    { className: 'ls-box-head' },
+	                                    _react2.default.createElement(
+	                                        'h6',
+	                                        { className: 'ls-title-6 ls-sm-margin-bottom' },
+	                                        'Titulo da caixa'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        { className: 'ls-md-margin-bottom' },
+	                                        'Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim. Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.'
+	                                    )
 	                                ),
 	                                _react2.default.createElement(
-	                                    'p',
-	                                    { className: 'ls-md-margin-bottom' },
-	                                    'Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim. Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'ls-box-body' },
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
-	                                    'Bot\xE3o principal'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
-	                                    'Bot\xE3o secund\xE1rio'
+	                                    'div',
+	                                    { className: 'ls-box-body' },
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
+	                                        'Bot\xE3o principal'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
+	                                        'Bot\xE3o secund\xE1rio'
+	                                    )
 	                                )
 	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-4' },
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: 'ls-box ls-md-space ls-no-bg' },
+	                            { className: 'col-md-4' },
 	                            _react2.default.createElement(
 	                                'div',
-	                                { className: 'ls-box-head' },
+	                                { className: 'ls-box ls-md-space ls-no-bg' },
 	                                _react2.default.createElement(
-	                                    'h6',
-	                                    { className: 'ls-title-6 ls-sm-margin-bottom' },
-	                                    'Titulo da caixa'
+	                                    'div',
+	                                    { className: 'ls-box-head' },
+	                                    _react2.default.createElement(
+	                                        'h6',
+	                                        { className: 'ls-title-6 ls-sm-margin-bottom' },
+	                                        'Titulo da caixa'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        { className: 'ls-md-margin-bottom' },
+	                                        'Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim. Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.'
+	                                    )
 	                                ),
 	                                _react2.default.createElement(
-	                                    'p',
-	                                    { className: 'ls-md-margin-bottom' },
-	                                    'Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim. Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'ls-box-body' },
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
-	                                    'Bot\xE3o principal'
+	                                    'div',
+	                                    { className: 'ls-box-body' },
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
+	                                        'Bot\xE3o principal'
+	                                    )
 	                                )
 	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-4' },
+	                        ),
 	                        _react2.default.createElement(
 	                            'div',
-	                            { className: 'ls-box ls-md-space ls-no-bg' },
+	                            { className: 'col-md-4' },
 	                            _react2.default.createElement(
 	                                'div',
-	                                { className: 'ls-box-head' },
+	                                { className: 'ls-box ls-md-space ls-no-bg' },
 	                                _react2.default.createElement(
-	                                    'h6',
-	                                    { className: 'ls-title-6 ls-sm-margin-bottom' },
-	                                    'Titulo da caixa'
+	                                    'div',
+	                                    { className: 'ls-box-head' },
+	                                    _react2.default.createElement(
+	                                        'h6',
+	                                        { className: 'ls-title-6 ls-sm-margin-bottom' },
+	                                        'Titulo da caixa'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        { className: 'ls-md-margin-bottom' },
+	                                        'Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim. Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.'
+	                                    )
 	                                ),
 	                                _react2.default.createElement(
-	                                    'p',
-	                                    { className: 'ls-md-margin-bottom' },
-	                                    'Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim. Non minim est incididunt do quis incididunt amet voluptate magna ut sint magna enim.'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'div',
-	                                { className: 'ls-box-body' },
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
-	                                    'Bot\xE3o principal'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
-	                                    'Bot\xE3o secund\xE1rio'
-	                                ),
-	                                _react2.default.createElement(
-	                                    'a',
-	                                    { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
-	                                    'Bot\xE3o secund\xE1rio'
+	                                    'div',
+	                                    { className: 'ls-box-body' },
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { href: '#', className: 'ls-btn ls-btn-primary ls-btn-block' },
+	                                        'Bot\xE3o principal'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
+	                                        'Bot\xE3o secund\xE1rio'
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'a',
+	                                        { href: '#', className: 'ls-btn ls-btn-default ls-btn-block' },
+	                                        'Bot\xE3o secund\xE1rio'
+	                                    )
 	                                )
 	                            )
 	                        )
@@ -31932,7 +32014,7 @@
 	exports.default = AppsPage;
 
 /***/ },
-/* 296 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
