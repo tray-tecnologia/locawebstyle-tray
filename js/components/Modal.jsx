@@ -21,7 +21,7 @@ class Modal extends React.Component {
                         </div>
                         <div className="ls-modal-footer ls-txt-right">
                             <button className="ls-btn ls-float-left" data-dismiss="modal">Fechar</button>
-                            <button type="submit" className="ls-btn-primary-danger" id="btn-modal" data-toggle-class="ls-display-none" data-target="#btn-modal, #btn-modal-disabled">
+                            <button type="submit" className="ls-btn ls-btn-danger ls-btn-primary-danger" id="btn-modal" data-toggle-class="ls-display-none" data-target="#btn-modal, #btn-modal-disabled">
                                 Desabilitar
                             </button>
                             <div>
