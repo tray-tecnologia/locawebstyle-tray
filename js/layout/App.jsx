@@ -27,7 +27,7 @@ class App extends React.Component {
     }
 
     /**
-     * Turns off page into an editor of text
+     * Turns off page into a text editor
      */
     onRemoveEditable() {
         store.dispatch(removeEditable());
