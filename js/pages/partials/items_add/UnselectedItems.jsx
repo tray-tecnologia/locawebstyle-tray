@@ -29,8 +29,12 @@ export default class UnselectedItems extends React.Component {
             overflow: 'scroll'
         };
 
+        if (!items.length) {
+            return null
+        }
+
         return (
-            <div className="ls-lg-margin-bottom" style={items.length > 5 ? style : {}}>
+            <div className={items.length > 5 ? 'ls-md-margin-bottom' : ''} style={items.length > 5 ? style : {}}>
                 <table className="ls-table ls-table-striped ls-table-bordered">
                     <tbody>
                         {items}
