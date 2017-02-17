@@ -9,16 +9,62 @@ class ItemsForm extends React.Component {
         super();
 
         this.state = {
-            items: [
-                { id: 1001, selected: false, name: 'Smartphone Motorola Moto B', price: 99.00, },
-                { id: 1523, selected: false, name: 'Smartphone Motorola Moto A', price: 99.00, },
-                { id: 1762, selected: false, name: 'Smartphone Motorola Moto G', price: 99.00, },
-                { id: 1070, selected: false, name: 'Smartphone Motorola Moto E', price: 99.00, },
-                { id: 1545, selected: false, name: 'Smartphone Motorola Moto W', price: 99.00, },
-                { id: 1031, selected: false, name: 'Smartphone Motorola Moto Maxx', price: 999.00, },
-                { id: 17462, selected: false, name: 'Smartphone Motorola Moto GGG', price: 919.00, },
-            ],
+            items: this.factoryItems(3),
         };
+    }
+
+    addNewItem(event) {
+        event.preventDefault()
+
+        let items = this.state.items
+
+        items.push(this.factoryItems()[0])
+
+        this.setState({
+            items: items
+        })
+    }
+
+    removeItem(event) {
+        event.preventDefault()
+        let items = this.state.items
+
+        if (items.length > 0) {
+            items.pop()
+        }
+
+        this.setState({ items: items })
+    }
+
+    getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    factoryItems(total = 1) {
+        let items = []
+
+        for (var count = 0; count < total; count++) {
+            items.push({
+                id: this.getRandomInt(1, 1000),
+                selected: false,
+                name: `Item de uma lista ${this.getRandomInt(1, 1000)}`,
+                price: Math.random(),
+            })
+        }
+
+        items.sort((a, b) => {
+            if (a.id > b.id) {
+                return 1;
+            }
+
+            if (a.id < b.id) {
+                return 0;
+            }
+
+            return -1;
+        })
+
+        return items
     }
 
     onSelect(itemID) {
@@ -111,10 +157,15 @@ class ItemsForm extends React.Component {
 
                 <section className="row ls-lg-margin-bottom">
                     <div className="col-md-4">
-                        <h3 className="ls-title-4 ls-md-margin-bottom">Produtos do kit</h3>
-                        <p>
+                        <h3 className="ls-title-4 ls-md-margin-bottom">Itens do kit</h3>
+                        <p className="ls-lg-margin-bottom">
                             Caso um dos produtos esteja indisponível ou sob consulta, seu kit poderá não ser exibido na loja para venda.
                         </p>
+
+                        <div className="ls-txt-right">
+                            <button onClick={this.addNewItem.bind(this)} className="ls-btn">+</button>
+                            <button onClick={this.removeItem.bind(this)} className="ls-btn">-</button>
+                        </div>
                     </div>
                     <div className="col-md-8 col-lg-8">
                         <ItemsAddSelectTable
@@ -123,8 +174,8 @@ class ItemsForm extends React.Component {
                             onRemove={this.onRemove.bind(this)}
                         />
                     </div>
-                    <div className="ls-clearfix"></div>
                 </section>
+                <div className="ls-clearfix"></div>
             </fieldset>
         );
     }

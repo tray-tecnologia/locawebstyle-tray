@@ -22,7 +22,7 @@ export default class ItemsAddSelectTable extends React.Component {
     render() {
         return (
             <div className="ls-box">
-                <h5>Lista de produtos</h5>
+                <h5>Lista de itens</h5>
                 <div className="ls-box-filter">
                     <fieldset className="ls-form ls-form-inline">
 
