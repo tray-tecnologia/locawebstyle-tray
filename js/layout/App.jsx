@@ -47,10 +47,12 @@ class App extends React.Component {
                     <div className="container-fluid ls-lg-margin-bottom" contentEditable={editable}>
                         {this.props.children}
                     </div>
+                    {/*
                     <div className="container-fluid">
                         <button className="ls-btn" onClick={this.onAddEditable}>Habilitar edição de conteúdo</button>
                         <button className="ls-btn" onClick={this.onRemoveEditable}>Desabilitar edição de conteúdo</button>
                     </div>
+                    */}
                 </main>
             </div>
         );

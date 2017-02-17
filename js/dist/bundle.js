@@ -29037,20 +29037,6 @@
 	                        'div',
 	                        { className: 'container-fluid ls-lg-margin-bottom', contentEditable: editable },
 	                        this.props.children
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'container-fluid' },
-	                        _react2.default.createElement(
-	                            'button',
-	                            { className: 'ls-btn', onClick: this.onAddEditable },
-	                            'Habilitar edi\xE7\xE3o de conte\xFAdo'
-	                        ),
-	                        _react2.default.createElement(
-	                            'button',
-	                            { className: 'ls-btn', onClick: this.onRemoveEditable },
-	                            'Desabilitar edi\xE7\xE3o de conte\xFAdo'
-	                        )
 	                    )
 	                )
 	            );
@@ -31206,7 +31192,7 @@
 /* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -31237,41 +31223,33 @@
 	    }
 
 	    _createClass(FloatingActions, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
-	            var fixedBarStyle = {
-	                width: 'calc(100% - 30px)'
-	            };
-
-	            var fixedBarStyleDesktop = {
-	                width: 'calc(100% - 325px)'
-	            };
-
 	            return _react2.default.createElement(
-	                'div',
+	                "div",
 	                null,
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'hidden-xs hidden-sm' },
+	                    "div",
+	                    { className: "hidden-xs hidden-sm" },
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'ls-alert-fixed-bottom ls-no-padding', style: fixedBarStyleDesktop },
+	                        "div",
+	                        { className: "ls-no-padding" },
 	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'ls-actions-btn ls-bg-white ls-txt-right ls-no-margin' },
+	                            "div",
+	                            { className: "ls-actions-btn ls-bg-white ls-txt-right ls-no-margin" },
 	                            this.props.children
 	                        )
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'visible-xs visible-sm' },
+	                    "div",
+	                    { className: "visible-xs visible-sm" },
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'ls-alert-fixed-bottom ls-no-padding', style: fixedBarStyle },
+	                        "div",
+	                        { className: "ls-no-padding" },
 	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'ls-actions-btn ls-bg-white ls-txt-right ls-no-margin' },
+	                            "div",
+	                            { className: "ls-actions-btn ls-bg-white ls-txt-right ls-no-margin" },
 	                            this.props.children
 	                        )
 	                    )
@@ -31324,12 +31302,72 @@
 	        var _this = _possibleConstructorReturn(this, (ItemsForm.__proto__ || Object.getPrototypeOf(ItemsForm)).call(this));
 
 	        _this.state = {
-	            items: [{ id: 1001, selected: false, name: 'Smartphone Motorola Moto B', price: 99.00 }, { id: 1523, selected: false, name: 'Smartphone Motorola Moto A', price: 99.00 }, { id: 1762, selected: false, name: 'Smartphone Motorola Moto G', price: 99.00 }, { id: 1070, selected: false, name: 'Smartphone Motorola Moto E', price: 99.00 }, { id: 1545, selected: false, name: 'Smartphone Motorola Moto W', price: 99.00 }, { id: 1031, selected: false, name: 'Smartphone Motorola Moto Maxx', price: 999.00 }, { id: 17462, selected: false, name: 'Smartphone Motorola Moto GGG', price: 919.00 }]
+	            items: _this.factoryItems(3)
 	        };
 	        return _this;
 	    }
 
 	    _createClass(ItemsForm, [{
+	        key: 'addNewItem',
+	        value: function addNewItem(event) {
+	            event.preventDefault();
+
+	            var items = this.state.items;
+
+	            items.push(this.factoryItems()[0]);
+
+	            this.setState({
+	                items: items
+	            });
+	        }
+	    }, {
+	        key: 'removeItem',
+	        value: function removeItem(event) {
+	            event.preventDefault();
+	            var items = this.state.items;
+
+	            if (items.length > 0) {
+	                items.pop();
+	            }
+
+	            this.setState({ items: items });
+	        }
+	    }, {
+	        key: 'getRandomInt',
+	        value: function getRandomInt(min, max) {
+	            return Math.floor(Math.random() * (max - min)) + min;
+	        }
+	    }, {
+	        key: 'factoryItems',
+	        value: function factoryItems() {
+	            var total = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+	            var items = [];
+
+	            for (var count = 0; count < total; count++) {
+	                items.push({
+	                    id: this.getRandomInt(1, 1000),
+	                    selected: false,
+	                    name: 'Item de uma lista ' + this.getRandomInt(1, 1000),
+	                    price: Math.random()
+	                });
+	            }
+
+	            items.sort(function (a, b) {
+	                if (a.id > b.id) {
+	                    return 1;
+	                }
+
+	                if (a.id < b.id) {
+	                    return 0;
+	                }
+
+	                return -1;
+	            });
+
+	            return items;
+	        }
+	    }, {
 	        key: 'onSelect',
 	        value: function onSelect(itemID) {
 	            var items = this.state.items.map(function (item, index) {
@@ -31503,12 +31541,26 @@
 	                        _react2.default.createElement(
 	                            'h3',
 	                            { className: 'ls-title-4 ls-md-margin-bottom' },
-	                            'Produtos do kit'
+	                            'Itens do kit'
 	                        ),
 	                        _react2.default.createElement(
 	                            'p',
-	                            null,
+	                            { className: 'ls-lg-margin-bottom' },
 	                            'Caso um dos produtos esteja indispon\xEDvel ou sob consulta, seu kit poder\xE1 n\xE3o ser exibido na loja para venda.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'ls-txt-right' },
+	                            _react2.default.createElement(
+	                                'button',
+	                                { onClick: this.addNewItem.bind(this), className: 'ls-btn' },
+	                                '+'
+	                            ),
+	                            _react2.default.createElement(
+	                                'button',
+	                                { onClick: this.removeItem.bind(this), className: 'ls-btn' },
+	                                '-'
+	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -31519,9 +31571,9 @@
 	                            onSelect: this.onSelect.bind(this),
 	                            onRemove: this.onRemove.bind(this)
 	                        })
-	                    ),
-	                    _react2.default.createElement('div', { className: 'ls-clearfix' })
-	                )
+	                    )
+	                ),
+	                _react2.default.createElement('div', { className: 'ls-clearfix' })
 	            );
 	        }
 	    }]);
@@ -31588,15 +31640,11 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'ls-box' },
-	                _react2.default.createElement(
-	                    'h5',
-	                    null,
-	                    'Lista de produtos'
-	                ),
-	                _react2.default.createElement(
+	            var filter = null;
+	            var noItems = null;
+
+	            if (this.props.items.length >= 10) {
+	                filter = _react2.default.createElement(
 	                    'div',
 	                    { className: 'ls-box-filter' },
 	                    _react2.default.createElement(
@@ -31613,7 +31661,29 @@
 	                            _react2.default.createElement('input', { className: 'ls-field', type: 'text', placeholder: 'Nome do produto', name: 'products[filters][code]' })
 	                        )
 	                    )
+	                );
+	            }
+
+	            if (!this.props.items.length) {
+	                noItems = _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'Nenhum item encontrado'
+	                );
+	            }
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'ls-box' },
+	                _react2.default.createElement(
+	                    'h5',
+	                    { className: 'ls-title-6' },
+	                    'Lista de itens (',
+	                    this.props.items.length,
+	                    ')'
 	                ),
+	                noItems,
+	                filter,
 	                _react2.default.createElement(_UnselectedItems2.default, { items: this.props.items, onSelect: this.onSelect.bind(this) }),
 	                _react2.default.createElement(_SelectedItems2.default, { items: this.props.items, onRemove: this.onRemove.bind(this) })
 	            );
@@ -31708,9 +31778,13 @@
 	                overflow: 'scroll'
 	            };
 
+	            if (!items.length) {
+	                return null;
+	            }
+
 	            return _react2.default.createElement(
 	                "div",
-	                { className: "ls-lg-margin-bottom", style: items.length > 5 ? style : {} },
+	                { className: items.length > 5 ? 'ls-md-margin-bottom' : '', style: items.length > 5 ? style : {} },
 	                _react2.default.createElement(
 	                    "table",
 	                    { className: "ls-table ls-table-striped ls-table-bordered" },

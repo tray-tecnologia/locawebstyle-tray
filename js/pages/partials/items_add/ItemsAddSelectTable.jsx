@@ -20,9 +20,11 @@ export default class ItemsAddSelectTable extends React.Component {
     }
 
     render() {
-        return (
-            <div className="ls-box">
-                <h5>Lista de produtos</h5>
+        let filter = null
+        let noItems = null
+
+        if (this.props.items.length >= 10) {
+            filter = (
                 <div className="ls-box-filter">
                     <fieldset className="ls-form ls-form-inline">
 
@@ -36,9 +38,23 @@ export default class ItemsAddSelectTable extends React.Component {
 
                     </fieldset>
                 </div>
+            )
+        }
 
+        if (!this.props.items.length) {
+            noItems = (
+                <p>
+                    Nenhum item encontrado
+                </p>
+            )
+        }
+
+        return (
+            <div className="ls-box">
+                <h5 className="ls-title-6">Lista de itens ({this.props.items.length})</h5>
+                {noItems}
+                {filter}
                 <UnselectedItems items={this.props.items} onSelect={this.onSelect.bind(this)} />
-
                 <SelectedItems items={this.props.items} onRemove={this.onRemove.bind(this)} />
             </div>
         );
