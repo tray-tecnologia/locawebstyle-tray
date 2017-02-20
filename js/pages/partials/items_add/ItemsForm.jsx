@@ -10,6 +10,7 @@ class ItemsForm extends React.Component {
 
         this.state = {
             items: this.factoryItems(3),
+            multi: true
         };
     }
 
@@ -49,6 +50,7 @@ class ItemsForm extends React.Component {
                 selected: false,
                 name: `Item de uma lista ${this.getRandomInt(1, 1000)}`,
                 price: Math.random(),
+                available: this.getRandomInt(0, 2),
             })
         }
 
@@ -89,6 +91,13 @@ class ItemsForm extends React.Component {
         });
 
         this.setState({items:items});
+    }
+
+    toggleMultiSelect() {
+        let multi = this.state.multi
+        this.setState({
+            multi: !multi
+        })
     }
 
     render() {
@@ -163,12 +172,27 @@ class ItemsForm extends React.Component {
                         </p>
 
                         <div className="ls-txt-right">
-                            <button onClick={this.addNewItem.bind(this)} className="ls-btn">+</button>
-                            <button onClick={this.removeItem.bind(this)} className="ls-btn">-</button>
+                            <p>
+                                <a href="#" onClick={this.addNewItem.bind(this)} className="ls-btn">
+                                    <span className="ls-ico-plus"></span>
+                                    Adicionar item
+                                </a>
+                                <a href="#" onClick={this.removeItem.bind(this)} className="ls-btn">
+                                    <span className="ls-ico-minus"></span>
+                                    Remover item
+                                </a>
+                            </p>
+                            <p>
+                                <label className="ls-label" htmlFor="enable-multi-select">
+                                    <b className="ls-label-text">Habilitar multi select</b>
+                                    <input id="enable-multi-select" type="checkbox" checked={this.state.multi} onChange={this.toggleMultiSelect.bind(this)} />
+                                </label>
+                            </p>
                         </div>
                     </div>
                     <div className="col-md-8 col-lg-8">
                         <ItemsAddSelectTable
+                            multi={this.state.multi}
                             items={this.state.items}
                             onSelect={this.onSelect.bind(this)}
                             onRemove={this.onRemove.bind(this)}

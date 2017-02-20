@@ -11,10 +11,11 @@ var messages = {
 
 gulp.task('dependencies', () => {
     gulp.src([
+        'node_modules/animate.css/animate.css',
         'node_modules/locawebstyle/dist/stylesheets/locastyle.css',
         'node_modules/locawebstyle/dist/javascripts/libs/jquery-2.1.0.min.js',
         'node_modules/locawebstyle/dist/javascripts/locastyle.js',
-    ], { read: false }).pipe(gulp.dest('./assets'));
+    ], { read: true }).pipe(gulp.dest('./assets'));
 
     gulp.src([
         'node_modules/locawebstyle/dist/stylesheets/fonts/**',

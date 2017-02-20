@@ -2,7 +2,6 @@ import React from 'react';
 
 export default class UnselectedItems extends React.Component {
     render() {
-
         let items = this.props.items.filter((element) => {
             return !element.selected;
         }).map((element, index) => {
@@ -11,21 +10,29 @@ export default class UnselectedItems extends React.Component {
             }
 
             return (
-                <tr key={index}>
-                    <td className="ls-text-sm">{element.id} - {element.name}</td>
+                <tr className={!element.available ? 'ls-background-danger' : ''} key={index}>
+                    <td className="ls-text-sm">
+                        {element.id} - {element.name}
+                    </td>
                     <td className="ls-text-sm ls-txt-right ls-width-150">R$ 99,00</td>
                     <td className="ls-text-sm ls-txt-right ls-width-150">
-                        <a href="#" aria-label="Ver imagem do produto" className="ls-text-xl ls-sm-margin-right ls-tooltip-left">
-                            <span className="ls-ico-images"></span>
-                        </a>
-                        <button className="ls-btn-xs ls-btn" onClick={this.props.onSelect} data-item-id={element.id}>Selecionar</button>
+                        <span aria-label="Ver imagem do produto" className="ls-display-inline-block ls-tooltip-left">
+                            <i className="ls-ico-images ls-text-xl ls-sm-margin-right"></i>
+                        </span>
+                        <button className="ls-btn-xs ls-btn ls-btn-primary" onClick={this.props.onSelect} data-item-id={element.id}>
+                            Selecionar
+                        </button>
                     </td>
                 </tr>
             );
         });
 
+        if (this.props.hasSelectedItems && !this.props.multi) {
+            return null
+        }
+
         let style = {
-            height: '280px',
+            height: '230px',
             overflow: 'scroll'
         };
 
@@ -34,8 +41,8 @@ export default class UnselectedItems extends React.Component {
         }
 
         return (
-            <div className={items.length > 5 ? 'ls-md-margin-bottom' : ''} style={items.length > 5 ? style : {}}>
-                <table className="ls-table ls-table-striped ls-table-bordered">
+            <div className={this.props.hasSelectedItems ? 'ls-md-margin-bottom' : ''} style={items.length > 4 ? style : {}}>
+                <table className="ls-table ls-table-striped ls-table-bordered ls-no-margin">
                     <tbody>
                         {items}
                     </tbody>
