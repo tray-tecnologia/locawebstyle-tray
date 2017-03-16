@@ -2,19 +2,18 @@ import React from 'react';
 
 export default class SelectedItems extends React.Component {
     render() {
-
-        let items = this.props.items.filter((element) => {
-            return element.selected;
-        }).map((element, index) => {
+        let items = this.props.selectedItems.map((element, index) => {
             return (
-                <tr key={index}>
+                <tr className={!element.available ? 'ls-background-danger' : ''} key={index}>
                     <td className="ls-text-sm">{element.id} - {element.name}</td>
                     <td className="ls-text-sm ls-txt-right ls-width-150">R$ 99,00</td>
                     <td className="ls-text-sm ls-txt-right ls-width-150">
-                        <a href="#" aria-label="Ver imagem do produto" className="ls-text-xl ls-sm-margin-right ls-tooltip-left">
-                            <span className="ls-ico-images"></span>
-                        </a>
-                        <button className="ls-btn-xs ls-btn-danger" onClick={this.props.onRemove} data-item-id={element.id}>Remover</button>
+                        <span aria-label="Ver imagem do produto" className="ls-display-inline-block ls-tooltip-left">
+                            <i className="ls-ico-images ls-text-xl ls-sm-margin-right"></i>
+                        </span>
+                        <button className="ls-btn-xs ls-btn-danger" onClick={this.props.onRemove} data-item-id={element.id}>
+                            {this.props.multi ? 'Remover' : 'Alterar'}
+                        </button>
                     </td>
                 </tr>
             );
@@ -25,15 +24,15 @@ export default class SelectedItems extends React.Component {
         }
 
         let style = {
-            height: '280px',
+            height: '230px',
             overflow: 'scroll'
         };
 
         return (
             <div>
-                <h5>Produtos selecionados</h5>
-                <div style={items.length > 5 ? style : {}}>
-                    <table className="ls-table ls-table-striped ls-table-bordered ls-no-margin-bottom">
+                <h5 className="ls-md-margin-bottom">{items.length > 1 ? 'Itens selecionados' : 'Item selecionado'}</h5>
+                <div style={items.length > 4 ? style : {}}>
+                    <table className="ls-table ls-table-striped ls-table-bordered ls-no-margin">
                         <tbody>
                             {items}
                         </tbody>

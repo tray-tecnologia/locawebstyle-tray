@@ -26,7 +26,7 @@ class ItemsEmpty extends React.Component {
         return (
             <div>
                 <div className="ls-lg-margin-bottom">
-                    <h2 className="ls-title-5">Você ainda não possui itens cadastrados.</h2>
+                    <h2 className="ls-title-5">Você ainda não possui itens cadastrados</h2>
                 </div>
 
                 <div className="ls-box ls-lg-space">

@@ -5,6 +5,11 @@ import SelectedItems from './SelectedItems.jsx';
 
 export default class ItemsAddSelectTable extends React.Component {
 
+    constructor() {
+        super()
+        this.selectedItems = []
+    }
+
     onSelect(event) {
         event.nativeEvent.preventDefault();
         this.props.onSelect(
@@ -19,13 +24,31 @@ export default class ItemsAddSelectTable extends React.Component {
         );
     }
 
+    filterSelectedItems() {
+        if (!this.props.items.length) {
+            return false
+        }
+
+        this.selectedItems = this.props.items.filter((element) => {
+            return element.selected;
+        })
+
+        return this.selectedItems
+    }
+
+    hasSelectedItems() {
+        return this.selectedItems.length > 0
+    }
+
     render() {
         let filter = null
         let noItems = null
 
-        if (this.props.items.length >= 10) {
+        this.filterSelectedItems()
+
+        if (this.props.items.length >= 11) {
             filter = (
-                <div className="ls-box-filter">
+                <div className="ls-box-filter ls-md-margin-bottom">
                     <fieldset className="ls-form ls-form-inline">
 
                         <label className="ls-label col-sm-5">
@@ -44,18 +67,27 @@ export default class ItemsAddSelectTable extends React.Component {
         if (!this.props.items.length) {
             noItems = (
                 <p>
-                    Nenhum item encontrado
+                    Nenhum item disponível
                 </p>
             )
         }
 
+        let title = (
+            <h5 className="ls-title-6 ls-md-margin-bottom">Lista de itens ({this.props.items.length})</h5>
+        )
+
+        if (this.hasSelectedItems() && !this.props.multi) {
+            title = null
+            filter = null
+        }
+
         return (
             <div className="ls-box">
-                <h5 className="ls-title-6">Lista de itens ({this.props.items.length})</h5>
+                {title}
                 {noItems}
                 {filter}
-                <UnselectedItems items={this.props.items} onSelect={this.onSelect.bind(this)} />
-                <SelectedItems items={this.props.items} onRemove={this.onRemove.bind(this)} />
+                <UnselectedItems multi={this.props.multi} items={this.props.items} hasSelectedItems={this.hasSelectedItems()} onSelect={this.onSelect.bind(this)} />
+                <SelectedItems selectedItems={this.selectedItems} multi={this.props.multi} items={this.props.items} onRemove={this.onRemove.bind(this)} />
             </div>
         );
     }

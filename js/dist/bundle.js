@@ -21485,15 +21485,15 @@
 
 	var _Stores2 = _interopRequireDefault(_Stores);
 
-	var _App = __webpack_require__(273);
+	var _App = __webpack_require__(272);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _Home = __webpack_require__(277);
+	var _Home = __webpack_require__(276);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Items = __webpack_require__(280);
+	var _Items = __webpack_require__(279);
 
 	var _Items2 = _interopRequireDefault(_Items);
 
@@ -28835,8 +28835,6 @@
 
 	var _Reducers2 = _interopRequireDefault(_Reducers);
 
-	var _Actions = __webpack_require__(272);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var store = (0, _redux.createStore)(_Reducers2.default);
@@ -28856,23 +28854,14 @@
 	var _redux = __webpack_require__(186);
 
 	var initialState = {
-	    editable: false,
 	    items: []
 	};
 
-	var editableReducer = function editableReducer() {
+	var Reducers = function Reducers() {
 	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
 	    var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
 	    switch (action.type) {
-	        case 'ADD_EDITABLE':
-	            return Object.assign({}, state, {
-	                editable: true
-	            });
-	        case 'REMOVE_EDITABLE':
-	            return Object.assign({}, state, {
-	                editable: false
-	            });
 	        case 'ADD_ITEMS':
 	            return Object.assign({}, state, {
 	                items: action.itemsData
@@ -28882,62 +28871,10 @@
 	    }
 	};
 
-	exports.default = editableReducer;
+	exports.default = Reducers;
 
 /***/ },
 /* 272 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	// actions types
-	var ADD_ITEM = 'ADD_ITEM';
-	var REMOVE_ITEM = 'REMOVE_ITEM';
-	var ADD_ITEMS = 'ADD_ITEMS';
-	var ADD_EDITABLE = 'ADD_EDITABLE';
-	var REMOVE_EDITABLE = 'REMOVE_EDITABLE';
-
-	// actions creators
-	var addItem = exports.addItem = function addItem(itemData) {
-	    return {
-	        type: ADD_ITEM,
-	        itemData: itemData
-	    };
-	};
-
-	var removeItem = exports.removeItem = function removeItem(itemID) {
-	    return {
-	        type: REMOVE_ITEM,
-	        itemID: itemID
-	    };
-	};
-
-	var addItems = exports.addItems = function addItems(itemsData) {
-	    return {
-	        type: ADD_ITEMS,
-	        itemsData: itemsData
-	    };
-	};
-
-	var addEditable = exports.addEditable = function addEditable() {
-	    return {
-	        type: ADD_EDITABLE,
-	        editable: true
-	    };
-	};
-
-	var removeEditable = exports.removeEditable = function removeEditable() {
-	    return {
-	        type: REMOVE_EDITABLE,
-	        editable: false
-	    };
-	};
-
-/***/ },
-/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28956,21 +28893,19 @@
 
 	var _reactRedux = __webpack_require__(179);
 
-	var _Actions = __webpack_require__(272);
-
 	var _Stores = __webpack_require__(270);
 
 	var _Stores2 = _interopRequireDefault(_Stores);
 
-	var _Header = __webpack_require__(274);
+	var _Header = __webpack_require__(273);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Sidebar = __webpack_require__(275);
+	var _Sidebar = __webpack_require__(274);
 
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
-	var _Alert = __webpack_require__(276);
+	var _Alert = __webpack_require__(275);
 
 	var _Alert2 = _interopRequireDefault(_Alert);
 
@@ -28988,43 +28923,12 @@
 	    function App(props) {
 	        _classCallCheck(this, App);
 
-	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-
-	        _Stores2.default.subscribe(function () {
-	            _this.forceUpdate();
-	        });
-	        return _this;
+	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	    }
 
-	    /**
-	     * Turns on page into an editor of text
-	     */
-
-
 	    _createClass(App, [{
-	        key: 'onAddEditable',
-	        value: function onAddEditable() {
-	            _Stores2.default.dispatch((0, _Actions.addEditable)());
-	        }
-
-	        /**
-	         * Turns off page into a text editor
-	         */
-
-	    }, {
-	        key: 'onRemoveEditable',
-	        value: function onRemoveEditable() {
-	            _Stores2.default.dispatch((0, _Actions.removeEditable)());
-	        }
-	    }, {
-	        key: 'isEditable',
-	        value: function isEditable() {
-	            return _Stores2.default.getState().editable;
-	        }
-	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var editable = this.isEditable();
 	            return _react2.default.createElement(
 	                'div',
 	                null,
@@ -29035,7 +28939,7 @@
 	                    { className: 'ls-main' },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'container-fluid ls-lg-margin-bottom', contentEditable: editable },
+	                        { className: 'container-fluid ls-lg-margin-bottom' },
 	                        this.props.children
 	                    )
 	                )
@@ -29049,7 +28953,7 @@
 	exports.default = (0, _reactRouter.withRouter)(App);
 
 /***/ },
-/* 274 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29181,7 +29085,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 275 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29279,7 +29183,7 @@
 	exports.default = Sidebar;
 
 /***/ },
-/* 276 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29374,7 +29278,7 @@
 	exports.default = Alert;
 
 /***/ },
-/* 277 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29389,11 +29293,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Breadcrumb = __webpack_require__(278);
+	var _Breadcrumb = __webpack_require__(277);
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _AnimatedContent = __webpack_require__(279);
+	var _AnimatedContent = __webpack_require__(278);
 
 	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
 
@@ -29461,7 +29365,7 @@
 	exports.default = HomePage;
 
 /***/ },
-/* 278 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29541,7 +29445,7 @@
 	exports.default = Breadcrumb;
 
 /***/ },
-/* 279 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29591,7 +29495,7 @@
 	exports.default = AnimatedContent;
 
 /***/ },
-/* 280 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29610,15 +29514,15 @@
 
 	var _Stores2 = _interopRequireDefault(_Stores);
 
-	var _Breadcrumb = __webpack_require__(278);
+	var _Breadcrumb = __webpack_require__(277);
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _AnimatedContent = __webpack_require__(279);
+	var _AnimatedContent = __webpack_require__(278);
 
 	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
 
-	var _FilterableItemsTable = __webpack_require__(281);
+	var _FilterableItemsTable = __webpack_require__(280);
 
 	var _FilterableItemsTable2 = _interopRequireDefault(_FilterableItemsTable);
 
@@ -29636,17 +29540,23 @@
 	  function ItemsPage(props) {
 	    _classCallCheck(this, ItemsPage);
 
-	    var _this = _possibleConstructorReturn(this, (ItemsPage.__proto__ || Object.getPrototypeOf(ItemsPage)).call(this, props));
-
-	    _Stores2.default.subscribe(function () {
-	      _this.forceUpdate();
-	    });
-	    return _this;
+	    return _possibleConstructorReturn(this, (ItemsPage.__proto__ || Object.getPrototypeOf(ItemsPage)).call(this, props));
 	  }
 
 	  _createClass(ItemsPage, [{
+	    key: 'checkStore',
+	    value: function checkStore() {
+	      var _this2 = this;
+
+	      _Stores2.default.subscribe(function () {
+	        return _this2.forceUpdate();
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      this.checkStore();
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -29666,7 +29576,7 @@
 	exports.default = ItemsPage;
 
 /***/ },
-/* 281 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29683,11 +29593,11 @@
 
 	var _Stores2 = _interopRequireDefault(_Stores);
 
-	var _ItemsActions = __webpack_require__(282);
+	var _ItemsActions = __webpack_require__(281);
 
 	var _ItemsActions2 = _interopRequireDefault(_ItemsActions);
 
-	var _ItemsEmpty = __webpack_require__(283);
+	var _ItemsEmpty = __webpack_require__(282);
 
 	var _ItemsEmpty2 = _interopRequireDefault(_ItemsEmpty);
 
@@ -29733,11 +29643,13 @@
 	     * When user filter some data
 	     */
 	    onFilterInput: function onFilterInput(filters) {
+	        var _this = this;
+
 	        this.setState({
 	            filters: filters
 	        }, function () {
-	            this.filterItems();
-	        }.bind(this));
+	            return _this.filterItems();
+	        });
 	    },
 
 
@@ -29761,18 +29673,20 @@
 	     * Filter items
 	     */
 	    filterItems: function filterItems() {
+	        var _this2 = this;
+
 	        var filters = this.state.filters;
-	        var items = this.state.items;
+	        var items = _Stores2.default.getState().items;
 
 	        var filteredItems = items.filter(function (item) {
-	            item = this.filterItemById(filters.id, item);
-	            item = this.filterItemByName(filters.name, item);
-	            item = this.filterItemByStatus(filters.status, item);
+	            item = _this2.filterItemById(filters.id, item);
+	            item = _this2.filterItemByName(filters.name, item);
+	            item = _this2.filterItemByStatus(filters.status, item);
 
 	            if (item) {
 	                return item;
 	            }
-	        }.bind(this));
+	        });
 
 	        this.setState({ filteredItems: filteredItems });
 	    },
@@ -29883,7 +29797,7 @@
 	exports.default = FilterableItemsTable;
 
 /***/ },
-/* 282 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29938,7 +29852,7 @@
 	exports.default = ItemsActions;
 
 /***/ },
-/* 283 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29961,7 +29875,7 @@
 
 	var _Stores2 = _interopRequireDefault(_Stores);
 
-	var _Actions = __webpack_require__(272);
+	var _Actions = __webpack_require__(283);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30004,7 +29918,7 @@
 	                    _react2.default.createElement(
 	                        'h2',
 	                        { className: 'ls-title-5' },
-	                        'Voc\xEA ainda n\xE3o possui itens cadastrados.'
+	                        'Voc\xEA ainda n\xE3o possui itens cadastrados'
 	                    )
 	                ),
 	                _react2.default.createElement(
@@ -30047,6 +29961,44 @@
 	}(_react2.default.Component);
 
 	exports.default = ItemsEmpty;
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// actions types
+	var ADD_ITEM = 'ADD_ITEM';
+	var REMOVE_ITEM = 'REMOVE_ITEM';
+	var ADD_ITEMS = 'ADD_ITEMS';
+	var ADD_EDITABLE = 'ADD_EDITABLE';
+	var REMOVE_EDITABLE = 'REMOVE_EDITABLE';
+
+	// actions creators
+	var addItem = exports.addItem = function addItem(itemData) {
+	    return {
+	        type: ADD_ITEM,
+	        itemData: itemData
+	    };
+	};
+
+	var removeItem = exports.removeItem = function removeItem(itemID) {
+	    return {
+	        type: REMOVE_ITEM,
+	        itemID: itemID
+	    };
+	};
+
+	var addItems = exports.addItems = function addItems(itemsData) {
+	    return {
+	        type: ADD_ITEMS,
+	        itemsData: itemsData
+	    };
+	};
 
 /***/ },
 /* 284 */
@@ -31019,15 +30971,15 @@
 
 	var _reactRouter = __webpack_require__(209);
 
-	var _Alert = __webpack_require__(276);
+	var _Alert = __webpack_require__(275);
 
 	var _Alert2 = _interopRequireDefault(_Alert);
 
-	var _AnimatedContent = __webpack_require__(279);
+	var _AnimatedContent = __webpack_require__(278);
 
 	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
 
-	var _Breadcrumb = __webpack_require__(278);
+	var _Breadcrumb = __webpack_require__(277);
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
@@ -31302,7 +31254,8 @@
 	        var _this = _possibleConstructorReturn(this, (ItemsForm.__proto__ || Object.getPrototypeOf(ItemsForm)).call(this));
 
 	        _this.state = {
-	            items: _this.factoryItems(3)
+	            items: _this.factoryItems(3),
+	            multi: true
 	        };
 	        return _this;
 	    }
@@ -31349,7 +31302,8 @@
 	                    id: this.getRandomInt(1, 1000),
 	                    selected: false,
 	                    name: 'Item de uma lista ' + this.getRandomInt(1, 1000),
-	                    price: Math.random()
+	                    price: Math.random(),
+	                    available: this.getRandomInt(0, 2)
 	                });
 	            }
 
@@ -31392,6 +31346,14 @@
 	            });
 
 	            this.setState({ items: items });
+	        }
+	    }, {
+	        key: 'toggleMultiSelect',
+	        value: function toggleMultiSelect() {
+	            var multi = this.state.multi;
+	            this.setState({
+	                multi: !multi
+	            });
 	        }
 	    }, {
 	        key: 'render',
@@ -31552,14 +31514,34 @@
 	                            'div',
 	                            { className: 'ls-txt-right' },
 	                            _react2.default.createElement(
-	                                'button',
-	                                { onClick: this.addNewItem.bind(this), className: 'ls-btn' },
-	                                '+'
+	                                'p',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', onClick: this.addNewItem.bind(this), className: 'ls-btn' },
+	                                    _react2.default.createElement('span', { className: 'ls-ico-plus' }),
+	                                    'Adicionar item'
+	                                ),
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#', onClick: this.removeItem.bind(this), className: 'ls-btn' },
+	                                    _react2.default.createElement('span', { className: 'ls-ico-minus' }),
+	                                    'Remover item'
+	                                )
 	                            ),
 	                            _react2.default.createElement(
-	                                'button',
-	                                { onClick: this.removeItem.bind(this), className: 'ls-btn' },
-	                                '-'
+	                                'p',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'label',
+	                                    { className: 'ls-label', htmlFor: 'enable-multi-select' },
+	                                    _react2.default.createElement(
+	                                        'b',
+	                                        { className: 'ls-label-text' },
+	                                        'Habilitar multi select'
+	                                    ),
+	                                    _react2.default.createElement('input', { id: 'enable-multi-select', type: 'checkbox', checked: this.state.multi, onChange: this.toggleMultiSelect.bind(this) })
+	                                )
 	                            )
 	                        )
 	                    ),
@@ -31567,6 +31549,7 @@
 	                        'div',
 	                        { className: 'col-md-8 col-lg-8' },
 	                        _react2.default.createElement(_ItemsAddSelectTable2.default, {
+	                            multi: this.state.multi,
 	                            items: this.state.items,
 	                            onSelect: this.onSelect.bind(this),
 	                            onRemove: this.onRemove.bind(this)
@@ -31622,7 +31605,10 @@
 	    function ItemsAddSelectTable() {
 	        _classCallCheck(this, ItemsAddSelectTable);
 
-	        return _possibleConstructorReturn(this, (ItemsAddSelectTable.__proto__ || Object.getPrototypeOf(ItemsAddSelectTable)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (ItemsAddSelectTable.__proto__ || Object.getPrototypeOf(ItemsAddSelectTable)).call(this));
+
+	        _this.selectedItems = [];
+	        return _this;
 	    }
 
 	    _createClass(ItemsAddSelectTable, [{
@@ -31638,15 +31624,35 @@
 	            this.props.onRemove(event.nativeEvent.target.getAttribute('data-item-id'));
 	        }
 	    }, {
+	        key: 'filterSelectedItems',
+	        value: function filterSelectedItems() {
+	            if (!this.props.items.length) {
+	                return false;
+	            }
+
+	            this.selectedItems = this.props.items.filter(function (element) {
+	                return element.selected;
+	            });
+
+	            return this.selectedItems;
+	        }
+	    }, {
+	        key: 'hasSelectedItems',
+	        value: function hasSelectedItems() {
+	            return this.selectedItems.length > 0;
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var filter = null;
 	            var noItems = null;
 
-	            if (this.props.items.length >= 10) {
+	            this.filterSelectedItems();
+
+	            if (this.props.items.length >= 11) {
 	                filter = _react2.default.createElement(
 	                    'div',
-	                    { className: 'ls-box-filter' },
+	                    { className: 'ls-box-filter ls-md-margin-bottom' },
 	                    _react2.default.createElement(
 	                        'fieldset',
 	                        { className: 'ls-form ls-form-inline' },
@@ -31668,24 +31674,31 @@
 	                noItems = _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'Nenhum item encontrado'
+	                    'Nenhum item dispon\xEDvel'
 	                );
+	            }
+
+	            var title = _react2.default.createElement(
+	                'h5',
+	                { className: 'ls-title-6 ls-md-margin-bottom' },
+	                'Lista de itens (',
+	                this.props.items.length,
+	                ')'
+	            );
+
+	            if (this.hasSelectedItems() && !this.props.multi) {
+	                title = null;
+	                filter = null;
 	            }
 
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'ls-box' },
-	                _react2.default.createElement(
-	                    'h5',
-	                    { className: 'ls-title-6' },
-	                    'Lista de itens (',
-	                    this.props.items.length,
-	                    ')'
-	                ),
+	                title,
 	                noItems,
 	                filter,
-	                _react2.default.createElement(_UnselectedItems2.default, { items: this.props.items, onSelect: this.onSelect.bind(this) }),
-	                _react2.default.createElement(_SelectedItems2.default, { items: this.props.items, onRemove: this.onRemove.bind(this) })
+	                _react2.default.createElement(_UnselectedItems2.default, { multi: this.props.multi, items: this.props.items, hasSelectedItems: this.hasSelectedItems(), onSelect: this.onSelect.bind(this) }),
+	                _react2.default.createElement(_SelectedItems2.default, { selectedItems: this.selectedItems, multi: this.props.multi, items: this.props.items, onRemove: this.onRemove.bind(this) })
 	            );
 	        }
 	    }]);
@@ -31699,7 +31712,7 @@
 /* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -31730,7 +31743,7 @@
 	    }
 
 	    _createClass(UnselectedItems, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 
@@ -31742,39 +31755,43 @@
 	                }
 
 	                return _react2.default.createElement(
-	                    "tr",
-	                    { key: index },
+	                    'tr',
+	                    { className: !element.available ? 'ls-background-danger' : '', key: index },
 	                    _react2.default.createElement(
-	                        "td",
-	                        { className: "ls-text-sm" },
+	                        'td',
+	                        { className: 'ls-text-sm' },
 	                        element.id,
-	                        " - ",
+	                        ' - ',
 	                        element.name
 	                    ),
 	                    _react2.default.createElement(
-	                        "td",
-	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
-	                        "R$ 99,00"
+	                        'td',
+	                        { className: 'ls-text-sm ls-txt-right ls-width-150' },
+	                        'R$ 99,00'
 	                    ),
 	                    _react2.default.createElement(
-	                        "td",
-	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
+	                        'td',
+	                        { className: 'ls-text-sm ls-txt-right ls-width-150' },
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", "aria-label": "Ver imagem do produto", className: "ls-text-xl ls-sm-margin-right ls-tooltip-left" },
-	                            _react2.default.createElement("span", { className: "ls-ico-images" })
+	                            'span',
+	                            { 'aria-label': 'Ver imagem do produto', className: 'ls-display-inline-block ls-tooltip-left' },
+	                            _react2.default.createElement('i', { className: 'ls-ico-images ls-text-xl ls-sm-margin-right' })
 	                        ),
 	                        _react2.default.createElement(
-	                            "button",
-	                            { className: "ls-btn-xs ls-btn", onClick: _this2.props.onSelect, "data-item-id": element.id },
-	                            "Selecionar"
+	                            'button',
+	                            { className: 'ls-btn-xs ls-btn ls-btn-primary', onClick: _this2.props.onSelect, 'data-item-id': element.id },
+	                            'Selecionar'
 	                        )
 	                    )
 	                );
 	            });
 
+	            if (this.props.hasSelectedItems && !this.props.multi) {
+	                return null;
+	            }
+
 	            var style = {
-	                height: '280px',
+	                height: '230px',
 	                overflow: 'scroll'
 	            };
 
@@ -31783,13 +31800,13 @@
 	            }
 
 	            return _react2.default.createElement(
-	                "div",
-	                { className: items.length > 5 ? 'ls-md-margin-bottom' : '', style: items.length > 5 ? style : {} },
+	                'div',
+	                { className: this.props.hasSelectedItems ? 'ls-md-margin-bottom' : '', style: items.length > 4 ? style : {} },
 	                _react2.default.createElement(
-	                    "table",
-	                    { className: "ls-table ls-table-striped ls-table-bordered" },
+	                    'table',
+	                    { className: 'ls-table ls-table-striped ls-table-bordered ls-no-margin' },
 	                    _react2.default.createElement(
-	                        "tbody",
+	                        'tbody',
 	                        null,
 	                        items
 	                    )
@@ -31807,7 +31824,7 @@
 /* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -31838,40 +31855,38 @@
 	    }
 
 	    _createClass(SelectedItems, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 
-	            var items = this.props.items.filter(function (element) {
-	                return element.selected;
-	            }).map(function (element, index) {
+	            var items = this.props.selectedItems.map(function (element, index) {
 	                return _react2.default.createElement(
-	                    "tr",
-	                    { key: index },
+	                    'tr',
+	                    { className: !element.available ? 'ls-background-danger' : '', key: index },
 	                    _react2.default.createElement(
-	                        "td",
-	                        { className: "ls-text-sm" },
+	                        'td',
+	                        { className: 'ls-text-sm' },
 	                        element.id,
-	                        " - ",
+	                        ' - ',
 	                        element.name
 	                    ),
 	                    _react2.default.createElement(
-	                        "td",
-	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
-	                        "R$ 99,00"
+	                        'td',
+	                        { className: 'ls-text-sm ls-txt-right ls-width-150' },
+	                        'R$ 99,00'
 	                    ),
 	                    _react2.default.createElement(
-	                        "td",
-	                        { className: "ls-text-sm ls-txt-right ls-width-150" },
+	                        'td',
+	                        { className: 'ls-text-sm ls-txt-right ls-width-150' },
 	                        _react2.default.createElement(
-	                            "a",
-	                            { href: "#", "aria-label": "Ver imagem do produto", className: "ls-text-xl ls-sm-margin-right ls-tooltip-left" },
-	                            _react2.default.createElement("span", { className: "ls-ico-images" })
+	                            'span',
+	                            { 'aria-label': 'Ver imagem do produto', className: 'ls-display-inline-block ls-tooltip-left' },
+	                            _react2.default.createElement('i', { className: 'ls-ico-images ls-text-xl ls-sm-margin-right' })
 	                        ),
 	                        _react2.default.createElement(
-	                            "button",
-	                            { className: "ls-btn-xs ls-btn-danger", onClick: _this2.props.onRemove, "data-item-id": element.id },
-	                            "Remover"
+	                            'button',
+	                            { className: 'ls-btn-xs ls-btn-danger', onClick: _this2.props.onRemove, 'data-item-id': element.id },
+	                            _this2.props.multi ? 'Remover' : 'Alterar'
 	                        )
 	                    )
 	                );
@@ -31882,26 +31897,26 @@
 	            }
 
 	            var style = {
-	                height: '280px',
+	                height: '230px',
 	                overflow: 'scroll'
 	            };
 
 	            return _react2.default.createElement(
-	                "div",
+	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    "h5",
-	                    null,
-	                    "Produtos selecionados"
+	                    'h5',
+	                    { className: 'ls-md-margin-bottom' },
+	                    items.length > 1 ? 'Itens selecionados' : 'Item selecionado'
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { style: items.length > 5 ? style : {} },
+	                    'div',
+	                    { style: items.length > 4 ? style : {} },
 	                    _react2.default.createElement(
-	                        "table",
-	                        { className: "ls-table ls-table-striped ls-table-bordered ls-no-margin-bottom" },
+	                        'table',
+	                        { className: 'ls-table ls-table-striped ls-table-bordered ls-no-margin' },
 	                        _react2.default.createElement(
-	                            "tbody",
+	                            'tbody',
 	                            null,
 	                            items
 	                        )
@@ -31930,11 +31945,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Breadcrumb = __webpack_require__(278);
+	var _Breadcrumb = __webpack_require__(277);
 
 	var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
 
-	var _AnimatedContent = __webpack_require__(279);
+	var _AnimatedContent = __webpack_require__(278);
 
 	var _AnimatedContent2 = _interopRequireDefault(_AnimatedContent);
 

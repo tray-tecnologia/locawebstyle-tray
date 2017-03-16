@@ -38,9 +38,7 @@ const FilterableItemsTable = React.createClass({
     onFilterInput(filters) {
         this.setState({
             filters: filters,
-        }, function() {
-            this.filterItems();
-        }.bind(this));
+        }, () => this.filterItems());
     },
 
     /**
@@ -62,9 +60,9 @@ const FilterableItemsTable = React.createClass({
      */
     filterItems() {
         let filters = this.state.filters;
-        let items = this.state.items;
+        let items = store.getState().items;
 
-        let filteredItems = items.filter(function(item) {
+        let filteredItems = items.filter((item) => {
             item = this.filterItemById(filters.id, item);
             item = this.filterItemByName(filters.name, item);
             item = this.filterItemByStatus(filters.status, item);
@@ -72,7 +70,7 @@ const FilterableItemsTable = React.createClass({
             if (item) {
                 return item;
             }
-        }.bind(this));
+        });
 
         this.setState({ filteredItems: filteredItems });
     },
