@@ -9,13 +9,15 @@ import FilterableItemsTable from '../pages/partials/items/FilterableItemsTable.j
 class ItemsPage extends React.Component {
   constructor(props) {
     super(props);
+  }
 
-    store.subscribe(() => {
-        this.forceUpdate();
-    });
+  checkStore () {
+    store.subscribe(() => this.forceUpdate());
   }
 
   render () {
+    this.checkStore();
+
     return (
         <div>
             <Breadcrumb title="Itens" />
