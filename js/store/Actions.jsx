@@ -27,17 +27,3 @@ export const addItems = (itemsData) => {
         itemsData
     }
 }
-
-export const addEditable = () => {
-    return {
-        type: ADD_EDITABLE,
-        editable: true,
-    }
-}
-
-export const removeEditable = () => {
-    return {
-        type: REMOVE_EDITABLE,
-        editable: false,
-    }
-}
