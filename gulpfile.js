@@ -1,11 +1,11 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var cp          = require('child_process');
-var deploy      = require('gulp-gh-pages');
-var webpack     = require('webpack-stream');
-var webpackConf = require('./webpack.config.js');
+const gulp        = require('gulp');
+const browserSync = require('browser-sync');
+const cp          = require('child_process');
+const deploy      = require('gulp-gh-pages');
+const webpack     = require('webpack-stream');
+const webpackConf = require('./webpack.config.js');
 
-var messages = {
+const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
@@ -25,8 +25,9 @@ gulp.task('dependencies', () => {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build', (done) => {
     browserSync.notify(messages.jekyllBuild);
+
     return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
@@ -34,23 +35,21 @@ gulp.task('jekyll-build', function (done) {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
-});
+gulp.task('jekyll-rebuild', ['jekyll-build'], () => browserSync.reload());
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['jekyll-build'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        },
-        open: false,
-    });
-});
+const browserSyncConfig = {
+    server: {
+        baseDir: '_site'
+    },
+    open: false,
+};
 
-gulp.task('webpack', function() {
+gulp.task('browser-sync', ['jekyll-build'], () => browserSync(browserSyncConfig));
+
+gulp.task('webpack', () => {
     return gulp.src('js/Main.jsx')
         .pipe(webpack(webpackConf))
         .pipe(gulp.dest('js/dist/'));
@@ -60,7 +59,7 @@ gulp.task('webpack', function() {
  * Watch html/md files, run jekyll & reload BrowserSync
  * if you add folder for pages, collection or datas, add them to this list
  */
-gulp.task('watch', function () {
+gulp.task('watch', () => {
     gulp.watch(['_layouts/*', 'js/dist/*'], ['jekyll-rebuild']);
     gulp.watch(['js/**/*.jsx',], ['webpack']);
 });
@@ -68,7 +67,7 @@ gulp.task('watch', function () {
 /**
  * Push build to gh-pages
  */
-gulp.task('deploy', function () {
+gulp.task('deploy', () => {
   return gulp.src('./_site/**/*')
     .pipe(deploy())
 });
