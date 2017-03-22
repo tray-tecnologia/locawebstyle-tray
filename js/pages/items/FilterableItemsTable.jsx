@@ -1,6 +1,6 @@
 import React from 'react';
 
-import store from '../../../store/Stores.jsx';
+import store from '../../store/Stores.jsx';
 
 import ItemsActions from './ItemsActions.jsx';
 import ItemsEmpty from './ItemsEmpty.jsx';
@@ -63,6 +63,7 @@ const FilterableItemsTable = React.createClass({
         let items = store.getState().items;
 
         let filteredItems = items.filter((item) => {
+            item.selected = false;
             item = this.filterItemById(filters.id, item);
             item = this.filterItemByName(filters.name, item);
             item = this.filterItemByStatus(filters.status, item);
@@ -134,10 +135,11 @@ const FilterableItemsTable = React.createClass({
 
     onSelectItem(event) {
         const ALL_ITEMS = 0;
-        let itemID = event.currentTarget.getAttribute('data-item-id');
-        let selected = event.currentTarget.checked;
+        let element = event.currentTarget;
+        let itemID = element.getAttribute('data-item-id');
+        let selected = element.checked;
 
-        let itemsUpdated = this.state.items.map((item) => {
+        let itemsUpdated = store.getState().items.map((item) => {
             if (item.id == itemID || itemID == ALL_ITEMS) {
                 item.selected = selected;
             }

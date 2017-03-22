@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 import { connect } from 'react-redux';
 
-import store from '../../../store/Stores.jsx';
-import { addItems } from '../../../store/Actions.jsx';
+import store from '../../../js/store/Stores.jsx';
+import { addItems } from '../../store/Actions.jsx';
 
 class ItemsEmpty extends React.Component {
 

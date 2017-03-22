@@ -9,11 +9,11 @@ class ItemsTableHead extends React.Component {
                         <input type="checkbox" data-item-id="0" onChange={this.props.onSelectItem} data-ls-module="checkboxToggle" data-checkbox-target="items-table"/>
                     </th>
                     <th>Código</th>
-                    <th>Status</th>
                     <th>Nome</th>
                     <th>Categoria</th>
                     <th>Preço</th>
                     <th>Estoque</th>
+                    <th className="ls-txt-center ls-width-100">Status</th>
                     <th></th>
                 </tr>
             </thead>
