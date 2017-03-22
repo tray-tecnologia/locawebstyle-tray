@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-import Alert from '../components/Alert.jsx';
-import AnimatedContent from '../components/AnimatedContent.jsx';
-import Breadcrumb from '../components/Breadcrumb.jsx';
-import FloatingActions from '../components/FloatingActions.jsx';
+import Alert from '../../components/Alert.jsx';
+import AnimatedContent from '../../components/AnimatedContent.jsx';
+import Breadcrumb from '../../components/Breadcrumb.jsx';
+import FloatingActions from '../../components/FloatingActions.jsx';
 
-import ItemsForm from './partials/items_add/ItemsForm.jsx';
+import ItemsForm from './ItemsForm.jsx';
 
 class ItemsAdd extends React.Component {
 

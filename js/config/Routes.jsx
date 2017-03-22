@@ -11,10 +11,10 @@ import store from '../store/Stores.jsx';
 import App from '../layout/App.jsx';
 
 // Pages
-import HomePage from '../pages/Home.jsx';
-import ItemsPage from '../pages/Items.jsx';
-import ItemsAddPage from '../pages/ItemsAdd.jsx';
-import AppsPage from '../pages/Apps.jsx';
+import HomePage from '../pages/home/Home.jsx';
+import ItemsPage from '../pages/items/Items.jsx';
+import ItemsAddPage from '../pages/items/ItemsAdd.jsx';
+import AppsPage from '../pages/apps/Apps.jsx';
 
 // Routes
 render((

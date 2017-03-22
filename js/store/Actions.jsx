@@ -2,8 +2,6 @@
 const ADD_ITEM = 'ADD_ITEM';
 const REMOVE_ITEM = 'REMOVE_ITEM';
 const ADD_ITEMS = 'ADD_ITEMS';
-const ADD_EDITABLE = 'ADD_EDITABLE';
-const REMOVE_EDITABLE = 'REMOVE_EDITABLE';
 
 
 // actions creators

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Breadcrumb from '../components/Breadcrumb.jsx';
-import AnimatedContent from '../components/AnimatedContent.jsx';
-import Modal from '../components/Modal.jsx';
+import Breadcrumb from '../../components/Breadcrumb.jsx';
+import AnimatedContent from '../../components/AnimatedContent.jsx';
+import Modal from '../../components/Modal.jsx';
 
 const AppsPage = React.createClass({
 

@@ -100,6 +100,11 @@ class ItemsForm extends React.Component {
         })
     }
 
+    componentDidMount() {
+        ls.popover.destroy();
+        ls.popover.init();
+    }
+
     render() {
         return (
             <fieldset className={this.props.className}>
@@ -116,7 +121,7 @@ class ItemsForm extends React.Component {
                                 <input type="checkbox" name="kit[status]" /> Kit ativo - será exibido na loja para venda
                             </label>
                             <label className="ls-label-text ls-no-bold">
-                                <input type="checkbox" name="kit[featured]" /> Exibir selo destaque no kit <span className="ls-ico-help"></span>
+                                <input type="checkbox" name="kit[featured]" /> Exibir selo destaque no kit <span className="ls-ico-help" data-trigger="hover" data-ls-module="popover" data-placement="right" data-content="Aqui usamos a classe <strong class='ls-color-danger'>.ls-ico-help</strong>" data-title="Popover com ícone de ajuda" data-target="#ls-popover-1"></span>
                             </label>
                             <label className="ls-label-text ls-no-bold">
                                 <input type="checkbox" name="kit[new]" /> Exibir selo lançamento no kit <span className="ls-ico-help"></span>

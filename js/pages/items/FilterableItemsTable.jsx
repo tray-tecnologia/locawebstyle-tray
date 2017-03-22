@@ -1,6 +1,6 @@
 import React from 'react';
 
-import store from '../../../store/Stores.jsx';
+import store from '../../store/Stores.jsx';
 
 import ItemsActions from './ItemsActions.jsx';
 import ItemsEmpty from './ItemsEmpty.jsx';
